@@ -6,7 +6,8 @@ import sys
 s = "Barack Obama is the president of the United States. And he is famous"
 
 def generate_named_entity(s):
-    sentences = nltk.sent_tokenize(s)
+    #print "generating for ", s
+    sentences = nltk.sent_tokenize(s.decode('utf-8'))
     sentences = re.split('\\?+!+|!+\\?+|\\.+|!+|\\?+', s)
 
     tokenized = nltk.word_tokenize(sentences[0])
@@ -23,10 +24,19 @@ def remove_empty(content):
     return content
 
 def write_full_content(content, path):
-    f = open(path+"_named-entities.txt", 'w')
+    f = open(path+"_named-entities.txt", 'a')
 
     for elem in content:
         f.write(elem)
+
+    f.write("\n")
+
+    f.write(str(content))
+
+def write_named_entities(content, path):
+    f = open(path+"_named-entities.txt", 'a')
+    f.write("\n")
+    f.write(str(content))
 
 def do_main():
     if len(sys.argv) < 2:
@@ -46,10 +56,12 @@ def do_main():
 
             write_full_content(full_content, path_season+"../output/"+episode)
 
-            # for string in full_content:
-            #     ne = generate_named_entity(string)
-            #
-            #     write_named_entity(ne)
+            named_entities = []
+            for string in full_content:
+                named_entities.append(generate_named_entity(string))
+
+            write_named_entities(named_entities, path_season+"../output/"+episode)
+            #print named_entities
 
 
 if __name__ == "__main__":
