@@ -3,10 +3,10 @@ import re
 import os
 import sys
 from nltk.tree import Tree
+import csv
 
 def generate_named_entity(s):
     sentences = nltk.sent_tokenize(s.decode('utf-8'))
-    sentences = re.split('\\?+!+|!+\\?+|\\.+|!+|\\?+', s)
 
     named_entities = []
     for sentence in sentences:
@@ -73,27 +73,46 @@ def list_named_entities(content):
 	named_entities = list(set(named_entities_repetition))
 	return named_entities
 
+def write_named_entities_in_csv(entities, path_episodes):
+    entities = list(set(entities))
+    with open(path_episodes+'/output/entities.csv', 'wb') as csvfile:
+        spamwriter = csv.writer(csvfile)
+
+	for entity in entities:
+            spamwriter.writerow([entity])
+
 def do_main():
     if len(sys.argv) < 2:
         print "Insuficient number of arguments."
-        print "Expected: python tarefa1.py <path_to_files>"
-	print "Path Example: /episodes/season_1/"
+        print "Expected: python tarefa1.py <path_to_episodes>"
+	print "Path Example: episodes if it's in the same directory of this file."
         return
 
     full_content = ""
-    path_season = sys.argv[1]
-    files = os.listdir(path_season)
-    for episode in files:
-        with open(path_season + episode) as f:
-            full_content = f.read().splitlines()
-            full_content = remove_empty(full_content)
+    path_episodes = sys.argv[1]
 
-            write_full_content(full_content, path_season+"../output/"+episode)
+    named_entities = []
+    entities = []
+    seasons = os.listdir(path_episodes)
+    for season in seasons:
+	if "season" in season:
+	    path_season = path_episodes+'/'+season+'/'
+    	    files = os.listdir(path_season)
+            for episode in files:
+        	with open(path_season + episode) as f:
+	             full_content = f.read().splitlines()
+            	     full_content = remove_empty(full_content)
 
-	    write_list_of_line_contents(full_content, path_season+"../output/"+episode)
-	
-            write_named_entities(list_named_entities(full_content), path_season+"../output/"+episode)
-            
+            	     write_full_content(full_content, path_season+"../output/"+season+"/"+episode)
+
+	             write_list_of_line_contents(full_content, path_season+"../output/"+season+"/"+episode)
+		     
+	             entities = list_named_entities(full_content)
+                     write_named_entities(entities, path_season+"../output/"+season+"/"+episode)
+            	     named_entities += entities
+
+    write_named_entities_in_csv(named_entities, path_episodes)
+    
 
 if __name__ == "__main__":
     do_main()
