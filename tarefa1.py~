@@ -8,27 +8,19 @@ def generate_named_entity(s):
     sentences = nltk.sent_tokenize(s.decode('utf-8'))
     sentences = re.split('\\?+!+|!+\\?+|\\.+|!+|\\?+', s)
 
-    words_tokenized = []
+    named_entities = []
     for sentence in sentences:
-	words_tokenized += nltk.word_tokenize(sentence)
+	words_tokenized = nltk.word_tokenize(sentence)
 
-    pos = nltk.pos_tag(words_tokenized)
-    ner = nltk.ne_chunk(pos, binary=True)
-    
-    prev = None
-    continuous_chunk = []
-    current_chunk = []
-    for i in ner:
-            if type(i) == Tree:
-                    current_chunk.append(" ".join([token for token, pos in i.leaves()]))
-            elif current_chunk:
-                    named_entity = " ".join(current_chunk)
-                    if named_entity not in continuous_chunk:
-                            continuous_chunk.append(named_entity)
-                            current_chunk = []
-            else:
-                    continue
-    return continuous_chunk
+	pos = nltk.pos_tag(words_tokenized)
+	ner = nltk.ne_chunk(pos, binary=True)
+	    
+	for t in ner:
+		if isinstance(t, nltk.tree.Tree):
+			if t.node == 'NE':
+				text = ' '.join([c[0] for c in t])
+				named_entities.append(text)
+    return named_entities
 
 def remove_empty(content):
     content = filter(None, content)
