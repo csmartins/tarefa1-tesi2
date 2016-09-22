@@ -1,0 +1,9 @@
+Para classificar uma entidade nomeada usamos tais regras de gramática:
+
+1. Sequência de nomes próprios no singular ou plural: <NNP|NNPS>+
+2. Nome próprio com pronomes possessivos para cobrir casos como "Night's Watch": <NNP|NNPS><POS><NNP|NNPS>
+3. Sequência de nomes próprios seguido de preposição antes de mais nomes próprios, para cobrir casos como "Sir Eddard Stark of Winterfell": <NNP|NNPS><IN><NNP|NNPS>
+	PROBLEMA: Pega casos como "David Coakley as Drennan" e "Man Without Honor on Wikipedia"
+4. Pensar numa regra para solucionar o caso dos "_____", que é classificado pelo pos_tag como NNP (se retirarmos essa parte do texto não vai ser necessário).
+
+Concatenando todas as regras: <NNP|NNPS>+<POS|IN>?<NNP|NNPS>*

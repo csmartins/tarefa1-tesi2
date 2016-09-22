@@ -13,7 +13,14 @@ def generate_named_entity(s):
 	words_tokenized = nltk.word_tokenize(sentence)
 
 	pos = nltk.pos_tag(words_tokenized)
-	ner = nltk.ne_chunk(pos, binary=True)
+	grammar = ''' 	NE:	{<NNP|NNPS>+}
+				{<NNP|NNPS><POS><NNP|NNPS>}
+				{<NNP|NNPS>+<IN><NNP|NNPS>+}
+		  '''
+ 
+	#ner = nltk.ne_chunk(pos, binary=True)
+	regex_parser = nltk.RegexpParser(grammar)
+	ner = regex_parser.parse(pos)
 	    
 	for t in ner:
 		if isinstance(t, nltk.tree.Tree):
@@ -69,23 +76,38 @@ def list_named_entities(content):
 		line_named_entities = generate_named_entity(line)
 		if line_named_entities != []:
 			for entity in line_named_entities:
-				named_entities_repetition.append(entity)
+				named_entities_repetition.append(entity.strip())
 	named_entities = list(set(named_entities_repetition))
 	return named_entities
 
 def write_named_entities_in_csv(entities, path_episodes):
+    print len(entities)
     entities = list(set(entities))
+    print len(entities)
     with open(path_episodes+'/output/entities.csv', 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
 
 	for entity in entities:
-            spamwriter.writerow([entity])
+            spamwriter.writerow([entity.encode('ascii', 'ignore')])
+
+def clean_text(text_by_line):
+
+	cleaned_text = []
+	for line in text_by_line:
+		#Condicoes para retirar parte debaixo do texto
+		if "Recap" in line and len(line) < 20: break
+		if "Appearances" in line and len(line) < 20: break
+		#condicao para nao adicionar parte de cima do texto
+		if len(line) > 150: cleaned_text.append(line)
+
+	cleaned_text = remove_empty(cleaned_text)
+	return cleaned_text
 
 def do_main():
     if len(sys.argv) < 2:
         print "Insuficient number of arguments."
         print "Expected: python tarefa1.py <path_to_episodes>"
-	print "Path Example: episodes if it's in the same directory of this file."
+	print "Path Example: episodes (if it's in the same directory of this file.)"
         return
 
     full_content = ""
@@ -96,12 +118,14 @@ def do_main():
     seasons = os.listdir(path_episodes)
     for season in seasons:
 	if "season" in season:
+	    print season
 	    path_season = path_episodes+'/'+season+'/'
     	    files = os.listdir(path_season)
             for episode in files:
+		print episode
         	with open(path_season + episode) as f:
-	             full_content = f.read().splitlines()
-            	     full_content = remove_empty(full_content)
+		     full_content = f.read().splitlines()
+		     full_content = clean_text(full_content)
 
             	     write_full_content(full_content, path_season+"../output/"+season+"/"+episode)
 
@@ -110,7 +134,6 @@ def do_main():
 	             entities = list_named_entities(full_content)
                      write_named_entities(entities, path_season+"../output/"+season+"/"+episode)
             	     named_entities += entities
-
     write_named_entities_in_csv(named_entities, path_episodes)
     
 
