@@ -81,14 +81,14 @@ def list_named_entities(content):
 	return named_entities
 
 def write_named_entities_in_csv(entities, path_episodes):
-    print len(entities)
+    entities = map(lambda x: x.encode('utf8'), entities)
     entities = list(set(entities))
     print len(entities)
     with open(path_episodes+'/output/entities.csv', 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
 
 	for entity in entities:
-            spamwriter.writerow([entity.encode('ascii', 'ignore')])
+            spamwriter.writerow([entity])
 
 def clean_text(text_by_line):
 
