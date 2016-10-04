@@ -5,6 +5,8 @@ import sys
 from nltk.tree import Tree
 import csv
 
+#nltk.help.upenn_tagset() PARA A POSTERIDADE
+
 path_output = "output"
 
 names_dict = {}
@@ -18,31 +20,47 @@ names_dict["Rickon Stark"] = ["Rickon"]
 names_dict["Gregor Clegane"] = ["Ser Gregor Clegane"]
 names_dict["Jorah Mormont"] = ["Ser Jorah Mormont"]
 
+nick_names = []
+
 def clear_entity(entity):
-    return entity.strip().strip("\"").strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip()
+    return entity.strip().strip('""').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'").strip()
+
+def get_nicknames(s, nicks):
+    quotes = [q.decode('utf-8') for q in s.split('"')[1::2]]
+    if quotes != [] and nicks != []:
+        for nick in nicks:
+            if nick in quotes:
+                nick_names.append(nick)
 
 def generate_named_entity(s):
     sentences = nltk.sent_tokenize(s.decode('utf-8'))
-
+    nicks = []
     named_entities = []
     for sentence in sentences:
     	words_tokenized = nltk.word_tokenize(sentence)
 
     	pos = nltk.pos_tag(words_tokenized)
-    	grammar = ''' 	NE:	{<NNP|NNPS>+}
-    				{<NNP|NNPS><POS><NNP|NNPS>}
-    				{<NNP|NNPS>+<IN><NNP|NNPS>+}
-    		  '''
-
+    	grammar = ''' 	NICK: {<DT><NNP|NNPS>}
+                        NE:	{<NNP|NNPS>+}
+    				        {<NNP|NNPS><POS><NNP|NNPS>}
+    				        {<NNP|NNPS>+<IN><NNP|NNPS>+}
+    		    '''
     	#ner = nltk.ne_chunk(pos, binary=True)
     	regex_parser = nltk.RegexpParser(grammar)
     	ner = regex_parser.parse(pos)
 
     	for t in ner:
-    		if isinstance(t, nltk.tree.Tree):
-    			if t.node == 'NE':
-    				text = ' '.join([c[0] for c in t])
-    				named_entities.append(clear_entity(text))
+            if isinstance(t, nltk.tree.Tree):
+                if t.label() == 'NICK':
+                    text = ' '.join(c[0] for c in t)
+                    nicks.append(text)
+
+                if t.label() == 'NE':
+                    text = ' '.join([c[0] for c in t])
+                    named_entities.append(clear_entity(text))
+
+    get_nicknames(s, nicks)
+
     return named_entities
 
 def remove_empty(content):
@@ -134,7 +152,7 @@ def do_main():
 
     full_content = ""
     path_episodes = sys.argv[1]
-    
+
     named_entities = []
     entities = []
     seasons = os.listdir(path_episodes)
@@ -165,6 +183,9 @@ def do_main():
 
                     named_entities += entities
     write_named_entities_in_csv(named_entities, path_output)
+
+    #ainda esta apenas printando os nicknames enquanto nao os usamos para algo
+    print nick_names
 
 
 if __name__ == "__main__":
