@@ -4,3 +4,7 @@ Para classificar uma entidade nomeada usamos tais regras de gramática:
 2. Nome próprio com pronomes possessivos para cobrir casos como "Night's Watch": <NNP|NNPS><POS><NNP|NNPS>
 3. Sequência de nomes próprios seguido de preposição antes de mais nomes próprios, para cobrir casos como "Sir Eddard Stark of Winterfell": <NNP|NNPS><IN><NNP|NNPS>
 	PROBLEMA: Pega casos como "David Coakley as Drennan" e "Man Without Honor on Wikipedia"
+
+Outras classificações:
+
+1. Todos os nomes com um artigo definido na frente. Usamos para determinar os nicknames: NICK: {<DT><NNP|NNPS>}
