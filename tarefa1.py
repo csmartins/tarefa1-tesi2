@@ -5,11 +5,18 @@ import sys
 from nltk.tree import Tree
 import csv
 
+path_output = "output"
+
 names_dict = {}
 names_dict["Jon Snow"] = ["Jon", "Jon Snow", "Lord Commander Jon Snow", "Lord Snow"]
 names_dict["Benjen Stark"] = ["Benjen Stark", "Benjen", "Uncle Benjen"]
 names_dict["Eddard Stark"] = ["Ned Stark", "Ned", "Lord Eddard", "Eddard Stark", "Eddard", "Lord Eddard Stark"]
 names_dict["Daenerys Targaryen"] = ["Daenerys Stormborn", "Daenarys", "Daenerys Targaryen", "Queen Daenerys Targaryen", "Princess Daenerys Targaryen", "Queen Daenerys", "Daenarys", "Dragon Queen", "Mhysa"]
+names_dict["Theon Greyjoy"] = ["Theon"]
+names_dict["Bran Stark"] = ["Bran", "Brandon Stark"]
+names_dict["Rickon Stark"] = ["Rickon"]
+names_dict["Gregor Clegane"] = ["Ser Gregor Clegane"]
+names_dict["Jorah Mormont"] = ["Ser Jorah Mormont"]
 
 def clear_entity(entity):
     return entity.strip().strip("\"").strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip()
@@ -33,7 +40,7 @@ def generate_named_entity(s):
 
     	for t in ner:
     		if isinstance(t, nltk.tree.Tree):
-    			if t.label() == 'NE':
+    			if t.node == 'NE':
     				text = ' '.join([c[0] for c in t])
     				named_entities.append(clear_entity(text))
     return named_entities
@@ -55,7 +62,7 @@ def write_list_of_line_contents(content,path):
     f.write("\n")
 
 def write_full_content(content, path):
-    f = open(path+"_named-entities.txt", 'a')
+    f = open(path+"_named-entities.txt", 'w')
 
     f.write("------------ String contendo todo o texto")
     f.write("\n")
@@ -68,6 +75,7 @@ def write_full_content(content, path):
     f.write("\n")
     f.write("\n")
     f.write("\n")
+    f.close()
 
 
 def write_named_entities(content, path):
@@ -78,6 +86,7 @@ def write_named_entities(content, path):
     f.write("\n")
     f.write("\n")
     f.write(str(content))
+    f.close()
 
 def list_named_entities(content):
     named_entities_repetition = []
@@ -92,9 +101,9 @@ def list_named_entities(content):
 
 def write_named_entities_in_csv(entities, path_episodes):
     entities = map(lambda x: x.encode('utf8'), entities)
-    entities = list(set(entities))
-    print len(entities)
-    with open(path_episodes+'/output/entities.csv', 'wb') as csvfile:
+    entities = sorted(list(set(entities)))
+
+    with open(path_episodes+'/entities.csv', 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
 
         for entity in entities:
@@ -105,13 +114,16 @@ def clean_text(text_by_line):
 	cleaned_text = []
 	for line in text_by_line:
 		#Condicoes para retirar parte debaixo do texto
-		if "Recap" in line and len(line) < 20: break
-		if "Appearances" in line and len(line) < 20: break
+		if ("Recap" in line or "Appearances" in line) and len(line) < 20: break
 		#condicao para nao adicionar parte de cima do texto
 		if len(line) > 150: cleaned_text.append(line)
 
 	cleaned_text = remove_empty(cleaned_text)
 	return cleaned_text
+
+def create_diretory(path):
+    if not (os.path.isdir(path)):
+	os.mkdir(path)
 
 def do_main():
     if len(sys.argv) < 2:
@@ -122,29 +134,37 @@ def do_main():
 
     full_content = ""
     path_episodes = sys.argv[1]
-
+    
     named_entities = []
     entities = []
     seasons = os.listdir(path_episodes)
+
+    create_diretory(path_output)
+
     for season in seasons:
     	if "season" in season:
-    	    print season
             path_season = path_episodes+'/'+season+'/'
             files = os.listdir(path_season)
+
+	    path_season_output = path_output+'/'+season+'/'
+	    create_diretory(path_season_output)
+
             for episode in files:
-                print episode
                 with open(path_season + episode) as f:
                     full_content = f.read().splitlines()
                     full_content = clean_text(full_content)
 
-                    write_full_content(full_content, path_season+"../output/"+season+"/"+episode)
+		    path_episode_output = path_season_output+episode
 
-                    write_list_of_line_contents(full_content, path_season+"../output/"+season+"/"+episode)
+                    write_full_content(full_content, path_episode_output)
+
+                    write_list_of_line_contents(full_content, path_episode_output)
 
                     entities = list_named_entities(full_content)
-                    write_named_entities(entities, path_season+"../output/"+season+"/"+episode)
+                    write_named_entities(entities, path_episode_output)
+
                     named_entities += entities
-    write_named_entities_in_csv(named_entities, path_episodes)
+    write_named_entities_in_csv(named_entities, path_output)
 
 
 if __name__ == "__main__":
