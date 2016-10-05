@@ -4,21 +4,14 @@ import os
 import sys
 from nltk.tree import Tree
 import csv
+import Levenshtein
 
 #nltk.help.upenn_tagset() PARA A POSTERIDADE
 
 path_output = "output"
 
+named_entities = []
 names_dict = {}
-names_dict["Jon Snow"] = ["Jon", "Jon Snow", "Lord Commander Jon Snow", "Lord Snow"]
-names_dict["Benjen Stark"] = ["Benjen Stark", "Benjen", "Uncle Benjen"]
-names_dict["Eddard Stark"] = ["Ned Stark", "Ned", "Lord Eddard", "Eddard Stark", "Eddard", "Lord Eddard Stark"]
-names_dict["Daenerys Targaryen"] = ["Daenerys Stormborn", "Daenarys", "Daenerys Targaryen", "Queen Daenerys Targaryen", "Princess Daenerys Targaryen", "Queen Daenerys", "Daenarys", "Dragon Queen", "Mhysa"]
-names_dict["Theon Greyjoy"] = ["Theon"]
-names_dict["Bran Stark"] = ["Bran", "Brandon Stark"]
-names_dict["Rickon Stark"] = ["Rickon"]
-names_dict["Gregor Clegane"] = ["Ser Gregor Clegane"]
-names_dict["Jorah Mormont"] = ["Ser Jorah Mormont"]
 
 nick_names = []
 
@@ -35,15 +28,16 @@ def get_nicknames(s, nicks):
 def generate_named_entity(s):
     sentences = nltk.sent_tokenize(s.decode('utf-8'))
     nicks = []
-    named_entities = []
+    nes = []
     for sentence in sentences:
     	words_tokenized = nltk.word_tokenize(sentence)
 
     	pos = nltk.pos_tag(words_tokenized)
-    	grammar = ''' 	NICK: {<DT><NNP|NNPS>}
-                        NE:	{<NNP|NNPS>+}
-    				        {<NNP|NNPS><POS><NNP|NNPS>}
-    				        {<NNP|NNPS>+<IN><NNP|NNPS>+}
+	#NICK:   {<DT><NNP|NNPS>}
+    	grammar = ''' 	
+                        NE:	 {<NNP|NNPS>+}
+    				 {<NNP|NNPS><POS><NNP|NNPS>}
+    				 {<NNP|NNPS>+<IN><NNP|NNPS>+}
     		    '''
     	#ner = nltk.ne_chunk(pos, binary=True)
     	regex_parser = nltk.RegexpParser(grammar)
@@ -51,17 +45,19 @@ def generate_named_entity(s):
 
     	for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                if t.label() == 'NICK':
+                if t.node == 'NICK':
                     text = ' '.join(c[0] for c in t)
                     nicks.append(text)
 
-                if t.label() == 'NE':
+                if t.node == 'NE':
                     text = ' '.join([c[0] for c in t])
-                    named_entities.append(clear_entity(text))
+		    text = clear_entity(text)
+		    if len(text.split()) == 2: 
+			if text not in names_dict.keys(): names_dict[text] = []
+		    else: nes.append(text)
 
     get_nicknames(s, nicks)
-
-    return named_entities
+    return nes
 
 def remove_empty(content):
     content = filter(None, content)
@@ -114,8 +110,8 @@ def list_named_entities(content):
             for entity in line_named_entities:
                 named_entities_repetition.append(entity.strip())
 
-    named_entities = list(set(named_entities_repetition))
-    return named_entities
+    nes = list(set(named_entities_repetition))
+    return nes
 
 def write_named_entities_in_csv(entities, path_episodes):
     entities = map(lambda x: x.encode('utf8'), entities)
@@ -143,6 +139,36 @@ def create_diretory(path):
     if not (os.path.isdir(path)):
 	os.mkdir(path)
 
+def remove_multiple_names():
+    named_entities_cp = named_entities
+    for name in names_dict.keys():
+        for entity in named_entities:
+	    '''TO DO: Pensar em solucao para os apelidos.'''
+	    if similar_strings(name, entity) and entity not in names_dict.keys(): 
+		names_dict[name].append(entity)
+		named_entities_cp.remove(entity)
+    '''Adicionando como entidades o que nao soubemos classificar'''
+    for name in named_entities_cp:
+	names_dict[name] = []
+
+def similar_strings(s1, s2):
+    if (s1 in s2) or (s2 in s1) :
+	return True
+    else:
+	#distance = Levenshtein.distance(s1, s2)
+	words2 = s2.split()
+	totalWords2 = len(words2) 
+	words1 = s1.split()
+	totalWords1 = len(words1)
+        countEqual = 0
+	if totalWords2 > 1 :
+           for word in words2:
+		if word in words1:
+		   countEqual += 1
+	   if countEqual >= (totalWords1/2 + 1) or countEqual >= (totalWords2/2 + 1): return True
+
+    return False
+
 def do_main():
     if len(sys.argv) < 2:
         print "Insuficient number of arguments."
@@ -152,8 +178,7 @@ def do_main():
 
     full_content = ""
     path_episodes = sys.argv[1]
-
-    named_entities = []
+    global named_entities
     entities = []
     seasons = os.listdir(path_episodes)
 
@@ -166,7 +191,7 @@ def do_main():
 
 	    path_season_output = path_output+'/'+season+'/'
 	    create_diretory(path_season_output)
-
+	    count = 0
             for episode in files:
                 with open(path_season + episode) as f:
                     full_content = f.read().splitlines()
@@ -182,11 +207,12 @@ def do_main():
                     write_named_entities(entities, path_episode_output)
 
                     named_entities += entities
-    write_named_entities_in_csv(named_entities, path_output)
-
+    
+    remove_multiple_names()
+    write_named_entities_in_csv(names_dict.keys(), path_output)
     #ainda esta apenas printando os nicknames enquanto nao os usamos para algo
-    print nick_names
-
+#    print nick_names
+    
 
 if __name__ == "__main__":
     do_main()
