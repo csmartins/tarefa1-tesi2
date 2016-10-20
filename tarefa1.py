@@ -4,7 +4,7 @@ import os
 import sys
 from nltk.tree import Tree
 import csv
-import Levenshtein
+#import Levenshtein
 
 #nltk.help.upenn_tagset() PARA A POSTERIDADE
 
@@ -16,7 +16,7 @@ names_dict = {}
 nick_names = []
 
 def clear_entity(entity):
-    return entity.strip().strip('""').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'").strip()
+    return entity.strip().strip('"').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'").strip()
 
 def get_nicknames(s, nicks):
     quotes = [q.decode('utf-8') for q in s.split('"')[1::2]]
@@ -34,7 +34,7 @@ def generate_named_entity(s):
 
     	pos = nltk.pos_tag(words_tokenized)
 	#NICK:   {<DT><NNP|NNPS>}
-    	grammar = ''' 	
+    	grammar = '''
                         NE:	 {<NNP|NNPS>+}
     				 {<NNP|NNPS><POS><NNP|NNPS>}
     				 {<NNP|NNPS>+<IN><NNP|NNPS>+}
@@ -45,14 +45,15 @@ def generate_named_entity(s):
 
     	for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                if t.node == 'NICK':
-                    text = ' '.join(c[0] for c in t)
-                    nicks.append(text)
+                # if t.level() == 'NICK':
+                #     text = ' '.join(c[0] for c in t)
+                #     nicks.append(text)
 
-                if t.node == 'NE':
+                if t.label() == 'NE':
+                #if t.node == 'NE':
                     text = ' '.join([c[0] for c in t])
 		    text = clear_entity(text)
-		    if len(text.split()) == 2: 
+		    if len(text.split()) == 2:
 			if text not in names_dict.keys(): names_dict[text] = []
 		    else: nes.append(text)
 
@@ -144,7 +145,7 @@ def remove_multiple_names():
     for name in names_dict.keys():
         for entity in named_entities:
 	    '''TO DO: Pensar em solucao para os apelidos.'''
-	    if similar_strings(name, entity) and entity not in names_dict.keys(): 
+	    if similar_strings(name, entity) and entity not in names_dict.keys():
 		names_dict[name].append(entity)
 		named_entities_cp.remove(entity)
     '''Adicionando como entidades o que nao soubemos classificar'''
@@ -157,10 +158,10 @@ def similar_strings(s1, s2):
     else:
 	#distance = Levenshtein.distance(s1, s2)
 	words2 = s2.split()
-	totalWords2 = len(words2) 
+	totalWords2 = len(words2)
 	words1 = s1.split()
 	totalWords1 = len(words1)
-        countEqual = 0
+    countEqual = 0
 	if totalWords2 > 1 :
            for word in words2:
 		if word in words1:
@@ -197,22 +198,25 @@ def do_main():
                     full_content = f.read().splitlines()
                     full_content = clean_text(full_content)
 
-		    path_episode_output = path_season_output+episode
+                    path_episode_output = path_season_output+episode
 
                     write_full_content(full_content, path_episode_output)
 
+                    entities = list_named_entities(full_content)
+
+                    tagged_content = insert_tags(full_content, entities)
+					
                     write_list_of_line_contents(full_content, path_episode_output)
 
-                    entities = list_named_entities(full_content)
                     write_named_entities(entities, path_episode_output)
 
                     named_entities += entities
-    
+
     remove_multiple_names()
     write_named_entities_in_csv(names_dict.keys(), path_output)
     #ainda esta apenas printando os nicknames enquanto nao os usamos para algo
 #    print nick_names
-    
+
 
 if __name__ == "__main__":
     do_main()
