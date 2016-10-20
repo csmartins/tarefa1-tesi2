@@ -13,4 +13,4 @@
 ------------ Lista das Entidades Nomeadas
 
 
-[u'', u'Ghost', u'Ygritte', u'June', u'Weiss', u'Gilly', u'Hill', u'Pypar', u'Longclaw', u'Down', u'Olly', u'North', u'Mance', u'Thrones', u'Upon', u'Pyp', u'Atop', u'Watch', u'Game', u'Hobb', u'Tormund', u'Janos', u'Jon', u'Town', u'On', u'Watchers', u'Thenn', u'Eddison', u'Thorne', u'scythe', u'Alliser', u'Night', u'Castle', u'South', u'Sam', u'D.B', u'Wall', u'Styr', u'Mole', u'Ser Alliser Thorne', u'Grenn', u'Aemon']
+[u"Tormund's", u'Ygritte', u"Pypar's", u'June', u"Styr's", u'Weiss', u'Gilly', u'Hill', u'Pypar', u'Longclaw', u'Olly', u'North', u'Mance', u'Thrones', u'Pyp', u'Watch', u'Game', u'Hobb', u'Tormund', u'Janos', u'Jon', u'Town', u'Thenn', u'Eddison', u'Thorne', u'scythe', u'Alliser', u'Pyp\u200b', u'Night', u'Castle', u'South', u"Mance's", u'Sam', u'D.B', u'Wall', u'Styr', u'Mole', u'Ser Alliser Thorne', u'Grenn', u'Gilly\u200b', u'Aemon']

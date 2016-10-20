@@ -1,5 +1,4 @@
 import nltk
-import re
 import os
 import sys
 from nltk.tree import Tree
@@ -30,6 +29,7 @@ def generate_named_entity(s):
     nicks = []
     nes = []
     for sentence in sentences:
+	sentence_nes = []
     	words_tokenized = nltk.word_tokenize(sentence)
 
     	pos = nltk.pos_tag(words_tokenized)
@@ -55,14 +55,15 @@ def generate_named_entity(s):
 		    text = clear_entity(text)
 		    if len(text.split()) == 2:
 			if text not in names_dict.keys(): names_dict[text] = []
-		    else: nes.append(text)
+		    else: 
+			sentence_nes.append(text)
+			nes.append(text)
+	
+	print "Sentence: ", sentence
+	print "Generated NEs: ", sentence_nes
 
     get_nicknames(s, nicks)
     return nes
-
-def remove_empty(content):
-    content = filter(None, content)
-    return content
 
 def write_list_of_line_contents(content,path):
     f = open(path+"_named-entities.txt", 'a')
@@ -124,18 +125,6 @@ def write_named_entities_in_csv(entities, path_episodes):
         for entity in entities:
             spamwriter.writerow([entity])
 
-def clean_text(text_by_line):
-
-	cleaned_text = []
-	for line in text_by_line:
-		#Condicoes para retirar parte debaixo do texto
-		if ("Recap" in line or "Appearances" in line) and len(line) < 20: break
-		#condicao para nao adicionar parte de cima do texto
-		if len(line) > 150: cleaned_text.append(line)
-
-	cleaned_text = remove_empty(cleaned_text)
-	return cleaned_text
-
 def create_diretory(path):
     if not (os.path.isdir(path)):
 	os.mkdir(path)
@@ -161,7 +150,7 @@ def similar_strings(s1, s2):
 	totalWords2 = len(words2)
 	words1 = s1.split()
 	totalWords1 = len(words1)
-    countEqual = 0
+        countEqual = 0
 	if totalWords2 > 1 :
            for word in words2:
 		if word in words1:
@@ -196,7 +185,6 @@ def do_main():
             for episode in files:
                 with open(path_season + episode) as f:
                     full_content = f.read().splitlines()
-                    full_content = clean_text(full_content)
 
                     path_episode_output = path_season_output+episode
 
@@ -204,7 +192,7 @@ def do_main():
 
                     entities = list_named_entities(full_content)
 
-                    tagged_content = insert_tags(full_content, entities)
+                    #tagged_content = insert_tags(full_content, entities)
 					
                     write_list_of_line_contents(full_content, path_episode_output)
 
