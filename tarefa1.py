@@ -8,6 +8,7 @@ import csv
 #nltk.help.upenn_tagset() PARA A POSTERIDADE
 
 path_output = "output"
+path_episodes_cleaned = "cleaned_episodes"
 
 named_entities = []
 names_dict = {}
@@ -31,7 +32,6 @@ def generate_named_entity(s):
     for sentence in sentences:
 	sentence_nes = []
     	words_tokenized = nltk.word_tokenize(sentence)
-
     	pos = nltk.pos_tag(words_tokenized)
 	#NICK:   {<DT><NNP|NNPS>}
     	grammar = '''
@@ -59,8 +59,8 @@ def generate_named_entity(s):
 			sentence_nes.append(text)
 			nes.append(text)
 	
-	print "Sentence: ", sentence
-	print "Generated NEs: ", sentence_nes
+	#print "Sentence: ", sentence
+	#print "Generated NEs: ", sentence_nes
 
     get_nicknames(s, nicks)
     return nes
@@ -160,50 +160,46 @@ def similar_strings(s1, s2):
     return False
 
 def do_main():
-    if len(sys.argv) < 2:
+    print "Attention! You must pre proccess your text running:"
+    print "python clean_text.py <path_to_episodes>"
+
+    if len(sys.argv) < 1:
         print "Insuficient number of arguments."
-        print "Expected: python tarefa1.py <path_to_episodes>"
-        print "Path Example: episodes (if it's in the same directory of this file.)"
-        return
+        print "Expected: python tarefa1.py"    
+    	return
 
     full_content = ""
-    path_episodes = sys.argv[1]
     global named_entities
     entities = []
-    seasons = os.listdir(path_episodes)
 
+    seasons = os.listdir(path_episodes_cleaned)
     create_diretory(path_output)
 
     for season in seasons:
     	if "season" in season:
-            path_season = path_episodes+'/'+season+'/'
+            path_season = path_episodes_cleaned+'/'+season+'/'
             files = os.listdir(path_season)
-
 	    path_season_output = path_output+'/'+season+'/'
 	    create_diretory(path_season_output)
-	    count = 0
-            for episode in files:
+
+	    for episode in files:
                 with open(path_season + episode) as f:
                     full_content = f.read().splitlines()
+		    full_content = filter(None, full_content)
 
                     path_episode_output = path_season_output+episode
 
                     write_full_content(full_content, path_episode_output)
 
                     entities = list_named_entities(full_content)
-
                     #tagged_content = insert_tags(full_content, entities)
 					
                     write_list_of_line_contents(full_content, path_episode_output)
-
                     write_named_entities(entities, path_episode_output)
-
                     named_entities += entities
 
     remove_multiple_names()
     write_named_entities_in_csv(names_dict.keys(), path_output)
-    #ainda esta apenas printando os nicknames enquanto nao os usamos para algo
-#    print nick_names
 
 
 if __name__ == "__main__":
