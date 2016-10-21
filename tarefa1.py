@@ -49,8 +49,8 @@ def generate_named_entity(s):
                 #     text = ' '.join(c[0] for c in t)
                 #     nicks.append(text)
 
-                if t.label() == 'NE':
-                #if t.node == 'NE':
+                #if t.label() == 'NE':
+                if t.node == 'NE':
                     text = ' '.join([c[0] for c in t])
 		    text = clear_entity(text)
 		    if len(text.split()) == 2:
