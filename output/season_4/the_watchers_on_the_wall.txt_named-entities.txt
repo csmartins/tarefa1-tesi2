@@ -13,4 +13,4 @@ Plot The Night's Watch, although hopelessly outnumbered, attempts to defend Cast
 ------------ Lista das Entidades Nomeadas
 
 
-[u'', u'Ghost', u'Ygritte', u'Upon', u'Gilly', u'Hill', u'Pypar', u'Longclaw', u'Down', u'Olly', u'North', u'Mance', u'Pyp', u'Atop', u'Watch', u'Hobb', u'Tormund', u'Janos', u'Jon', u'Town', u'On', u'Thenn', u'Eddison', u'Thorne', u'Summary', u'Mag Mar Tun Doh Weg', u'scythe', u'Alliser', u'Night', u'Castle', u'South', u'Sam', u'Wall', u'Styr', u'Mole', u'Ser Alliser Thorne', u'Grenn', u'Aemon']
+[u"Tormund's", u'Ygritte', u"Pypar's", u"Styr's", u'Gilly', u'Hill', u'Pypar', u'Olly', u'North', u'Mance', u'Pyp', u'Hobb', u'Tormund', u'Longclaw with Sam', u'Janos', u'Jon', u'Thenn', u'Castle Black from Mance Rayder', u'Eddison', u'Thorne', u'Mag Mar Tun Doh Weg', u'scythe', u'Alliser', u'Pyp\u200b', u'Castle', u"Night 's Watch", u'South', u"Mance's", u'Sam', u'Wall', u'Styr', u'Longclaw', u'Ser Alliser Thorne', u'Grenn', u'Gilly\u200b', u'Aemon', u"Mole 's Town"]

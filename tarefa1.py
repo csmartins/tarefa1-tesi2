@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import nltk
 import os
 import sys
@@ -15,8 +16,11 @@ names_dict = {}
 
 nick_names = []
 
+accepted_grammatical_forms = ['NE_POS_NE', 'NE_IN_NE', 'NE_VERB', 'PLACE', 'SIMPLE_NE']
+
 def clear_entity(entity):
     return entity.strip().strip('"').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'").strip()
+
 
 def get_nicknames(s, nicks):
     quotes = [q.decode('utf-8') for q in s.split('"')[1::2]]
@@ -30,39 +34,64 @@ def generate_named_entity(s):
     nicks = []
     nes = []
     for sentence in sentences:
-	sentence_nes = []
-    	words_tokenized = nltk.word_tokenize(sentence)
-    	pos = nltk.pos_tag(words_tokenized)
-	#NICK:   {<DT><NNP|NNPS>}
-    	grammar = '''
-                        NE:	 {<NNP|NNPS>+}
-    				 {<NNP|NNPS><POS><NNP|NNPS>}
-    				 {<NNP|NNPS>+<IN><NNP|NNPS>+}
-    		    '''
-    	#ner = nltk.ne_chunk(pos, binary=True)
-    	regex_parser = nltk.RegexpParser(grammar)
-    	ner = regex_parser.parse(pos)
+        sentence_nes = []
+        words_tokenized = nltk.word_tokenize(sentence)
+        pos = nltk.pos_tag(words_tokenized)
 
-    	for t in ner:
+        grammar = '''
+            NE_POS_NE: {<NNP|NNPS>+<POS><NNP|NNPS>}
+            NE_IN_NE: {<NNP|NNPS>+<IN><NNP|NNPS>+}
+            NE_VERB: {<NNP|NNPS>+<VBZ>}
+            PLACE: {<IN>+<NNP|NNPS>+<POS>*<NNP|NNPS>*}
+            SIMPLE_NE: {<NNP|NNPS>+}
+            '''
+
+        #ner = nltk.ne_chunk(pos, binary=True)
+        regex_parser = nltk.RegexpParser(grammar)
+        ner = regex_parser.parse(pos)
+
+        for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                # if t.level() == 'NICK':
-                #     text = ' '.join(c[0] for c in t)
-                #     nicks.append(text)
+                grammatical_form = t.label()
+                #grammatical_form = t.node
 
-                #if t.label() == 'NE':
-                if t.node == 'NE':
-                    text = ' '.join([c[0] for c in t])
-		    text = clear_entity(text)
-		    if len(text.split()) == 2:
-			if text not in names_dict.keys(): names_dict[text] = []
-		    else: 
-			sentence_nes.append(text)
-			nes.append(text)
-	
-	#print "Sentence: ", sentence
-	#print "Generated NEs: ", sentence_nes
+                if grammatical_form in accepted_grammatical_forms:
+                    if grammatical_form == 'NE_VERB':
+                        text = ''
+                        for c in t:
+                            if c[1] in ['NNP', 'NNPS']:
+                                text = text + ' ' + c[0]
+                                text = clear_entity(text)
 
-    get_nicknames(s, nicks)
+                        if len(text.split()) == 2:
+                            if text not in names_dict.keys(): names_dict[text] = []
+                        else:
+                            sentence_nes.append(text)
+                            nes.append(text)
+                    elif grammatical_form == 'PLACE':
+			text = ''                        
+			for c in t:
+                            if c[1] in ['NNP', 'NNPS']:
+                                text = text + ' ' + c[0]
+                                text = clear_entity(text)
+
+                        if len(text.split()) == 2:
+                            if text not in names_dict.keys(): names_dict[text] = []
+                        else:
+                            sentence_nes.append(text)
+                            nes.append(text)
+                    else:
+                        text = ' '.join([c[0] for c in t])
+                        text = clear_entity(text)
+                        if len(text.split()) == 2:
+                            if text not in names_dict.keys(): names_dict[text] = []
+                        else:
+                            sentence_nes.append(text)
+                            nes.append(text)
+        #print "Sentence: ", sentence
+        #print "Generated NEs: ", sentence_nes
+
+    #get_nicknames(s, nicks)
     return nes
 
 def write_list_of_line_contents(content,path):
@@ -133,29 +162,29 @@ def remove_multiple_names():
     named_entities_cp = named_entities
     for name in names_dict.keys():
         for entity in named_entities:
-	    '''TO DO: Pensar em solucao para os apelidos.'''
-	    if similar_strings(name, entity) and entity not in names_dict.keys():
-		names_dict[name].append(entity)
-		named_entities_cp.remove(entity)
+            '''TO DO: Pensar em solucao para os apelidos.'''
+            if similar_strings(name, entity) and entity not in names_dict.keys():
+                names_dict[name].append(entity)
+                named_entities_cp.remove(entity)
     '''Adicionando como entidades o que nao soubemos classificar'''
     for name in named_entities_cp:
-	names_dict[name] = []
+        names_dict[name] = []
 
 def similar_strings(s1, s2):
     if (s1 in s2) or (s2 in s1) :
-	return True
+        return True
     else:
-	#distance = Levenshtein.distance(s1, s2)
-	words2 = s2.split()
-	totalWords2 = len(words2)
-	words1 = s1.split()
-	totalWords1 = len(words1)
+        #distance = Levenshtein.distance(s1, s2)
+        words2 = s2.split()
+        totalWords2 = len(words2)
+        words1 = s1.split()
+        totalWords1 = len(words1)
         countEqual = 0
-	if totalWords2 > 1 :
-           for word in words2:
-		if word in words1:
-		   countEqual += 1
-	   if countEqual >= (totalWords1/2 + 1) or countEqual >= (totalWords2/2 + 1): return True
+        if totalWords2 > 1 :
+            for word in words2:
+                if word in words1:
+                    countEqual += 1
+            if countEqual >= (totalWords1/2 + 1) or countEqual >= (totalWords2/2 + 1): return True
 
     return False
 
@@ -165,7 +194,7 @@ def do_main():
 
     if len(sys.argv) < 1:
         print "Insuficient number of arguments."
-        print "Expected: python tarefa1.py"    
+        print "Expected: python tarefa1.py"
     	return
 
     full_content = ""
@@ -179,28 +208,27 @@ def do_main():
     	if "season" in season:
             path_season = path_episodes_cleaned+'/'+season+'/'
             files = os.listdir(path_season)
-	    path_season_output = path_output+'/'+season+'/'
-	    create_diretory(path_season_output)
+            path_season_output = path_output+'/'+season+'/'
+            create_diretory(path_season_output)
 
-	    for episode in files:
+            for episode in files:
                 with open(path_season + episode) as f:
                     full_content = f.read().splitlines()
-		    full_content = filter(None, full_content)
+                    full_content = filter(None, full_content)
 
                     path_episode_output = path_season_output+episode
 
                     write_full_content(full_content, path_episode_output)
-
+                    print "Generating for ", season, "-", episode
                     entities = list_named_entities(full_content)
                     #tagged_content = insert_tags(full_content, entities)
-					
+
                     write_list_of_line_contents(full_content, path_episode_output)
                     write_named_entities(entities, path_episode_output)
                     named_entities += entities
 
     remove_multiple_names()
     write_named_entities_in_csv(names_dict.keys(), path_output)
-
 
 if __name__ == "__main__":
     do_main()
