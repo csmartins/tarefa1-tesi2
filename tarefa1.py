@@ -46,7 +46,6 @@ def generate_named_entity(s):
             SIMPLE_NE: {<NNP|NNPS>+}
             '''
 
-        #ner = nltk.ne_chunk(pos, binary=True)
         regex_parser = nltk.RegexpParser(grammar)
         ner = regex_parser.parse(pos)
 
@@ -56,21 +55,9 @@ def generate_named_entity(s):
                 #grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
-                    if grammatical_form == 'NE_VERB':
+                    if grammatical_form == 'NE_VERB' or grammatical_form == 'PLACE':
                         text = ''
                         for c in t:
-                            if c[1] in ['NNP', 'NNPS']:
-                                text = text + ' ' + c[0]
-                                text = clear_entity(text)
-
-                        if len(text.split()) == 2:
-                            if text not in names_dict.keys(): names_dict[text] = []
-                        else:
-                            sentence_nes.append(text)
-                            nes.append(text)
-                    elif grammatical_form == 'PLACE':
-			text = ''                        
-			for c in t:
                             if c[1] in ['NNP', 'NNPS']:
                                 text = text + ' ' + c[0]
                                 text = clear_entity(text)
@@ -88,50 +75,7 @@ def generate_named_entity(s):
                         else:
                             sentence_nes.append(text)
                             nes.append(text)
-        #print "Sentence: ", sentence
-        #print "Generated NEs: ", sentence_nes
-
-    #get_nicknames(s, nicks)
     return nes
-
-def write_list_of_line_contents(content,path):
-    f = open(path+"_named-entities.txt", 'a')
-    f.write("------------ Lista contendo cada linha do Arquivo")
-    f.write("\n")
-    f.write("\n")
-    f.write("\n")
-
-    f.write(str(content))
-    f.write("\n")
-    f.write("\n")
-    f.write("\n")
-
-def write_full_content(content, path):
-    f = open(path+"_named-entities.txt", 'w')
-
-    f.write("------------ String contendo todo o texto")
-    f.write("\n")
-    f.write("\n")
-    f.write("\n")
-
-    for elem in content:
-        f.write(elem+" ")
-
-    f.write("\n")
-    f.write("\n")
-    f.write("\n")
-    f.close()
-
-
-def write_named_entities(content, path):
-    f = open(path+"_named-entities.txt", 'a')
-
-    f.write("------------ Lista das Entidades Nomeadas")
-    f.write("\n")
-    f.write("\n")
-    f.write("\n")
-    f.write(str(content))
-    f.close()
 
 def list_named_entities(content):
     named_entities_repetition = []
@@ -145,14 +89,17 @@ def list_named_entities(content):
     return nes
 
 def write_named_entities_in_csv(entities, path_episodes):
-    entities = map(lambda x: x.encode('utf8'), entities)
-    entities = sorted(list(set(entities)))
+    entitiesKeys = map(lambda x: x.encode('utf8'), entities.keys())
+    entitiesKeys = sorted(list(set(entities.keys())))
 
     with open(path_episodes+'/entities.csv', 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
 
-        for entity in entities:
-            spamwriter.writerow([entity])
+        for entity in entitiesKeys:
+	    listRow = [entity]
+ 	    for x in list(set(entities[entity])):
+		listRow.append(x.encode('ascii', 'ignore'))
+            spamwriter.writerow([s.encode('utf8') for s in listRow])
 
 def create_diretory(path):
     if not (os.path.isdir(path)):
@@ -218,17 +165,12 @@ def do_main():
 
                     path_episode_output = path_season_output+episode
 
-                    write_full_content(full_content, path_episode_output)
-                    print "Generating for ", season, "-", episode
                     entities = list_named_entities(full_content)
                     #tagged_content = insert_tags(full_content, entities)
-
-                    write_list_of_line_contents(full_content, path_episode_output)
-                    write_named_entities(entities, path_episode_output)
-                    named_entities += entities
+	       	    named_entities += entities
 
     remove_multiple_names()
-    write_named_entities_in_csv(names_dict.keys(), path_output)
+    write_named_entities_in_csv(names_dict, path_output)
 
 if __name__ == "__main__":
     do_main()
