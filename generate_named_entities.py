@@ -14,10 +14,17 @@ named_entities = []
 names_dict = {}
 nick_names = []
 accepted_grammatical_forms = ['NE_POS_NE', 'NE_IN_NE', 'NE_VERB', 'PLACE', 'SIMPLE_NE']
+stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'of ' ]
 
 '''Remove caracteres indesejados das entidades, tais como parenteses.'''
 def clear_entity(entity):
     return entity.strip().strip('"').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'").strip()
+
+def remove_stopwords(entity):
+    for word in stopwords:
+        if word in entity:
+            entity = entity.replace(word, '').strip()
+    return entity
 
 '''Pega possiveis entidades reconhecidas como apelidos'''
 def get_nicknames(s, nicks):
@@ -59,6 +66,7 @@ def generate_named_entity(s):
                         for c in t:
                             if c[1] in ['NNP', 'NNPS']:
                                 text = text + ' ' + c[0]
+				text = remove_stopwords(text)
                                 text = clear_entity(text)
 
                         if len(text.split()) == 2:
@@ -68,6 +76,7 @@ def generate_named_entity(s):
                             nes.append(text)
                     else:
                         text = ' '.join([c[0] for c in t])
+			text = remove_stopwords(text)
                         text = clear_entity(text)
                         if len(text.split()) == 2:
                             if text not in names_dict.keys(): names_dict[text] = []
