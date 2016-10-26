@@ -61,13 +61,28 @@ def generate_named_entity(s):
                 #grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
-                    if grammatical_form == 'NE_VERB' or grammatical_form == 'PLACE':
+                    if grammatical_form == 'NE_VERB':
                         text = ''
                         for c in t:
                             if c[1] in ['NNP', 'NNPS']:
                                 text = text + ' ' + c[0]
 				text = remove_stopwords(text)
                                 text = clear_entity(text)
+
+                        if len(text.split()) == 2:
+                            if text not in names_dict.keys(): names_dict[text] = []
+                        else:
+                            sentence_nes.append(text)
+                            nes.append(text)
+                    elif grammatical_form == 'PLACE':
+                        text = ''
+                        if t[0][1] == 'IN' and t[0][0] in ['from', 'in', 'at']:
+                            t.remove(t[0])
+                            for c in t:
+                                if c[1] in ['NNP', 'NNPS']:
+                                    text = text + ' ' + c[0]
+                                    text = remove_stopwords(text)
+                                    text = clear_entity(text)
 
                         if len(text.split()) == 2:
                             if text not in names_dict.keys(): names_dict[text] = []
