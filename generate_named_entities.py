@@ -16,10 +16,16 @@ nick_names = []
 accepted_grammatical_forms = ['NE_POS_NE', 'NE_IN_NE', 'NE_VERB', 'PLACE', 'SIMPLE_NE']
 stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'of ' ]
 
-'''Remove caracteres indesejados das entidades, tais como parenteses.'''
+'''Remove caracteres indesejados das entidades.'''
 def clear_entity(entity):
-    return entity.strip().strip('"').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'").strip()
+    newEntity = ''
+    #Remove palavras que nao contem numeros ou letras (para casos com caracteres especiais)
+    for word in entity.split():
+        if word.isalnum(): newEntity += word+" "
+        
+    return newEntity.strip().strip('"').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'")
 
+'''Remove as stopwrods da entidade.'''
 def remove_stopwords(entity):
     for word in stopwords:
         if word in entity:
@@ -33,6 +39,25 @@ def get_nicknames(s, nicks):
         for nick in nicks:
             if nick in quotes:
                 nick_names.append(nick)
+                
+'''Remove stop words e limpa os espacos das entidades que possuem nomes próprios.'''
+def refine_text_from_tree(t):
+    text = ''
+    for c in t:
+        if c[1] in ['NNP', 'NNPS']:
+            text = text + ' ' + c[0]
+    	    text = remove_stopwords(text)
+            text = clear_entity(text)
+    return text
+
+'''Adiciona como chave do dicionario de entidades se a mesma for uma sequencia de nomes proprios de tamanho 2
+(assumimos que nesse caso sera nome e sobrenome). Caso contrario, retorna na lista nes.'''
+def add_entity_to_nes(text, nes, grammatical_form):
+    if len(text.split()) == 2 and grammatical_form == 'SIMPLE_NE':
+        if text not in names_dict.keys(): names_dict[text] = []
+    else:
+        nes.append(text)
+
 
 '''Responsavel por fazer o chunk das entidades ao separa-las por frases, utilizando o regexParser e
 as regras definidas pela nossa gramatica.'''
@@ -41,7 +66,6 @@ def generate_named_entity(s):
     nicks = []
     nes = []
     for sentence in sentences:
-        sentence_nes = []
         words_tokenized = nltk.word_tokenize(sentence)
         pos = nltk.pos_tag(words_tokenized)
 
@@ -62,42 +86,20 @@ def generate_named_entity(s):
 
                 if grammatical_form in accepted_grammatical_forms:
                     if grammatical_form == 'NE_VERB':
-                        text = ''
-                        for c in t:
-                            if c[1] in ['NNP', 'NNPS']:
-                                text = text + ' ' + c[0]
-				text = remove_stopwords(text)
-                                text = clear_entity(text)
-
-                        if len(text.split()) == 2:
-                            if text not in names_dict.keys(): names_dict[text] = []
-                        else:
-                            sentence_nes.append(text)
-                            nes.append(text)
+                        text = refine_text_from_tree(t)
+                        add_entity_to_nes(text, nes, grammatical_form)
+                        
                     elif grammatical_form == 'PLACE':
-                        text = ''
                         if t[0][1] == 'IN' and t[0][0] in ['from', 'in', 'at']:
                             t.remove(t[0])
-                            for c in t:
-                                if c[1] in ['NNP', 'NNPS']:
-                                    text = text + ' ' + c[0]
-                                    text = remove_stopwords(text)
-                                    text = clear_entity(text)
-
-                        if len(text.split()) == 2:
-                            if text not in names_dict.keys(): names_dict[text] = []
-                        else:
-                            sentence_nes.append(text)
-                            nes.append(text)
+                            text = refine_text_from_tree(t)
+                            add_entity_to_nes(text,nes, grammatical_form)
+                        
                     else:
                         text = ' '.join([c[0] for c in t])
-			text = remove_stopwords(text)
+                        text = remove_stopwords(text)
                         text = clear_entity(text)
-                        if len(text.split()) == 2:
-                            if text not in names_dict.keys(): names_dict[text] = []
-                        else:
-                            sentence_nes.append(text)
-                            nes.append(text)
+                        add_entity_to_nes(text,nes, grammatical_form)
     return nes
 
 '''Responsavel por alterar a variavel global de entidades nomeadas, adicionando as encontradas em cada linha.'''
@@ -140,11 +142,11 @@ def remove_multiple_names():
     named_entities_cp = named_entities
     for name in names_dict.keys():
         for entity in named_entities:
-            '''TO DO: Pensar em solucao para os apelidos.'''
+            #TO DO: Pensar em solucao para os apelidos.
             if similar_strings(name, entity) and entity not in names_dict.keys():
                 names_dict[name].append(entity)
                 named_entities_cp.remove(entity)
-    '''Adicionando como entidades o que nao soubemos classificar'''
+    #Adicionando como entidades o que nao soubemos classificar
     for name in named_entities_cp:
         names_dict[name] = []
 
@@ -179,7 +181,6 @@ def do_main():
                 with open(path_season + episode) as f:
                     line_content = f.read().splitlines()
                     list_named_entities(line_content)
-                    #tagged_content = insert_tags(full_content, entities)
 
     remove_multiple_names()
     write_named_entities_in_csv(names_dict, path_output)
