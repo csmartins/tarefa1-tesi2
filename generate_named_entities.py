@@ -53,7 +53,20 @@ def refine_text_from_tree(t):
 '''Adiciona como chave do dicionario de entidades se a mesma for uma sequencia de nomes proprios de tamanho 2
 (assumimos que nesse caso sera nome e sobrenome). Caso contrario, retorna na lista nes.'''
 def add_entity_to_nes(text, nes, grammatical_form):
-    if len(text.split()) == 2 and grammatical_form == 'SIMPLE_NE':
+    text_split = text.split()
+    special_names = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
+    if len(text_split) >= 2:
+        if text_split[0][0].isupper():
+            if text_split[1][0].isupper() is not True: 
+                if text in special_names and grammatical_form == 'NE_VERB':
+                     pass
+                else:
+                     text = text_split[0]
+        else:
+            if text_split[1][0].isupper():
+                text_split.pop(0)
+                text = ' '.join(c for c in text_split)
+    if len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
         if text not in names_dict.keys(): names_dict[text] = []
     else:
         nes.append(text)
