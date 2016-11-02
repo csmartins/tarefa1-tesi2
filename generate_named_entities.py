@@ -4,11 +4,13 @@ import os
 import sys
 from nltk.tree import Tree
 import csv
+import Levenshtein
 
 '''Variaveis de caminho de paths'''
 path_output = "output"
 path_episodes_cleaned = "cleaned_episodes"
 special_names_to_ignore = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
+special_first_word_to_consider = ['Battle', 'Master']
 
 '''Variaveis globais de listas'''
 named_entities = []
@@ -159,20 +161,44 @@ def remove_multiple_names():
     named_entities_cp = named_entities
     for name in names_dict.keys():
         for entity in named_entities:
-            if similar_strings(name, entity) and entity not in names_dict.keys():
+            if len(entity) == 0 : continue
+            if entity not in names_dict.keys() and entity.split()[0] not in special_first_word_to_consider and  similar_strings(name, entity):
                 names_dict[name].append(entity)
                 named_entities_cp.remove(entity)
                 
     #Adicionando como entidades o que nao soubemos classificar
     for name in named_entities_cp:
+        if len(name) == 0: continue
+        
         encontrou = False
-        for nameKey in names_dict.keys():
-            if similar_strings(name, nameKey):
-                if name != nameKey: names_dict[nameKey].append(name)
-                encontrou = True
-                break
+        if name.split()[0] not in special_first_word_to_consider:
+            for nameKey in names_dict.keys():
+                if similar_strings(nameKey, name):
+                    if name != nameKey: names_dict[nameKey].append(name)
+                    encontrou = True
+                    break
+                    
         if encontrou == False: 
             names_dict[name] = []
+
+'''Responsavel por juntar as keys que sao similares, por exemplo: White Walker e White Walkers'''            
+def remove_similar_keys():
+    for key1 in names_dict.keys():        
+        for key2 in names_dict.keys():
+            if key1 != key2 and key1 in names_dict.keys() and key2 in names_dict.keys() and Levenshtein.distance(key1, key2) <= 1:
+                #condicao para nao juntar Aemon e Aegon Targaryen
+                if key1 == "Aemon Targaryen" or key1 == "Aegon Targaryen" or key2 == "Aemon Targaryen" or key2 == "Aegon Targaryen": continue
+                union_keys_names_dict(key1,key2)
+
+    union_keys_names_dict("Daenerys Targaryen", "Daenarys")            
+
+                
+def union_keys_names_dict(key1, key2):
+    values = names_dict[key1]
+    values.append(key2)
+    values += names_dict[key2]
+    names_dict[key1] = values
+    del names_dict[key2]    
 
 '''Funcao responsavel por comparar as strings e verificar se pertencem a mesma entidade.'''
 def similar_strings(s1, s2):
@@ -207,6 +233,7 @@ def do_main():
                     list_named_entities(line_content)
 
     remove_multiple_names()
+    remove_similar_keys()
     write_named_entities_in_csv(names_dict, path_output)
 
 if __name__ == "__main__":

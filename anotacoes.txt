@@ -1,10 +1,34 @@
 
 
-Exemplos palavra minuscula no meio:
+*** Problema entidades separadas por palavra minuscula no meio: DONE
 
 Daenerys from Robert Baratheon
 Lannisters since Eddard Stark
 Mutiny at Castle Black
 Myrcella from Doran
 Amory Lorch with Gregor Clegane
+
+*** Problema de chaves iguais ou parecidas: DONE
+White walker | white walkers
+Westeros | Westoros
+
+PROBLEMA APÓS CONSERTAR:   
+            AEMON E AEGON TARGARYEN MESMA ENTIDADE -> adicionei restricao na mao
+            DAENARYS E DAENERYS TARGARYEN não juntaram -> juntei na mão
+            RAEGHAL E RAEGHAR TARGARYEN não juntaram -> Pesquisei! Raeghal é o dragão da Dany e Raeghar era um príncipe, então OK
+
+
+*** Problema de palavras que com certeza significam entidades sendo filhas de outras: DONE
+    ex: Winterfell e Battle Winterfell
+Battle
+Master
+-- Criei lista de primeiras palavras a considerar e criei condição para adicioná-las como entidades e não filhas
+
+
+*** Problemas filhas diferentes de mae:
+Vala Valahd
+
+
+*** Problema no mark entities
+<entidade:<entidade:<entidade:Battle>Battle</entidade> Winterfell>Winterfell</entidade>><entidade:<entidade:Battle>Battle</entidade> Winterfell>Winterfell</entidade></entidade>
 

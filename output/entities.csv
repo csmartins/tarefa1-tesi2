@@ -4,11 +4,11 @@ Acting Hand
 Aegon Targaryen,Aegon
 Aemon Sam
 Aemon Targaryen,Aemon
-Aeron Greyjoy,Aeron
+Aeron Greyjoy,on Greyjoy,Aeron
 Aerys Targaryen,Targaryen,Aerys,Mad Aerys Targaryen
 After Tommen
 Afterward
-Aggo
+Aggo,Iggo
 Akho
 Alayne
 Alliser Thorne,Alliser,Thorne
@@ -39,16 +39,20 @@ Aunt Lyanna
 Aware
 Awoken
 Axell Florent
-Back
 Baelor
 Balon Greyjoy
-Balon King,Balon
+Balon King,King,Balon
 Bannen
 Baratheons
 Barra
 Barristan Selmy,Barristan,Selmy
 Bastard Girls
-Battle,Battle Ashford
+Battle
+Battle Ashford
+Battle Castle Black,Castle Black
+Battle Oxcross
+Battle Stone Mill
+Battle Winterfell,Winterfell
 Bear,Bear Island,Old Bear
 Belicho Paenymion
 Benjen Stark,Benjen,Star,Stark
@@ -70,7 +74,7 @@ Blessed
 Bloody Gate
 Bloody Hand,Hand
 Boltons
-Bones,The Bones,Garden Bones
+Bones,Garden Bones
 Book Brothers,Book
 Boros Blount
 Bowen Marsh,Bowen
@@ -86,14 +90,13 @@ Brother Lancel
 Brotherhood Without Banners,Banners,Brotherhood
 Brusco
 Brutal
-Brynden Tully,Brynden,Brynden The Blackfish Tully
+Brynden Tully,Brynden,Brynden Blackfish Tully
 Burn
 Caleotte
-Calla
 Capital
 Captain
 Casterly Rock
-Castle Black,Battle Castle Black,Castle
+Castle Black,Castle
 Castle Stokeworth
 Catelyn Stark,Catelyn,Cat
 Cersei Lannister,As Cersei Lannister,Cersei
@@ -101,6 +104,7 @@ Cerwyns
 Chamber
 Children
 Chosen
+Citadel
 City Watch,City
 Cleon
 Coming
@@ -112,15 +116,13 @@ Convinced
 Covered
 Crag
 Crane
-Craster Keep
-Crasters Keep,Craster
+Crasters Keep,Craster,Craster Keep
 Cressen
 Cripples
 Crossroads Inn,Inn,In
 Crown,Crow,Crownlands
 Daario Naharis,Daario
-Daenarys
-Daenerys Targaryen,Daenerys,Daenerys Stormborn House Targaryen
+Daenerys Targaryen,Daenerys,Daenerys Stormborn House Targaryen,Daenarys
 Dagmer,Dagmer Cleftjaw
 Daisy
 Dany,Dany Dothraki
@@ -154,30 +156,26 @@ Drowned God,God
 Drowned Men
 Drowned Priest
 Eastern Road,East
-Edd The,Edd
 Eddard Stark,Eddard
-Eddison Tollett,Eddison
+Eddison Tollett,Eddison,Edd
 Edmure Tully,Edmure
-Egg,Egg Aegon V
+Egg Aegon V,Egg
 Elia Martell,Elia,Martell
 Ellaria Sand,Ellaria
 En,Storm End
 Eraz
 Essence Nightshade
 Essos
-Euron Greyjoy,Euron
+Euron Greyjoy,Euron,on Greyjoy
 Exhausted
 Eye
 Eyrie,Eyrie High
-Faceless Man
-Faceless Men
+Faceless Man,Faceless Men
 Faith Militant,Faith
-Farther
+Farther,Father
 Fascinated
-Father
 Fearful
-Fennesz
-Fennez
+Fennez,Fennesz
 Filled
 Fine
 Fingers
@@ -237,7 +235,6 @@ Growing Strong
 Guard
 Guild
 Hall Faces
-Hands
 Hardhome
 Harpy,Harpy Son
 Harrenhal,Whent Harrenhal
@@ -260,7 +257,7 @@ Hollow Hill,Hill
 Horrified
 Hoster Tully,Hoster
 Hot Pie,Pie
-Hound Clegane,Hound
+Hound Clegane,Hound,Sandor Hound Clegane
 House Arryn
 House Black
 House Bolton,Bolton
@@ -278,7 +275,6 @@ House Tyrell,House,Tyrell
 Howland Reed,Howland
 Hugh
 Ice Cells,Ice
-Iggo
 Illyrio Mopatis,Magister Illyrio Mopatis Pentos,M,Illyrio
 Ilyn Payne,Ilyn
 Imp
@@ -293,14 +289,14 @@ Ironborn
 Irri
 Jafer Flowers,Flowers
 Jaime Dornish
-Jaime Lannister,Jaime,Lannister
+Jaime Lannister,Jaime,nn,Lannister
 Jamie
 Janos Slynt,Janos,Slynt
 Jaqen H,Jaqen
 Jeor Mormont,Jeor
 Jhiqui
 Joanna
-Joffrey Baratheon,,Joffrey,Baratheon
+Joffrey Baratheon,on,Joffrey,Baratheon
 Jojen Reed,Jojen,Reed
 Jon Arryn,Arry,Jon,Arryn
 Jon Snow
@@ -327,7 +323,7 @@ Kingsroad
 Kingswood
 Kinvara
 Kovarro
-Kraznys,Kraznys The Unsullied
+Kraznys Unsullied,Unsullied,Kraznys
 Lady
 Lancel Lannister,Lancel
 Landing
@@ -343,7 +339,7 @@ Let
 Lhara
 Lhazareen,Lhazar
 Liberation
-Light
+Light,Wight,Sight
 Little Bird Spies
 Little Sam
 Littlefinger
@@ -369,7 +365,7 @@ Lyanna Stark
 Lysa Arryn
 Lysa Tully,Lysa,Lys,Tully
 Lysene
-Mace Tyrell,Mace,Master Coin Mace Tyrell
+Mace Tyrell,Mace
 Mad King,Mad
 Maegor Holdfast,Hold
 Maester,Order Maesters
@@ -384,9 +380,11 @@ Marillion
 Martells
 Martyn Lannister,Martyn
 Master Coin
+Master Coin Mace Tyrell
 Master Laws
-Master Mighdal,Mighdal
+Master Mighdal
 Master Ships
+Master War
 Master Whisperers
 Matthos Seaworth,Matthos
 Mazins
@@ -403,7 +401,7 @@ Mikken
 Milk
 Mirri Maz Duur,Duur
 Missandei,Missandei Naath,Missandei Daenerys
-Moat Cailin
+Moat Cailin,on for Moat Cailin
 Mole Town,Town
 Mollified
 Moon Door
@@ -411,7 +409,7 @@ Morghulis
 Morning
 Mossador
 Mother,Mother Dragons
-Mountain That Rides
+Mountain That Rides,Mountain
 Mud Gate
 Mummer Ford
 Mutiny
@@ -430,13 +428,11 @@ Needle
 New
 Night King
 Night Lands
-Night Watch,Night Watchman
+Night Watch,Watch,Night,Nights Watch,Night Watchman
 Nightfort
-Nights Watch,Watch,Night
 North Edit,North,Nor,No
-Northeners
+Northeners,Northerners
 Northern Lords,Northern
-Northerners
 Norvosi
 Nymeria Sand,Nymeria,Nym
 Oathkeeper
@@ -461,7 +457,7 @@ Orson
 Osha
 Othell Yarwyck,Yarwyck
 Othor
-Oxcross,Battle Oxcross
+Oxcross
 Painted Table
 Paramount
 Pentos,Free City Pentos,Pentoshi
@@ -484,14 +480,13 @@ Qarth,Qartheen,Warlocks Qarth
 Qhorin Halfhand,Qhorin,Halfhand
 Qotho
 Quaithe,Quaithe Asshai
-Queensgard
-Queensguard
+Queensgard,Queensguard
 Quick
 Qyburn,Qyburn Grand Maester
 Rains Castamere
 Rakharo
 Ralf Kenning
-Ramsay Bolton
+Ramsay Bolton,on from Ramsay Bolton
 Ramsay Snow,Snow,Ramsay
 Randyll Tarly,Randyll,Tarly
 Rast
@@ -536,15 +531,15 @@ Rorge
 Roslin Frey,Ros,Roslin
 Royal Fleet,Royal
 Runestone
-Sack,Sack Astapor
+Sack,Sick,Back,Sack Astapor
 Saddened
 Salladhor Saan,Salladhor
 Salt Throne
 Samwall
 Samwell Tarly,Samwell,Sam
 Sand Snakes
-Sandor Clegane,Clegane,Sandor The Hound Clegane,Hound Sandor Clegane,Sandor
-Sands
+Sandor Clegane,Clegane,Sandor,Hound Sandor Clegane,Sandor Hound Clegane
+Sands,Hands
 Sansa Meanwhile
 Sansa Robb,Robb,Sansa
 Sansa Stark
@@ -553,7 +548,7 @@ Satisfied
 Savior
 Savo
 Second Sons,Sons,Son
-Selwyn Tarth,Tarth,Selwyn
+Selwyn Tarth,Selwyn,Tarth
 Selyse Baratheon,Selyse
 Septa Mordane,Sept,Mord
 Septa Unella,Unella
@@ -565,15 +560,11 @@ Shagga
 Shaggydog
 Shaken
 Shireen Baratheon,Shireen House Baratheon,Shireen
-Sick
 Siege Old Wyk
-Sight
-Silent Sister
-Silent Sisters
+Silent Sisters,Silent Sister
 Sissy
 Skirling Pass
-Slaver Bay
-Slavers Bay
+Slaver Bay,Slavers Bay
 Small Council,Council
 Smalljon
 Smoking Sea
@@ -589,7 +580,7 @@ Steelshanks
 Stick
 Stiv
 Stone Men
-Stone Mill,Battle Stone Mill
+Stone Mill
 Stonemen
 Stony Shore
 Stormcrows
@@ -605,7 +596,7 @@ Sworn Brothers,Brothers,Brother
 Syrio Forel,Syrio
 Talisa Maegyr,Talisa
 Talisa Volantis,Volantis,Talisa
-Tall
+Tall,Wall
 Targaryen Conquest,Targaryen
 Targaryen Kingsguard,Kingsguard
 Targaryens
@@ -613,13 +604,7 @@ Tears Lys
 Temple,Red Temple Volantis
 Ternesio Terys
 Terrified
-That Was Promised,The That Was Promised
-The Citadel,Citadel
-The King,King,The Night King
-The Mountain,Mountain
-Thenn,Thenns
-Theon Greyjoy,Greyjoy,Theon
-Therefore
+That Was Promised
 Thin Man,Thin
 Thirteen
 This
@@ -657,11 +642,9 @@ Undeterred
 Undying
 Unexpected
 Unknown
-Unsullied
 Upon
 Vaes Dothrak
-Vala,Valahd
-Vale,Vale Arryn
+Vala,Vale Arryn,Valahd,Vale
 Vance Corbray,Corbray
 Vardis Egen,Egen,Vardis
 Varys
@@ -674,8 +657,7 @@ Waif,Waif In Braavos
 Walda Bolton,Walda
 Walder Frey
 Walk Punishment
-Wall
-War,Master War,Warden
+War,Warden
 Watch Thorne
 Watchman
 Water Dancer,Dance,Braavosi Water Dancer
@@ -684,22 +666,19 @@ Water Gardens,Water Gardens Dorne,Gardens
 Waymar Royce,Waymar,Royce
 Weirwood
 Westerlands
-Westeros,Tongue Westeros,Westerosi,His Conquest Westeros
-Westoros
+Westeros,Westoros,Tongue Westeros,Westerosi,His Conquest Westeros
 Whispering Wood
 White Harbor
 White Rat
 White Sword Tower,Sword
-White Walker
 White Walkers,Walker,White,White Walker,Walkers
 Who Lost
 Widow Wail
-Wight
 Wildfire
 Wildlings,Wildling
 Willas Bracken,Will
 Willem Lannister,Willem
-Winterfell,Baelish At Winterfell,Sack Winterfell,Battle Winterfell,Winter,Stark Winterfell
+Winterfell,Baelish At Winterfell,Sack Winterfell,Winter,Stark Winterfell
 Wisdom Hallyne,Hallyne
 Wise Masters,Wise,Wise Masters Yunkai
 Within
@@ -707,7 +686,7 @@ Wolf Bread
 Wolfswood
 Wolkan
 Woods
-World,Stallion That Mounts The World
+World,Stallion That Mounts World
 Wun Wun
 Wylis
 Wylla,Wyl
@@ -720,5 +699,8 @@ Yoren
 You
 Yunkai
 Yunkish
-Zalla
+Zalla,Calla
 in Tywin
+nns
+on Greyjoy,Balon Greyjoy
+refore
