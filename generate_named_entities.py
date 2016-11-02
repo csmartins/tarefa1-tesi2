@@ -8,6 +8,7 @@ import csv
 '''Variaveis de caminho de paths'''
 path_output = "output"
 path_episodes_cleaned = "cleaned_episodes"
+special_names = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
 
 '''Variaveis globais de listas'''
 named_entities = []
@@ -25,7 +26,7 @@ def clear_entity(entity):
         
     return newEntity.strip().strip('"').strip("(").strip(")").strip(".").strip("-").strip("[").strip("]").strip("{").strip("}").strip("'")
 
-'''Remove as stopwrods da entidade.'''
+'''Remove as stopwords da entidade.'''
 def remove_stopwords(entity):
     for word in stopwords:
         if word in entity:
@@ -54,22 +55,24 @@ def refine_text_from_tree(t):
 (assumimos que nesse caso sera nome e sobrenome). Caso contrario, retorna na lista nes.'''
 def add_entity_to_nes(text, nes, grammatical_form):
     text_split = text.split()
-    special_names = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
-    if len(text_split) >= 2:
-        if text_split[0][0].isupper():
-            if text_split[1][0].isupper() is not True: 
-                if text in special_names and grammatical_form == 'NE_VERB':
-                     pass
-                else:
-                     text = text_split[0]
-        else:
-            if text_split[1][0].isupper():
-                text_split.pop(0)
-                text = ' '.join(c for c in text_split)
-    if len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
+    if len(text_split) == 0 or (text in special_names and grammatical_form == 'NE_VERB'):
+        pass
+    elif len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
         if text not in names_dict.keys(): names_dict[text] = []
+    
     else:
-        nes.append(text)
+        if len(text_split) == 1 or text_split[0][0].isupper() is not True: nes.append(text)
+        
+        else:
+            newEntities = []
+            newEntity = text_split[0]+" "
+            for x in range(1, len(text_split)):
+                if text_split[x][0].isupper() is not True:
+                    nes.append(newEntity)
+                    newEntity = ""
+                else:
+                    newEntity += text_split[x]+" "
+            nes.append(newEntity)
 
 
 '''Responsavel por fazer o chunk das entidades ao separa-las por frases, utilizando o regexParser e
@@ -94,8 +97,8 @@ def generate_named_entity(s):
 
         for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                grammatical_form = t.label()
-                #grammatical_form = t.node
+                #grammatical_form = t.label()
+                grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
                     if grammatical_form == 'NE_VERB':
