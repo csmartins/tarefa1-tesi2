@@ -8,7 +8,7 @@ import csv
 '''Variaveis de caminho de paths'''
 path_output = "output"
 path_episodes_cleaned = "cleaned_episodes"
-special_names = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
+special_names_to_ignore = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
 
 '''Variaveis globais de listas'''
 named_entities = []
@@ -52,10 +52,10 @@ def refine_text_from_tree(t):
     return text
 
 '''Adiciona como chave do dicionario de entidades se a mesma for uma sequencia de nomes proprios de tamanho 2
-(assumimos que nesse caso sera nome e sobrenome). Caso contrario, retorna na lista nes.'''
+(assumimos que nesse caso sera nome e sobrenome). Caso contrario, verifica se entidade possui palavra de letra minuscula no meio: se sim, separa em entidades tudo o que não for minusculo e retorna na lista nes, se não apenas retorna na lista.'''
 def add_entity_to_nes(text, nes, grammatical_form):
     text_split = text.split()
-    if len(text_split) == 0 or (text in special_names and grammatical_form == 'NE_VERB'):
+    if len(text_split) == 0 or (text in special_names_to_ignore and grammatical_form == 'NE_VERB'):
         pass
     elif len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
         if text not in names_dict.keys(): names_dict[text] = []
@@ -84,7 +84,8 @@ def generate_named_entity(s):
     for sentence in sentences:
         words_tokenized = nltk.word_tokenize(sentence)
         pos = nltk.pos_tag(words_tokenized)
-
+        if len(pos) == 0 : continue
+        
         grammar = '''
             NE_POS_NE: {<NNP|NNPS>+<POS><NNP|NNPS>}
             NE_IN_NE: {<NNP|NNPS>+<IN><NNP|NNPS>+}
@@ -151,20 +152,27 @@ def write_named_entities_in_csv(entities, path_episodes):
 Ou apenas abri-los, caso existam.'''
 def create_diretory(path):
     if not (os.path.isdir(path)):
-	os.mkdir(path)
+	    os.mkdir(path)
 
 '''Responsavel por popular o dicionario de entidades que se dirigem ao mesmo personagem.'''
 def remove_multiple_names():
     named_entities_cp = named_entities
     for name in names_dict.keys():
         for entity in named_entities:
-            #TO DO: Pensar em solucao para os apelidos.
             if similar_strings(name, entity) and entity not in names_dict.keys():
                 names_dict[name].append(entity)
                 named_entities_cp.remove(entity)
+                
     #Adicionando como entidades o que nao soubemos classificar
     for name in named_entities_cp:
-        names_dict[name] = []
+        encontrou = False
+        for nameKey in names_dict.keys():
+            if similar_strings(name, nameKey):
+                if name != nameKey: names_dict[nameKey].append(name)
+                encontrou = True
+                break
+        if encontrou == False: 
+            names_dict[name] = []
 
 '''Funcao responsavel por comparar as strings e verificar se pertencem a mesma entidade.'''
 def similar_strings(s1, s2):
