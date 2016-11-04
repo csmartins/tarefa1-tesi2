@@ -26,11 +26,15 @@ def generate_dict_entities():
 def mark_entities(text, dictEnts):
     edited_text = text
     for key in dictEnts.keys():
-	pattern = re.compile(r'\b'+key+r'\b')
-	edited_text = pattern.sub("<entidade:"+key+">"+key+"</entidade>", edited_text)
-	for value in dictEnts[key]:
-	    pattern = re.compile(r'\b'+value+r'\b')
-            edited_text = pattern.sub("<entidade:"+key+">"+value+"</entidade>", edited_text)
+	pattern_key = re.compile(r'\b'+key+r'\b')
+
+        if pattern_key:
+            edited_text = pattern_key.sub("<entidade:"+key+">"+key+"</entidade>", edited_text)
+        else:
+            for value in dictEnts[key]:
+                pattern_val = re.compile(r'\b'+value+r'\b')
+                if pattern_val:
+                    edited_text = pattern.sub("<entidade:"+key+">"+value+"</entidade>", edited_text)
     return edited_text
 
 def do_main():
