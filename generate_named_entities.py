@@ -10,7 +10,7 @@ import Levenshtein
 path_output = "output"
 path_episodes_cleaned = "cleaned_episodes"
 special_names_to_ignore = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
-special_first_word_to_consider = ['Battle', 'Master']
+special_first_word_to_consider = ['Battle', 'Master', 'Castle']
 
 '''Variaveis globais de listas'''
 named_entities = []
@@ -57,13 +57,15 @@ def refine_text_from_tree(t):
 (assumimos que nesse caso sera nome e sobrenome). Caso contrario, verifica se entidade possui palavra de letra minuscula no meio: se sim, separa em entidades tudo o que não for minusculo e retorna na lista nes, se não apenas retorna na lista.'''
 def add_entity_to_nes(text, nes, grammatical_form):
     text_split = text.split()
-    if len(text_split) == 0 or (text in special_names_to_ignore and grammatical_form == 'NE_VERB'):
+    if len(text_split) == 0 or (text in special_names_to_ignore and grammatical_form == 'NE_VERB') or (text in names_dict.keys()):
         pass
     elif len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
-        if text not in names_dict.keys(): names_dict[text] = []
+        if text not in names_dict.keys(): 
+            names_dict[text] = []
     
     else:
-        if len(text_split) == 1 or text_split[0][0].isupper() is not True: nes.append(text)
+        if len(text_split) == 1 or text_split[0][0].isupper() is not True: 
+            nes.append(text)
         
         else:
             newEntities = []
@@ -130,9 +132,8 @@ def list_named_entities(content):
         if line_named_entities != []:
             for entity in line_named_entities:
                 named_entities_repetition.append(entity.strip())
-
-    named_entities += list(set(named_entities_repetition))
-
+    named_entities_repetition += named_entities
+    named_entities = list(set(named_entities_repetition))
 
 '''Responsavel por escrever em um csv todas as entidades encontradas. 
 Cada linha do csv representara na primeira coluna o nome a ser considerado da entidade e 

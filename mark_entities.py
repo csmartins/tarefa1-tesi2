@@ -19,23 +19,37 @@ def generate_dict_entities():
     with open(path_entities_csv+'.csv', mode='r') as infile:
 	reader = csv.reader(infile, delimiter="\t")
 	for i,line in enumerate(reader):
-	    entitiesList = line[0].split(',',1)
-	    entitiesList = [x for x in entitiesList if x]
+	    entitiesList = line[0].split(',')
 	    mydict[entitiesList[0]] = []
 	    if len(entitiesList) > 1: mydict[entitiesList[0]] = entitiesList[1:]
     return mydict
+    
+def create_dict_replace(key, value):
+    #value+' ': "<entidade:"+key+">"+value+"</entidade> "
+    return {' '+value+' ': " <entidade:"+key+">"+value+"</entidade> ", ' '+value+', ': " <entidade:"+key+">"+value+"</entidade>, ",' '+value+'.': " <entidade:"+key+">"+value+"</entidade>.", "\n"+value+' ': "\n<entidade:"+key+">"+value+"</entidade> ", ' '+value+"\n": " <entidade:"+key+">"+value+"</entidade>\n", ' '+value+"!": " <entidade:"+key+">"+value+"</entidade>!", ' '+value+"?": " <entidade:"+key+">"+value+"</entidade>?"}
 
 '''Adiciona a tag das entidades em todas as palavras que se encontram no dicionario'''
 def mark_entities(text, dictEnts):
     edited_text = text
+
     for key in dictEnts.keys():
-        if key == 'Summary':
-            print dictEnts[key]
-        pattern = re.compile(r'(?<!<entidade:)\b'+key+r'\b')
-        edited_text = pattern.sub("<entidade:"+key+">"+key+"</entidade>", edited_text)
+        possible_matches_key = create_dict_replace(key, key)
+        
+        for match in possible_matches_key.keys():
+            new_text = edited_text
+            new_text = new_text.replace(match, possible_matches_key[match]) 
+            if new_text.find("<entidade:<") == -1:
+                edited_text = new_text
+                
         for value in dictEnts[key]:
-            pattern = re.compile(r'(?<!<entidade:)\b'+value+r'\b')
-            edited_text = pattern.sub("<entidade:"+key+">"+value+"</entidade>", edited_text)
+            possible_matches_value = create_dict_replace(key, value)
+        
+            for match in possible_matches_value.keys():
+                new_text = edited_text
+                new_text = new_text.replace(match, possible_matches_value[match]) 
+                if new_text.find("<entidade:<") == -1:
+                    edited_text = new_text
+                    
     return edited_text
 
 def do_main():
