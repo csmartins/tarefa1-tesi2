@@ -11,6 +11,7 @@ path_output = "output"
 path_episodes_cleaned = "cleaned_episodes"
 special_names_to_ignore = ['Hizdahr zo Loraq', 'Yezzan zo Qaggaz', 'Kraznys mo Nakloz']
 special_first_word_to_consider = ['Battle', 'Master', 'Castle']
+csv_name = "/entities.csv"
 
 '''Variaveis globais de listas'''
 named_entities = []
@@ -153,7 +154,7 @@ def write_named_entities_in_csv(entities, path_episodes):
     entitiesKeys = map(lambda x: x.encode('utf8'), entities.keys())
     entitiesKeys = sorted(list(set(entities.keys())))
 
-    with open(path_episodes+'/entities.csv', 'wb') as csvfile:
+    with open(path_episodes+csv_name, 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
 
         for entity in entitiesKeys:

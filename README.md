@@ -27,6 +27,23 @@ Espera-se que a pasta "cleaned_text" e o arquivo "entities.csv" estejam preenchi
 
 Cria as pastas com mesmo formato dos episódios na pasta "output".
 
+## tag_entities.py
+É o arquivo responsável por gerar um csv de todas as entidades nomeadas encontradas em "entities.csv" e sua respectiva classe de descrição (person, place, battle, etc).
+
+Como rodar: python tag_entities.py
+
+Espera-se que a pasta "cleaned_text" e o arquivo "entities.csv" estejam preenchidos.
+
+Gera um arquivo "tagged_entities.csv" na pasta output.
+
+## relate_entities.py
+É o arquivo responsável por gerar um csv de todas as relações entre entidades nomeadas encontradas nos arquivos de "output".
+
+Como rodar: python relate_entities.py
+
+Espera-se que a pasta "output" esteja preenchida com os arquivos de texto com entidades já marcadas.
+
+Gera um arquivo "related_entities.csv" na pasta output.
 
 ## regras_gramatica.txt
 É um arquivo texto responsável por caracterizar todas as regras de gramática utilizadas pelo programa "generate_named_entities.py" para encontrar as entidades nomeadas dos textos.

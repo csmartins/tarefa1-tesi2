@@ -6,13 +6,14 @@ import re
 '''Variaveis globais'''
 path_output = "output"
 path_entities_csv = "output/entities"
+csv_name = "/tagged_entities.csv"
 tags = ["person", "place", "family", "battle", "other"]
 
 '''Responsavel por escrever em um csv todas as entidades encontradas. 
-Cada linha do csv representara na primeira coluna o nome a ser considerado da entidade e 
-nas demais colunas os outros nomes associados.'''
+Cada linha do csv representara na primeira coluna o nome da entidade e 
+na segunda a classe a que pertence.'''
 def write_tagged_entities_in_csv(tagged_entities):
-    with open(path_output+'/tagged_entities.csv', 'wb') as csvfile:
+    with open(path_output+csv_name, 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
         for entity in tagged_entities:
             spamwriter.writerow(entity)
@@ -35,6 +36,7 @@ def generate_dict_entities():
             if len(entitiesList) > 1: mydict[entitiesList[0]] = entitiesList[1:]
     return mydict
     
+'''Cria tupla de entidade e sua classe caracteristica.'''
 def create_tuples_entity_tag(dict_entities):
     listTuples = []
     for key in dict_entities.keys():
