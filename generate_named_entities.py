@@ -57,14 +57,25 @@ def refine_text_from_tree(t):
 (assumimos que nesse caso sera nome e sobrenome). Caso contrario, verifica se entidade possui palavra de letra minuscula no meio: se sim, separa em entidades tudo o que não for minusculo e retorna na lista nes, se não apenas retorna na lista.'''
 def add_entity_to_nes(text, nes, grammatical_form):
     text_split = text.split()
-    if len(text_split) == 0 or (text in special_names_to_ignore and grammatical_form == 'NE_VERB') or (text in names_dict.keys()):
+    
+    #Condicoes para nao considerar como entidade
+    if len(text_split) == 0 or (text in special_names_to_ignore and grammatical_form == 'NE_VERB') or (text in names_dict.keys() or (len(text) > 0 and text[0].isupper() is not True and len(text_split) == 1)):
         pass
+        
+    #Se entidade comecar com letra minuscula, so pega a partir da primeira palavra com letra maiuscula
+    elif (len(text) > 0 and text[0].isupper() is not True and len(text_split) > 1):
+        for i in range(0, len(text_split)):
+            if text_split[i][0].isupper() is True:
+                text_split = text_split[i:]
+                break
+                
+    #Se forem 2 palavras como simple_ne adiciona como chave
     elif len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
         if text not in names_dict.keys(): 
             names_dict[text] = []
     
     else:
-        if len(text_split) == 1 or text_split[0][0].isupper() is not True: 
+        if len(text_split) == 1: 
             nes.append(text)
         
         else:

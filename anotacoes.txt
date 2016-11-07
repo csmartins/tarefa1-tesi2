@@ -28,7 +28,15 @@ Master
 *** Problemas filhas diferentes de mae:
 Vala Valahd
 
+** Problemas de entidades que começam com letra minuscula: DONE
+on Greyjoy
+on
+in Tiwyn
+refore
+nn
+on for Moat Catelyn
+nns
+on from Ramsay Bolton
+-- Peguei a partir da palavra que começa com letra maiuscula
 
-*** Problema no mark entities
-<entidade:<entidade:<entidade:Battle>Battle</entidade> Winterfell>Winterfell</entidade>><entidade:<entidade:Battle>Battle</entidade> Winterfell>Winterfell</entidade></entidade>
 
