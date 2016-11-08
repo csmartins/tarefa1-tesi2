@@ -1,13 +1,14 @@
 import os
 import sys
-import csv 
-import re
+import math
 import nltk
 from nltk.corpus import stopwords
 
 path_output = "output"
 path_episodes_cleaned = "cleaned_episodes"
-word_frequence = {}
+word_frequency = {}
+documents_count = 0
+all_documents = []
 
 def create_diretory(path):
     if not (os.path.isdir(path)):
@@ -46,31 +47,87 @@ def count_words(full_content):
 		words_count = update_dict(words_count, words_dict)
 	return words_count
 
+def count_frequency(path_episode, words_count):
+	for word in words_count.keys():
+		if word in word_frequency.keys():
+			word_frequency[word].append((path_episode, words_count[word]))
+		else:
+			word_frequency[word] = [(path_episode, words_count[word])]
+
+def calc_idf():
+	inverse_document_frequency = {}
+	for word in word_frequency.keys():
+		df = 0		
+		for docs in word_frequency[word]:
+			df+= docs[1]
+
+		N = len(word_frequency[word]) * 1.0 #convertendo pra decimal para prevenir math domain error
+		#print "N =", N
+		#print "df de", word, "=", df
+		idf = math.log10(N/df)
+		
+		inverse_document_frequency[word] = idf
+	return inverse_document_frequency
+
+def calc_tf_idf(idf):
+	tf_idf = {}
+	for word in word_frequency.keys():
+		tf_idf[word] = {}
+		for tf in word_frequency[word]:
+			tf_idf[word][tf[0]] = tf[1]*idf[word]
+	return tf_idf
+
+def score(query, tf_idf):
+	scores = []
+	words = nltk.word_tokenize(query)
+
+	for document in all_documents:
+		score = 0
+		for word in words:
+			if word in word_frequency.keys():
+				score+= tf_idf[word].get(document,0)
+		scores.append((document, score))
+	return scores
+
+def get_best_scores(scores):
+	sorted_scores = sorted(scores, key=lambda scor: scor[1])
+	new_sorted_scores = []
+	for s_s in sorted_scores:
+		if s_s[1] != 0:
+			new_sorted_scores.append(s_s)
+
+	return new_sorted_scores
+
 def do_main():
-    full_content = ""
-
-    seasons = os.listdir(path_episodes_cleaned)
-    create_diretory(path_output)
-
-    for season in seasons:
-    	if "season" in season:
-            path_season = path_episodes_cleaned+'/'+season+'/'
-            files = os.listdir(path_season)
-            path_season_output = path_output+'/'+season+'/'
-            create_diretory(path_season_output)
-
-            for episode in files:
+	full_content = ""
+	
+	seasons = os.listdir(path_episodes_cleaned)
+	create_diretory(path_output)
+	
+	for season in seasons:
+		if "season" in season:
+			path_season = path_episodes_cleaned+'/'+season+'/'
+			files = os.listdir(path_season)
+			path_season_output = path_output+'/'+season+'/'
+			create_diretory(path_season_output)
+			
+			for episode in files:
 				path_episode = path_season + episode
+				all_documents.append(path_episode)
 				with open(path_episode) as f:
 					full_content = f.read()
 					words_count = count_words(full_content)
 					
-					for word in words_count.keys():
-						if word in word_frequence.keys():
-							word_frequence[word].append((path_episode, words_count[word]))
-						else:
-							word_frequence[word] = [(path_episode, words_count[word])]
-		
+					count_frequency(path_episode, words_count)
+	
+	idf = calc_idf()
+	tf_idf = calc_tf_idf(idf)
+	
+	query = "Jon Snow Death"
+	scores = score(query, tf_idf)
+	
+	final_score = get_best_scores(scores)
+
+	print new_sorted_scores	
 if __name__ == "__main__":
 	do_main()
-	print word_frequence['Cersei']
