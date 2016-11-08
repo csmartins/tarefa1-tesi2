@@ -57,14 +57,12 @@ def count_frequency(path_episode, words_count):
 def calc_idf():
 	inverse_document_frequency = {}
 	for word in word_frequency.keys():
-		df = 0		
-		for docs in word_frequency[word]:
-			df+= docs[1]
+		df = len(word_frequency[word])
 
-		N = len(word_frequency[word]) * 1.0 #convertendo pra decimal para prevenir math domain error
+		N = documents_count * 1.0 #convertendo pra decimal para prevenir math domain error
 		#print "N =", N
 		#print "df de", word, "=", df
-		idf = math.log10(N/df)
+		idf = math.log(N/df)
 		
 		inverse_document_frequency[word] = idf
 	return inverse_document_frequency
@@ -110,7 +108,8 @@ def do_main():
 			files = os.listdir(path_season)
 			path_season_output = path_output+'/'+season+'/'
 			create_diretory(path_season_output)
-			
+			global documents_count
+			documents_count += len(files)
 			for episode in files:
 				path_episode = path_season + episode
 				all_documents.append(path_episode)
@@ -123,11 +122,11 @@ def do_main():
 	idf = calc_idf()
 	tf_idf = calc_tf_idf(idf)
 	
-	query = "Jon Snow Death"
+	query = "Eddard Stark Death"
 	scores = score(query, tf_idf)
 	
 	final_score = get_best_scores(scores)
 
-	print new_sorted_scores	
+	print final_score	
 if __name__ == "__main__":
 	do_main()
