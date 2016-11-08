@@ -39,4 +39,10 @@ nns
 on from Ramsay Bolton
 -- Peguei a partir da palavra que começa com letra maiuscula
 
+*** Classificação de entidades classifica pessoas como lugares ou vice-versa
+place,Joffrey Baratheon
+person,Red Wedding
+-> uma rede neural pra resolver isso parece realmente uma solução boa
 
+*** Usando "Jon Snow Death" com tfidf retorna um ep da quarta temporada que não tem nada a ver com a morte do floquinho
+	isso acontece pq o tfidf só conta as ocorrencias das palavras, as palavras podem ocorrer varias vezes no documento mas nunca juntas ou ter alguma relação entre si. 
