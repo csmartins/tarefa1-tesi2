@@ -26,7 +26,7 @@ def generate_dict_entities():
     
 def create_dict_replace(key, value):
     #value+' ': "<entidade:"+key+">"+value+"</entidade> "
-    return {' '+value+' ': " <entidade:"+key+">"+value+"</entidade> ", ' '+value+', ': " <entidade:"+key+">"+value+"</entidade>, ",' '+value+'.': " <entidade:"+key+">"+value+"</entidade>.", "\n"+value+' ': "\n<entidade:"+key+">"+value+"</entidade> ", ' '+value+"\n": " <entidade:"+key+">"+value+"</entidade>\n", ' '+value+"!": " <entidade:"+key+">"+value+"</entidade>!", ' '+value+"?": " <entidade:"+key+">"+value+"</entidade>?"}
+    return {' '+value+' ': " <entidade:"+key+">"+value+"</entidade> ", ' '+value+', ': " <entidade:"+key+">"+value+"</entidade>, ",' '+value+'.': " <entidade:"+key+">"+value+"</entidade>.", "\n"+value+' ': "\n<entidade:"+key+">"+value+"</entidade> ", ' '+value+"\n": " <entidade:"+key+">"+value+"</entidade>\n", ' '+value+"!": " <entidade:"+key+">"+value+"</entidade>!", ' '+value+"?": " <entidade:"+key+">"+value+"</entidade>?", ' '+value+":": " <entidade:"+key+">"+value+"</entidade>:"}
 
 '''Adiciona a tag das entidades em todas as palavras que se encontram no dicionario'''
 def mark_entities(text, dictEnts):
