@@ -40,7 +40,7 @@ def generate_dict_entities():
     return mydict
     
 '''Cria a tripla da relacao entre as entidades.
-Apenas se ha um verbo entre duas entidades.'''
+Apenas se ha um verbo entre duas entidades. '''
 def create_triple_entity_relation(text_split, unigram_tagger):
     lemmatizer = WordNetLemmatizer()
     triples_line = []
