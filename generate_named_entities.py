@@ -5,6 +5,7 @@ import sys
 from nltk.tree import Tree
 import csv
 import Levenshtein
+import tag_entities
 
 '''Variaveis de caminho de paths'''
 path_output = "output"
@@ -18,7 +19,10 @@ named_entities = []
 names_dict = {}
 nick_names = []
 accepted_grammatical_forms = ['NE_POS_NE', 'NE_IN_NE', 'NE_VERB', 'PLACE', 'SIMPLE_NE']
-stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'of ', 'The' ]
+stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'of ', 'The', 'Khal' ]
+
+place_entities = []
+person_entities = []
 
 '''Remove caracteres indesejados das entidades.'''
 def clear_entity(entity):
@@ -114,19 +118,21 @@ def generate_named_entity(s):
 
         for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                #grammatical_form = t.label()
-                grammatical_form = t.node
+                grammatical_form = t.label()
+                #grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
                     if grammatical_form == 'NE_VERB':
                         text = refine_text_from_tree(t)
                         add_entity_to_nes(text, nes, grammatical_form)
+                        person_entities.append(text)
                         
                     elif grammatical_form == 'PLACE':
                         if t[0][1] == 'IN' and t[0][0] in ['from', 'in', 'at']:
                             t.remove(t[0])
                             text = refine_text_from_tree(t)
                             add_entity_to_nes(text,nes, grammatical_form)
+                            place_entities.append(text)				
                         
                     else:
                         text = ' '.join([c[0] for c in t])
@@ -248,6 +254,8 @@ def do_main():
     remove_multiple_names()
     remove_similar_keys()
     write_named_entities_in_csv(names_dict, path_output)
+
+    tag_entities.tag(place_entities, person_entities)
 
 if __name__ == "__main__":
     do_main()
