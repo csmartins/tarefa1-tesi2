@@ -7,14 +7,16 @@ import re
 path_output = "output"
 path_entities_csv = "output/entities"
 csv_name = "/tagged_entities.csv"
+
 tags = ["person", "place", "family", "battle", "other"]
+places_names = ["Castle", "Cities", "Free City", "Sept"]
 tagged_entities = []
 place_entities = []
 person_entities = []
 
 '''Responsavel por escrever em um csv todas as entidades encontradas. 
-Cada linha do csv representara na primeira coluna o nome da entidade e 
-na segunda a classe a que pertence.'''
+Cada linha do csv representara na primeira coluna a classe a que pertence e 
+na segunda o nome da entidade.'''
 def write_tagged_entities_in_csv():
     with open(path_output+csv_name, 'wb') as csvfile:
         spamwriter = csv.writer(csvfile)
@@ -49,44 +51,42 @@ def create_tuples_entity_tag(dict_entities):
     listTuples.sort(key=lambda x: x[0])
     return listTuples
     
+def add_to_tagged_entities(entity, related_entities, tag):
+	entities = []
+	entities.append(entity)
+	entities.extend(related_entities)
+
+	tagged_entities.append((tag, entities))
+
 '''Adiciona a tag de classificacao das entidades'''
 def tag_entity(entity, related_entities):
+    if entity.startswith("House"):
+        add_to_tagged_entities(entity, related_entities, 'house')
+        return None
+    
+	#for place in places_names:
+	#	if place in entity:
+	#		add_to_tagged_entities(entity, related_entities, 'place')
+	#		return None
     if entity in place_entities:
-		entities = []
-		entities.append(entity)
-		entities.extend(related_entities)
-
-		tagged_entities.append(('place', entities))
-		return None
+        add_to_tagged_entities(entity, related_entities, 'place')
+        return None
     else:
-		for ent in related_entities:
-			if ent in place_entities:
-				entities = []
-				entities.append(entity)
-				entities.extend(related_entities)
-				tagged_entities.append(('place', entities))
-				return None
+        for ent in related_entities:
+            if ent in place_entities:
+                add_to_tagged_entities(entity, related_entities, 'place')
+                return None
 
     if entity in person_entities:
-		entities = []
-		entities.append(entity)
-		entities.extend(related_entities)
-
-		tagged_entities.append(('person', entities))
-		return None
+        add_to_tagged_entities(entity, related_entities, 'person')
+        return None
     else:
-		for ent in related_entities:
-			if ent in person_entities:
-				entities = []
-				entities.append(entity)
-				entities.extend(related_entities)
-				tagged_entities.append(('person', entities))
-				return None
-
-    entities = []
-    entities.append(entity)
-    entities.extend(related_entities)
-    tagged_entities.append(('other', entities))
+        for ent in related_entities:
+            if ent in person_entities:
+                add_to_tagged_entities(entity, related_entities, 'person')
+                return None
+    
+    add_to_tagged_entities(entity, related_entities, 'other')
     return None
 
 def populate_place_entities(places):
@@ -98,12 +98,8 @@ def populate_person_entities(persons):
 def tag(places, persons):
     global place_entities, person_entities
     
-    print len(place_entities)
-    print len(person_entities)
     place_entities = places
     person_entities = persons
-    print len(place_entities)
-    print len(person_entities)
 
     dict_entities = generate_dict_entities()  
     

@@ -24,10 +24,9 @@ other,Lannisters
 person,Caleotte
 person,Bloody Hand
 person,Hand
-person,Aerys Targaryen
-person,Targaryen
-person,Mad Aerys Targaryen
-person,Aerys
+other,Aerys Targaryen
+other,Aerys
+other,Mad Aerys Targaryen
 place,Sansa Robb
 place,Robb
 place,Sansa
@@ -47,6 +46,7 @@ other,Siege Old Wyk
 other,Widow Wail
 other,Wolkan
 place,Balon King
+place,King
 place,Balon
 place,Flea Bottom
 person,Brother Lancel
@@ -62,6 +62,8 @@ place,Blackwater Bay
 place,Blackwater
 other,Mazins
 person,Lorren
+place,Lhazareen
+place,Lhazar
 other,Shireen Greyscale
 other,Greyscale
 place,Hardhome
@@ -84,7 +86,7 @@ person,Dany Dothraki
 person,Dany
 other,Orson
 other,Baelor
-other,House Reed
+house,House Reed
 place,Planky Town
 place,Town
 other,Crown
@@ -99,6 +101,7 @@ other,Distraught
 person,Commander
 other,Rides
 other,High Priestess
+other,High
 other,Priestess
 place,Tyrion Lannister
 place,Tyrion
@@ -114,7 +117,7 @@ person,Beric Dondarrion
 person,Dondarrion
 person,Beric
 other,Titan Bastard
-other,House Stark
+house,House Stark
 other,Terrified
 other,Hollow Hill
 other,Hill
@@ -139,8 +142,6 @@ other,Glovers
 other,Targaryens
 other,Stone Men
 other,Men
-other,Enraged
-other,En
 other,Rivermen
 other,Dead
 person,Areo Hotah
@@ -172,7 +173,7 @@ other,Akho
 person,Vale Arryn
 person,Vale
 other,Armeca
-other,House Arryn
+house,House Arryn
 other,Anara
 place,Grand Pycelle
 place,Pycelle
@@ -185,15 +186,14 @@ other,Daenerys Unsullied
 other,Unsullied
 place,Stannis Baratheon
 place,Stannis
-person,Eyrie High
-person,Eyrie
 place,Stone Mill
 other,Lanna
 other,Pits
-other,House Martell
-other,House Martell Dorne
+house,House Martell
+house,House Martell Dorne
 other,Thin Man
 other,Thin
+place,Littlefinger
 other,Piggy
 person,Talisa
 person,Talisa Maegyr
@@ -203,8 +203,6 @@ other,Night Watch
 other,Night
 other,Nights Watch
 other,Night Watchman
-other,Queensgard
-other,Queensguard
 person,Sansa Stark
 place,Pentos
 place,Pentoshi
@@ -223,9 +221,6 @@ person,Siege Pyke
 person,AND Wylis
 person,Wyl
 person,Wylis
-person,Quaithe Asshai
-person,Asshai
-person,Quaithe
 place,Mero
 place,Moro
 other,Northeners
@@ -234,9 +229,9 @@ other,Children
 other,Wolf Bread
 person,Iron Throne
 person,Throne
+person,Iron
 other,Shadow Lands
 person,Septa Unella
-person,Sept
 person,Unella
 other,Missandei Naath
 other,Naath
@@ -271,6 +266,9 @@ other,Banners
 other,Brotherhood Without Banners
 person,Matthos Seaworth
 person,Matthos
+place,Red Temple Volantis
+place,Volantis
+place,Temple
 other,Master Whisperers
 place,Drogo
 place,Drogon
@@ -278,7 +276,10 @@ place,Drogos
 other,Old Ghiscari
 other,Ghiscari
 other,Aunt Lyanna
+place,Yohn
+place,Yohn Royce
 person,Great Sept
+person,Sept
 person,Great Sept Baelor
 other,Alayne
 person,Lancel Lannister
@@ -293,7 +294,8 @@ other,Cripples
 other,Beyond
 person,Jory Cassel
 person,Jory
-other,Targaryen Conquest
+other,Garden Bones
+other,Bones
 other,Ternesio Terys
 person,Onion Knight
 place,Yoren
@@ -312,15 +314,15 @@ person,Gerold
 person,Aeron Greyjoy
 person,Aeron
 other,Stallion
-place,House Baratheon Dragonstone
-place,Dragonstone
+house,House Baratheon Dragonstone
+house,Dragonstone
 place,Landing
 place,Battle Oxcross
 place,Oxcross
 other,Conquer
 other,Conqueror
-place,Valar Morghulis
-place,Vala
+other,Queensguard
+other,Queensgard
 other,Rhaego
 other,Castle Stokeworth
 other,Convinced
@@ -342,10 +344,11 @@ person,Fennesz
 other,Battle Winterfell
 other,Elia Martell
 other,Elia
-other,House Reyne Castamere
+house,House Reyne Castamere
 other,Torrhen Square
 place,Jorah Mormont
 place,Jorah
+place,Mormont
 place,Ramsay Bolton
 place,Ramsay
 place,Olly
@@ -354,10 +357,9 @@ place,Robb Stark
 place,North Robb Stark
 person,Yara Greyjoy
 person,Yara
-person,Greyjoy
-place,House Bolton
-place,House
-place,Bolton
+house,House Bolton
+house,House
+house,Bolton
 other,Mikken
 other,Wildfire
 person,Ghost
@@ -376,7 +378,7 @@ person,Thoros
 person,Thoros Myr
 other,Common Tongue
 other,Common Tongue Westeros
-person,House Mormont
+house,House Mormont
 other,Undeterred
 other,Quickly Tyrion
 person,Balon Greyjoy
@@ -392,8 +394,6 @@ person,Old Nan
 person,Old
 other,Cerwyns
 other,Battle Ashford
-place,Yohn Royce
-place,Yohn
 other,Old Tongue
 person,Viserys Targaryen
 person,Viserys
@@ -402,13 +402,15 @@ place,Qhorin
 place,Halfhand
 place,Sunspear
 other,Egg
-place,Littlefinger
+other,En
+other,Enraged
 place,Missandei Daenerys
 place,Daenerys
 place,Missandei
 other,Axell Florent
 person,Olenna Tyrell
 person,Olenna
+person,Tyrell
 person,Nymeria Sand
 person,Nymeria
 person,Nym
@@ -426,6 +428,7 @@ person,Red Priestess Melisandre
 person,Priest
 person,Red Priestess
 person,High Red Priestess
+person,Jamie
 other,Prologue
 other,Hugh
 person,Gilly
@@ -443,6 +446,8 @@ place,Westerosi
 other,Mormonts
 place,Tywin Lannister
 place,Tywin
+place,Whent Harrenhal
+place,Harrenhal
 other,Drowned God
 other,God
 person,Walder Frey
@@ -452,9 +457,8 @@ person,Septon
 place,Casterly Rock
 person,Red Keep
 other,Crane
-place,Jeor Mormont
-place,Jeor
-place,Mormont
+person,Jeor Mormont
+person,Jeor
 other,Neck
 place,Ned Stark
 place,Ned
@@ -475,7 +479,10 @@ place,Crasters Keep
 place,Craster
 place,Craster Keep
 place,Keep
-other,Lysa Tully
+place,Lysa Tully
+place,Lysa
+place,Tully
+place,Lys
 other,Karlon Stark
 other,Riverlords
 person,Septa Mordane
@@ -483,6 +490,7 @@ person,Mord
 other,Drunk
 person,Oldtown
 person,Euron Greyjoy
+person,Greyjoy
 person,Euron
 other,Mutiny
 person,Kinvara
@@ -558,11 +566,14 @@ other,Nakloz
 person,Wildlings
 person,Wildling
 place,Dorne
+person,Targaryen Conquest
+person,Targaryen
 other,Great Hall
+other,Great
+other,Hall
 other,Great Masters
 other,Masters
 other,Meereenese Great Masters
-other,Great
 other,Bianca
 person,Qotho
 place,Davos Seaworth
@@ -573,15 +584,15 @@ other,White Sword Tower
 other,Sword
 other,Strong
 other,Against Cersei
-place,Harrenhal
-place,Whent Harrenhal
+other,Hearth
+other,Heart
 person,North Edit
 person,North
 other,Crossroads Inn
 other,Inn
 other,Crossroads
 person,Myranda
-other,Tysha
+other,Asshai
 other,Good Masters
 person,Marillion
 person,Grey Wind
@@ -599,12 +610,10 @@ place,Podrick
 place,Pod
 person,Brynden Tully
 person,Brynden
-person,Tully
 place,Small Council
 place,Council
 place,Mace Tyrell
 place,Mace
-place,Tyrell
 other,Great Ranging
 other,Ran
 person,Wall
@@ -615,7 +624,7 @@ place,Myr
 place,Myrcella
 person,Hound
 other,Volantene
-person,House Lannister
+house,House Lannister
 other,Arbor
 other,Gods Laws
 other,First Builder
@@ -623,8 +632,6 @@ other,Builder
 other,First Builder Othell Yarwyck
 other,First
 other,Stormcrows
-place,Lhazar
-place,Lhazareen
 other,Angered
 other,Eastern Road
 other,East
@@ -657,7 +664,6 @@ other,Royal Fleet
 other,Royal
 other,Shadow Tower
 other,Shadow
-other,Tower
 person,Ramsay Snow
 other,Blessed
 other,Woods
@@ -681,8 +687,6 @@ person,Ice
 other,Greatjon
 other,Mole Town
 other,Greyjoys
-other,Temple
-other,Red Temple Volantis
 other,Inside Bran
 other,Conclave
 other,Maiden Fair
@@ -699,6 +703,8 @@ other,Spice King
 other,Dolorous Edd
 place,Yunkai
 other,Guild
+place,Valar Morghulis
+place,Vala
 other,Free Cities
 other,Cities
 other,Kingslayer
@@ -755,6 +761,7 @@ other,Qaggaz
 other,Walk Punishment
 person,Brotherhood
 other,Broken Tower
+other,Tower
 other,Long Night
 person,Norvosi
 place,Meereenese
@@ -765,8 +772,9 @@ other,Steelshanks
 place,Rodrik Cassel
 place,Rodrik
 place,White Harbor
-person,House Karstark
+house,House Karstark
 person,Morning
+other,Tysha
 other,Eraz
 place,Meryn Trant
 place,Meryn
@@ -790,6 +798,7 @@ person,Sand Snakes
 place,Willem Lannister
 place,Will
 place,Willem
+place,Lannister
 other,Heward
 person,Summer Isles
 person,Summer
@@ -801,26 +810,24 @@ place,Jojen
 place,Reed
 place,Jaime Lannister
 place,Jaime
-place,Lannister
 other,Martells
 person,Faceless Man
 person,Faceless Men
 other,Othor
-place,Five Kings
-place,King
-other,House Black
+person,Five Kings
+house,House Black
 place,Xaro
 person,Vardis Egen
 person,Vardis
 person,Hobb
 person,Mago
-place,House Tyrell
+house,House Tyrell
 other,Rains Castamere
 other,Narrow Sea
-person,Houses Jon
+house,Houses Jon
 other,Savior
 other,Oh
-place,House Tarth
+house,House Tarth
 other,Dracarys
 other,Freys
 place,Doran Martell
@@ -829,8 +836,6 @@ place,Doran
 place,Martell
 other,Vhagar
 other,Shagga
-other,Heart
-other,Hearth
 other,Reeds
 place,Jaqen
 other,Smoking Sea
@@ -839,10 +844,12 @@ other,Great Pit
 other,Pit
 other,Great Pit Daznak
 other,Jaime Dornish
-other,Bones
-other,Garden Bones
+person,Quaithe
+person,Quaithe Asshai
+other,Cleon
 other,Kingswood
 other,Aegon V
+other,Aegon
 other,Fine
 other,Prince
 person,Targaryen Kingsguard
@@ -865,7 +872,6 @@ other,Kayla
 other,Columns
 other,Discouraged
 other,Aegon Targaryen
-other,Aegon
 person,Pit Fighter
 other,Afterward
 person,Othell Yarwyck
@@ -882,7 +888,6 @@ place,Alliser Thorne
 place,Alliser
 place,Thorne
 person,Bear Island
-other,Cleon
 person,Tyrells
 person,Calla
 person,Zalla
@@ -901,7 +906,6 @@ other,Haunted Forest
 other,Forest
 other,Frostfangs
 other,Iron Fleet
-other,Iron
 person,Eddison Tollett
 person,Eddison
 person,Edd
@@ -917,9 +921,10 @@ place,Walder
 other,Trident River
 other,Trident
 other,Fork Trident River
-person,Jamie
+person,Eyrie
+person,Eyrie High
 other,Robert jokingly
-person,House Frey
+house,House Frey
 person,Blackfish
 person,Roslin Frey
 person,Ros
@@ -931,9 +936,7 @@ person,Iron Bank
 person,Bank
 person,Iron Bank Braavos
 other,Tears Lys
-place,Lysa Arryn
-place,Lysa
-place,Lys
+person,Lysa Arryn
 other,Sworn Brothers
 other,Brother
 other,Brothers
@@ -952,10 +955,8 @@ other,Joanna
 other,Silent Sisters
 other,Sisters
 other,Sister
-place,Razdal
-place,Wise Master Razdal
 other,Master Laws
-other,House Targaryen
+house,House Targaryen
 other,Greyjoy Rebellion
 other,Realm
 other,Bastard Girls
@@ -964,14 +965,15 @@ other,Outside
 person,Cressen
 other,Viper
 other,New
+place,Wise Master Razdal
+place,Razdal
 person,Pyat Pree
 person,Pree
 other,Bannen
-place,Volantis
 other,Night Lands
 other,Anya Waynwood
 other,Waynwood
-place,House Greyjoy
+house,House Greyjoy
 other,Needle
 person,Reach
 person,Lollys Stokeworth
@@ -990,8 +992,6 @@ person,Ilyn Payne
 person,Ilyn
 other,Sparrows
 other,High Hall
-other,High
-other,Hall
 other,Salladhor Saan
 other,Salladhor
 person,South
