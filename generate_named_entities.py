@@ -247,7 +247,7 @@ def do_main():
     remove_similar_keys()
     write_named_entities_in_csv(names_dict, path_output)
 
-    tag_entities.tag(place_entities, person_entities)
+    tag_entities.tag_all(place_entities)
     relate_entities.write_related_entities_in_csv(triples)
 
 if __name__ == "__main__":

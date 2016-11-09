@@ -10,9 +10,10 @@ csv_name = "/tagged_entities.csv"
 
 tags = ["person", "place", "family", "battle", "other"]
 places_names = ["Castle", "Cities", "Free City", "Sept"]
-tagged_entities = []
+tagged_entities = {}
 place_entities = []
 person_entities = []
+family_names = []
 
 '''Responsavel por escrever em um csv todas as entidades encontradas. 
 Cada linha do csv representara na primeira coluna a classe a que pertence e 
@@ -51,60 +52,49 @@ def create_tuples_entity_tag(dict_entities):
     listTuples.sort(key=lambda x: x[0])
     return listTuples
     
-def add_to_tagged_entities(entity, related_entities, tag):
-	entities = []
-	entities.append(entity)
-	entities.extend(related_entities)
+def add_to_tagged_entities(entities, tag):
+	for entity in entities:
+		tagged_entities[entity] = tag
 
-	tagged_entities.append((tag, entities))
+def tag_general_entities(entities):
+	for entity in entities.keys():
+		tagged_entities[entity] = 'other'
+    	add_to_tagged_entities(entities[entity], 'other')
 
-'''Adiciona a tag de classificacao das entidades'''
-def tag_entity(entity, related_entities):
-    if entity.startswith("House"):
-        add_to_tagged_entities(entity, related_entities, 'house')
-        return None
+def populate_family_names(dict_entities):
+	for tagged in tagged_entities:
+		if tagged[0] == 'house':
+			house = tagged[1].split()
+			# se house tem 3 palavras a terceira é sempre um lugar
+			if len(house) == 2:
+				family_names.append(house[1])
+
+def tag_places():
+	add_to_tagged_entities(place_entities, 'place')
+
+def tag_houses():
+	for entity in tagged_entities:
+		if entity.startswith("House"):
+        	tagged_entities[entity] = 'house'
+
+			house = tagged[1].split()
+			# se house tem 3 palavras a terceira é sempre um lugar
+			family_names.append(house[1])
+			if len(house) == 3:
+				tagged_entities[tagged[2]] = 'place'				
+	
+def tag_persons():
+	pass
+
+def tag_all(places):
+	global place_entities
+	place_entities = places	
     
-	#for place in places_names:
-	#	if place in entity:
-	#		add_to_tagged_entities(entity, related_entities, 'place')
-	#		return None
-    if entity in place_entities:
-        add_to_tagged_entities(entity, related_entities, 'place')
-        return None
-    else:
-        for ent in related_entities:
-            if ent in place_entities:
-                add_to_tagged_entities(entity, related_entities, 'place')
-                return None
-
-    if entity in person_entities:
-        add_to_tagged_entities(entity, related_entities, 'person')
-        return None
-    else:
-        for ent in related_entities:
-            if ent in person_entities:
-                add_to_tagged_entities(entity, related_entities, 'person')
-                return None
+	dict_entities = generate_dict_entities()  
     
-    add_to_tagged_entities(entity, related_entities, 'other')
-    return None
-
-def populate_place_entities(places):
-	place_entities = places
-
-def populate_person_entities(persons):
-	person_entities = persons
-
-def tag(places, persons):
-    global place_entities, person_entities
-    
-    place_entities = places
-    person_entities = persons
-
-    dict_entities = generate_dict_entities()  
-    
-    for entity in dict_entities.keys():
-    	tag_entity(entity, dict_entities[entity])
-  
+	tag_general_entities(dict_entities)
+	tag_places()
+	tag_houses()
+	tag_persons()
     write_tagged_entities_in_csv()
     
