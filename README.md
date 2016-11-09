@@ -45,6 +45,12 @@ Espera-se que a pasta "output" esteja preenchida com os arquivos de texto com en
 
 Gera um arquivo "related_entities.csv" na pasta output.
 
+## tf-idf.py
+ADICIONAR DESCRICAO E COMO RODAR
+
 ## regras_gramatica.txt
 É um arquivo texto responsável por caracterizar todas as regras de gramática utilizadas pelo programa "generate_named_entities.py" para encontrar as entidades nomeadas dos textos.
+
+## anotacoes.txt
+É um arquivo texto que armazena anotações diversas de coisas a fazer ou experimentos no decorrer do trabalho.
  

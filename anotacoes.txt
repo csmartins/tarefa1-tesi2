@@ -51,3 +51,13 @@ person,Red Wedding
 *** Usando "Jon Snow Death" com tfidf retorna um ep da quarta temporada que não tem nada a ver com a morte do floquinho
 	isso acontece pq o tfidf só conta as ocorrencias das palavras, as palavras podem ocorrer varias vezes no documento mas nunca juntas ou ter alguma relação entre si. 
 --- tfidf está aparentemente certo, conferi com fernando/rafael
+
+
+*** Usar casas para definir grupo de pessoas (Sugestão da apresentação do Hugo e Guilherme
+
+*** Pegar parte do texto referente as mortes para adicionar como relações
+
+
+*** Adicionar entidades no tf ido
+
+*** Remover “of” de stop words e timber metodo de remocao de palavras minúscula no meio para testar eficiência e adicionar resultados no formulário 
