@@ -123,7 +123,7 @@ def do_main():
 					words_count = count_words(full_content)
 					
 					count_frequency(path_episode, words_count)
-	print len(word_frequency.keys())	
+	
 	idf = calc_idf()
 	tf_idf = calc_tf_idf(idf)
 	
@@ -131,6 +131,8 @@ def do_main():
 	
 	final_score = get_best_scores(scores)
 
-	print final_score	
+	print "Most relevant episodes, sorted by score:"
+	for fc in final_score:
+		print fc[0], '-', fc[1]
 if __name__ == "__main__":
 	do_main()
