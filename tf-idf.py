@@ -5,7 +5,7 @@ import nltk
 from nltk.corpus import stopwords
 
 path_output = "output"
-path_episodes_cleaned = "cleaned_episodes"
+
 word_frequency = {}
 documents_count = 0
 all_documents = []
@@ -98,14 +98,20 @@ def get_best_scores(scores):
 	return new_sorted_scores[:5]
 
 def do_main():
+	if len(sys.argv) < 3:
+		print "Insuficient number of arguments."
+		print "Expected: python tf-idf.py <query> <path_to_episodes>"
+		return
+
 	full_content = ""
-	
-	seasons = os.listdir(path_episodes_cleaned)
+	query = sys.argv[1]
+	path_episodes = sys.argv[2]
+	seasons = os.listdir(path_episodes)
 	create_diretory(path_output)
 	
 	for season in seasons:
 		if "season" in season:
-			path_season = path_episodes_cleaned+'/'+season+'/'
+			path_season = path_episodes+'/'+season+'/'
 			files = os.listdir(path_season)
 			global documents_count
 			documents_count += len(files)
@@ -121,7 +127,6 @@ def do_main():
 	idf = calc_idf()
 	tf_idf = calc_tf_idf(idf)
 	
-	query = "Jon Snow Death"
 	scores = score(query, tf_idf)
 	
 	final_score = get_best_scores(scores)

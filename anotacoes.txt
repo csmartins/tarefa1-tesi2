@@ -61,3 +61,12 @@ person,Red Wedding
 *** Adicionar entidades no tf ido
 
 *** Remover “of” de stop words e timber metodo de remocao de palavras minúscula no meio para testar eficiência e adicionar resultados no formulário 
+
+*** Rodando para texto bruto
+$ python tf-idf.py "Jon Snow Death" cleaned_episodes
+9136
+[('cleaned_episodes/season_4/the_children.txt', 5.159842618771975), ('cleaned_episodes/season_4/the_watchers_on_the_wall.txt', 3.850563067726274), ('cleaned_episodes/season_6/oathbreaker.txt', 3.6581750861879994), ('cleaned_episodes/season_4/two_swords.txt', 3.5812999917715693), ('cleaned_episodes/season_5/hardhome_(episode).txt', 3.1965240286950207)]
+$ python tf-idf.py "Jon Snow Death" episodes
+17777
+[('episodes/season_5/high_sparrow_(episode).txt', 5.48438134019679), ("episodes/season_5/mother's_mercy.txt", 3.6562542267978597), ('episodes/season_5/the_dance_of_dragons.txt', 3.6562542267978597), ('episodes/season_1/a_golden_crown.txt', 3.6562542267978597), ('episodes/season_5/sons_of_the_harpy_(episode).txt', 1.8281271133989299)]
+
