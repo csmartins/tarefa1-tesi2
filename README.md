@@ -4,7 +4,7 @@
 
 É o arquivo responsável pelo pré processamento do texto de entrada. Ele trabalha com a retirada da parte não interessante do texto e retorna os arquivos limpos. É necessário que o caminho da pasta contendo os episódios seja passado como parâmetro.
 
-Como rodar: python clean_text.py <path_to_episodes>
+Como rodar: python clean_text.py \<path_to_episodes\>
 
 Cria uma pasta "clean_text" com o mesmo formato da pasta de episódios, contendo os textos limpos.
 
@@ -46,11 +46,13 @@ Espera-se que a pasta "output" esteja preenchida com os arquivos de texto com en
 Gera um arquivo "related_entities.csv" na pasta output.
 
 ## tf-idf.py
-Arquivo responsável por buscar documentos que mais se adequam a consulta passada como parâmetro. Para tal usa-se a técnica de TF-IDF. Também recebe o caminho para os episódios.
+Arquivo responsável por retornar os 5 documentos em que o texto da consulta passada como parâmetro possui mais ocorrências. Para tal usa-se a técnica de TF-IDF. Também recebe o caminho para os episódios.
 
-Como rodar: python tf-idf.py query caminho_para_os_episódios
+Como rodar: 
+$python tf-idf.py \<consulta\> \<caminho_para_os_episódios\>
 
-Retorna os 5 arquivos com maior score ordenados.
+Exemplo:
+$ python tf-idf.py "Jon Snow Death" cleaned_episodes
 
 ## regras_gramatica.txt
 É um arquivo texto responsável por caracterizar todas as regras de gramática utilizadas pelo programa "generate_named_entities.py" para encontrar as entidades nomeadas dos textos.
