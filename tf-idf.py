@@ -9,13 +9,14 @@ path_episodes_cleaned = "cleaned_episodes"
 word_frequency = {}
 documents_count = 0
 all_documents = []
+punctuation = [".", ",", "/", "(", ")", "'", "?", "!"]
 
 def create_diretory(path):
     if not (os.path.isdir(path)):
 		os.mkdir(path)
 
 def filter_words(words):
-	filtered_words = [word for word in words if word not in stopwords.words('english')]
+	filtered_words = [word for word in words if word not in stopwords.words('english') and word not in punctuation]
 	return filtered_words
 
 def get_tokens(sent):
@@ -88,13 +89,13 @@ def score(query, tf_idf):
 	return scores
 
 def get_best_scores(scores):
-	sorted_scores = sorted(scores, key=lambda scor: scor[1])
+	sorted_scores = sorted(scores, key=lambda scor: scor[1], reverse=True)
 	new_sorted_scores = []
 	for s_s in sorted_scores:
 		if s_s[1] != 0:
 			new_sorted_scores.append(s_s)
 
-	return new_sorted_scores
+	return new_sorted_scores[:5]
 
 def do_main():
 	full_content = ""
@@ -106,8 +107,6 @@ def do_main():
 		if "season" in season:
 			path_season = path_episodes_cleaned+'/'+season+'/'
 			files = os.listdir(path_season)
-			path_season_output = path_output+'/'+season+'/'
-			create_diretory(path_season_output)
 			global documents_count
 			documents_count += len(files)
 			for episode in files:
@@ -118,11 +117,11 @@ def do_main():
 					words_count = count_words(full_content)
 					
 					count_frequency(path_episode, words_count)
-	
+	print len(word_frequency.keys())	
 	idf = calc_idf()
 	tf_idf = calc_tf_idf(idf)
 	
-	query = "Eddard Stark Death"
+	query = "Jon Snow Death"
 	scores = score(query, tf_idf)
 	
 	final_score = get_best_scores(scores)
