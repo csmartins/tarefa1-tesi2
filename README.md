@@ -46,7 +46,11 @@ Espera-se que a pasta "output" esteja preenchida com os arquivos de texto com en
 Gera um arquivo "related_entities.csv" na pasta output.
 
 ## tf-idf.py
-ADICIONAR DESCRICAO E COMO RODAR
+Arquivo responsável por buscar documentos que mais se adequam a consulta passada como parâmetro. Para tal usa-se a técnica de TF-IDF. Também recebe o caminho para os episódios.
+
+Como rodar: python tf-idf.py <query> <caminho_para_os_episódios>
+
+Retorna os 5 arquivos com maior score ordenados.
 
 ## regras_gramatica.txt
 É um arquivo texto responsável por caracterizar todas as regras de gramática utilizadas pelo programa "generate_named_entities.py" para encontrar as entidades nomeadas dos textos.
