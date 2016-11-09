@@ -6,6 +6,7 @@ from nltk.tree import Tree
 import csv
 import Levenshtein
 import tag_entities
+import relate_entities
 
 '''Variaveis de caminho de paths'''
 path_output = "output"
@@ -17,12 +18,12 @@ csv_name = "/entities.csv"
 '''Variaveis globais de listas'''
 named_entities = []
 names_dict = {}
-nick_names = []
 accepted_grammatical_forms = ['NE_POS_NE', 'NE_IN_NE', 'NE_VERB', 'PLACE', 'SIMPLE_NE']
 stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'of ', 'The', 'Khal' ]
 
 place_entities = []
 person_entities = []
+triples = []
 
 '''Remove caracteres indesejados das entidades.'''
 def clear_entity(entity):
@@ -40,14 +41,6 @@ def remove_stopwords(entity):
             entity = entity.replace(word, '').strip()
     return entity
 
-'''Pega possiveis entidades reconhecidas como apelidos'''
-def get_nicknames(s, nicks):
-    quotes = [q.decode('utf-8') for q in s.split('"')[1::2]]
-    if quotes != [] and nicks != []:
-        for nick in nicks:
-            if nick in quotes:
-                nick_names.append(nick)
-                
 '''Remove stop words e limpa os espacos das entidades que possuem nomes próprios.'''
 def refine_text_from_tree(t):
     text = ''
@@ -99,27 +92,27 @@ def add_entity_to_nes(text, nes, grammatical_form):
 as regras definidas pela nossa gramatica.'''
 def generate_named_entity(s):
     sentences = nltk.sent_tokenize(s.decode('utf-8'))
-    nicks = []
     nes = []
+    global triples 
     for sentence in sentences:
         words_tokenized = nltk.word_tokenize(sentence)
         pos = nltk.pos_tag(words_tokenized)
         if len(pos) == 0 : continue
-        
+        #NE_VERB: {<NNP|NNPS>+<VBZ>}
         grammar = '''
             NE_POS_NE: {<NNP|NNPS>+<POS><NNP|NNPS>}
             NE_IN_NE: {<NNP|NNPS>+<IN><NNP|NNPS>+}
-            NE_VERB: {<NNP|NNPS>+<VBZ>}
             PLACE: {<IN>+<NNP|NNPS>+<POS>*<NNP|NNPS>*}
             SIMPLE_NE: {<NNP|NNPS>+}
             '''
         regex_parser = nltk.RegexpParser(grammar)
         ner = regex_parser.parse(pos)
-
+        
+        triples += relate_entities.generate_relation_triples(ner)    
         for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                grammatical_form = t.label()
-                #grammatical_form = t.node
+                #grammatical_form = t.label()
+                grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
                     if grammatical_form == 'NE_VERB':
@@ -240,7 +233,6 @@ def similar_strings(s1, s2):
 
 def do_main():
     full_content = ""
-
     seasons = os.listdir(path_episodes_cleaned)
     for season in seasons:
     	if "season" in season:
@@ -256,6 +248,7 @@ def do_main():
     write_named_entities_in_csv(names_dict, path_output)
 
     tag_entities.tag(place_entities, person_entities)
+    relate_entities.write_related_entities_in_csv(triples)
 
 if __name__ == "__main__":
     do_main()

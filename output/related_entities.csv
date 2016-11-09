@@ -1,350 +1,599 @@
-Catelyn,confront,Jaime
-This,bring,Catelyn
-Quaithe,warn,Jorah
-Jorah,find,Daenerys
-Pyat Pree,urge,Daenerys
-Ygritte,bring,Jon
-Jorah Mormont,advise,Daenerys
-Stannis,tell,Davos
-Arya,give,Jaqen
-Shae,urge,Tyrion
-Melisandre,tell,Stannis
-Catelyn,urge,Robb
-Ygritte,give,Jon
-Bones,cut,Jon
-Mormont,consider,Craster
-Samwell Tarly,give,Gilly
-Renly,introduce,Catelyn
-Catelyn,warn,Renly
-Lommy,beg,Polliver
-Arya,ask,Gendry
-Varys,discover,Shae
-Tyrion,warn,Varys
-Alton Lannister,deliver,King
-Cersei,confront,Tyrion
-Craster,tell,Jeor
-Mormont,ask,Jon
-Sansa,watch,King
-Sansa,convince,Joffrey
-Melisandre,proclaim,Stannis
-Cressen,ask,Davos Seaworth
-Robb,confront,Jaime
-Varys,tell,Tyrion
-Mandon,slash,Tyrion
-Shae,tell,Sansa
-Qhorin,give,Jon
-Robb,introduce,Talisa
-Lancel Lannister,tell,Sansa
-Catelyn,tell,Petyr
-Stannis,offer,Renly
-Catelyn,remind,Stannis
-This,lead,Walder
-Ramsay Snow,offer,Robb
-Tyrion,remind,Sansa
-Meera Reed,tell,Bran
-Bran,ask,Sam
-Sam,tell,Gilly
-Sam,tell,Gilly
-Tormund,restrain,Ygritte
-Jon,kill,Orell
-Catelyn,slap,Roose
-Arya,give,Sandor
-Catelyn,kill,Walder
-Littlefinger,offer,Sansa
-Jon,kill,Qhorin Halfhand
-Jon,kill,Qhorin
-Mance,ask,Jon
-Davos,convince,Salladhor
-Barristan,save,Daenerys
-Daenerys,leave,Yunkai
-Daenerys,tell,Jorah
-Tywin,inform,Joffrey
-Tywin,remind,Joffrey
-Brienne,tell,Jaime
-Jaime,leave,Harrenhal
-Shae,ask,Tyrion Lannister
-Jaime Lannister,provoke,Brienne
-Mance,bring,Jon
-Mormont,assign,Rast
-Mormont,tell,Sam
-This,disturb,Sansa
-Sansa,remind,Loras
-Robb,leave,Roose
-Jaime,tell,Brienne
-Brienne,give,Jaime
-Tyrion,ask,Varys
-Varys,realize,Littlefinger
-Joffrey,give,Margaery
-Margaery,convince,Joffrey
-Olenna,discuss,Sansa
-Tyrell,find,Sansa
-Tyrell,make,Sansa
-Jojen,advise,Bran
-Rast,call,Craster
-Mormont,restrain,Rast
-Mormont,grab,Rast
-Mormont,grab,Rast
-Daenerys,reveal,Drogon
-Kraznys,tell,Daenerys
-Drogon,burn,Kraznys
-Tormund,warn,Jon
-Tormund,tell,Jon
-Ygritte,tell,Jon
-Robb,execute,Rickard
-Robb,say,Tywin Lannister
-Robb,show,Talisa
-Jaime,recall,Aerys
-Jaime,warn,Aerys
-Jaime,finish,Aerys
-Thoros,revive,Beric
-Targaryens,build,Dragonstone
-Tyrion,give,Shae
-Varys,find,Lord
-Baelish,tell,Varys
-Joffrey,kill,Ros
-Anguy,teach,Arya
-Freys,carry,Walder
-Bolton,tell,Jaime
-Sam,show,Gilly
-Baratheon,kill,Rhaegar
-Mance,warn,Jon
-Tyrion,warn,Bronn
-Bronn,ask,Pod
-Jaime,warn,Brienne
-Daenerys,tell,Barristan
-Ramsay,allow,Reek
-Varys,inform,Tywin
-Jaime,ask,Tywin
-Ramsay Snow,send,Reek
-Barristan,surmise,Jorah
-Gregor,grab,Oberyn
-Brienne,believe,Sansa
-Lysa,encourage,Sansa
-Jojen,distract,Karl
-Jon,confront,Karl
-North,follow,Robb
-Roose,give,Ramsay
-Tyrion,find,Varys
-Margaery,serve,Joffrey
-Mance,bring,Jon
-Jon,inform,Mance
-First Men,enter,Westeros
-Davos,introduce,Stannis
-This,make,Stannis
-Tormund,implore,Jon
-Barristan Selmy,warn,Daenerys
-Cersei,find,Jaime
-Jaime,help,Tyrion
-Tywin,dare,Tyrion
-Tywin,interrupt,Oberyn
-Aemon,find,Sam
-Gilly,want,Sam
-Gilly,beg,Sam
-Jon,tell,Sam
-Sam,tell,Jon
-Brienne,tell,Margaery
-Brienne,expect,Jaime
-Qhorin,want,Jon
-Slynt,dismiss,Jon
-Arya,take,Needle
-Jorah,tell,Daenerys
-Daario,entreat,Dany
-Cersei,show,Tyrion
-Oberyn,tell,Tyrion
-Cersei,tell,Oberyn
-Oberyn,tell,Tyrion
-Daenerys,tell,Jorah
-Podrick,remind,Brienne
-Sansa,slap,Robin
-Missandei,teach,Grey Worm
-Slynt,convince,Thorne
-Sam,tell,Jon
-Locke,bring,Jon
-Olenna,tell,Margaery
-Sansa,accuse,Petyr Baelish
-Sansa,defend,Tyrion
-Tyrion,invite,Kinvara
-Raven,show,Bran
-Raven,tell,Bran
-Winterfell,watch,Ned
-Jaime,advise,Tommen
-Bran,find,Meera Reed
-Jaime,convince,Tommen
-Grey Worm,tell,Tyrion
-Tyrion,instruct,Varys
-Roose,warn,Ramsay
-Brienne,fill,Sansa
-Balon,tell,Euron
-Septa Unella,enter,Queen
-Margaery,tell,Loras
-Pycelle,advise,King
-Olenna,send,House
-Eddison Tollett,help,Jon
-Starks,leave,Winterfell
-Brienne,warn,Melisandre
-Royce,remind,Baelish
-Petyr,accuse,Royce
-Royce,accuse,Baelish
-Stark,escape,Winterfell
-Missandei,warn,Tyrion
-Dosh Khaleen,give,Daenerys
-Podrick,meet,Sansa
-Sansa,accept,Brienne
-Ellaria,help,Doran
-Doran,beg,Ellaria
-Cersei,ask,Jaime
-Nymeria,offer,Trystane
-Davos,convince,Edd
-Davos,tell,Thorne
-Davos,ask,Jon
-Light,bring,Jon
-Davos,ask,Melisandre
-Bowen,say,Jon
-Yarwyck,plead,Jon
-Gilly,assure,Samwell
-Gilly,tell,Tarly
-Samwell,assure,Gilly
-Cersei,want,Qyburn
-Cersei,accuse,Kevan
-Varys,assure,Vala
-Tyrion,ask,Varys
-Jaqen,ask,Arya
-Ramsay,ask,Smalljon
-Tyrion,defend,Jorah
-Tyrion,assure,Daenerys
-Daenerys,decide,Tyrion
-Sansa,confront,Reek
-Snow,defy,Stannis
-Jon,retrieve,Longclaw
-Waif,tell,Arya
-Jorah,pull,Tyrion
-Lancel,warn,Baelish
-Olenna,warn,Cersei
-Cersei,inform,Olenna
-Sansa,startle,Myranda
-Varys,tell,Tyrion
-Varys,offer,Tyrion
-Littlefinger,tell,Lord
-Myranda,threaten,Sansa
-Myranda,tell,Sansa
-Arya,kill,Meryn Trant
-Waif,grab,Arya
-Tyrion,watch,Daario
-Qyburn,introduce,Cersei
-Qyburn,suggest,Cersei
-Snow,tell,Sam
-Sam,ask,Jon
-Jorah,smack,Tyrion
-Stannis,wish,Jon
-Rhaegar,choose,Lyanna
-Stannis,send,Davos
-Doran,ask,Jaime
-Areo,lead,Bronn
-Areo,bring,Ellaria
-Doran,give,Ellaria
-Daario,evacuate,Daenerys
-Sam,give,Jon
-Sam,eulogize,Aemon
-Stannis,ask,Melisandre
-Areo Hotah,bring,Myrcella
-Daenerys,ask,Missandei
-Aemon,tell,Jon
-Sam,tell,Gilly
-Myranda,lead,Sansa
-Reek,help,Ramsay
-Roose,tell,Ramsay
-Jorah,tell,Tyrion
-Jorah,tell,Tyrion
-Margaery,manipulate,Tommen
-Boltons,greet,Sansa
-Snow,ask,Sam
-Snow,assign,Janos Slynt
-Slynt,refuse,Jon
-Baratheon,see,Jon
-Jaqen,allow,Arya
-Varys,tell,Tyrion
-Stannis,tempt,Jon
-Varys,depart,Pentos
-Cersei,show,Jaime
-Cersei,summon,Jaime
-Lollys,remind,Bronn
-Brienne,tell,Podrick
-Barristan Selmy,tell,Daenarys
-Baratheon,teach,Gilly
-Stannis,show,Jon
-Jon,tell,Stannis
-Stannis,make,Jon
-Janos Slynt,nominate,Alliser Thorne
-Tyrion Lannister,depart,Winterfell
-Doreah,instruct,Daenerys
-Jon,urge,Arya
-Eddard,tell,Jon
-Robert,ask,Eddard
-Tyrion,tell,Jon
-Joffrey,save,Sansa
-Hound,run,Mycah
-Eddard,kill,Lady
-Cersei,manipulate,Sansa
-Sworn Brothers,urge,Lord
-Pyp,hold,Jon
-Tywin Lannister,greet,Tyrion
-Septa Mordane,tell,Sansa
-Syrio,hold,Arya
-Eddard,ask,Varys
-Sansa,beg,Joffrey
-Targaryen,marry,Khal Drogo
-Stark,inform,Eddard
-Cersei,send,Jaime
-Jaime,tell,Tyrion
-Viserys,prepare,Daenerys
-Daenerys,marry,Khal Drogo
-Yoren,drag,Arya
-Joffrey,ask,Marillion
-Osha,take,Bran
-Rickon,call,Shaggydog
-Jon,leave,Castle Black
-Mormont,tell,Jon
-Mormont,give,Jon
-Sam,take,Jon
-Jorah Mormont,help,Daenerys
-Jorah,take,Daenerys
-Varys,tell,Eddard
-Varys,urge,Eddard
-Ilyn Payne,execute,Eddard
-Varys,tell,Eddard
-Eddard,threaten,Lord
-Littlefinger,fetch,Eddard
-Old Nan,tell,Bran
-Benjen Stark,meet,Jon
-Eddard,find,King
-Loras,declare,Sandor
-Varys,find,Littlefinger
-Arya,ask,Jory Cassel
-Robert,tell,Eddard
-Loras,urge,Renly
-Loras,urge,Renly
-Littlefinger,bring,Eddard
-Eddard,ask,Littlefinger
-Jory,engage,Jaime
-Greyjoy,summon,Hodor
-Sam,join,Jon
-Sam,tell,Jon
-Daenerys,send,Doreah
-Eddard,send,Jory Cassel
-Eddard,send,Jory
-Renly,find,Eddard
-Eddard,find,Robert
-Robert,tell,Joffrey
-Robert,instruct,Eddard
-Renly,confront,Eddard
-Stark,confront,King
-Robert,restore,Eddard
-Queen,put,Joffrey
-This,give,Eddard
-Tyrion,convince,Mord
-Lysa,summon,Tyrion
-Drogo,lift,Daenerys
-Jorah Mormont,prevent,Viserys
-Jorah,want,Daenerys
-Khal Drogo,give,Viserys
-Viserys,beg,Daenerys
+Theon ,berates ,Lorren 
+Ser Gregor ,speculates that the ,Brotherhood Without Banners 
+Lord Rickard ,demands ,Jaime 
+Ygritte ,says ,that Jon 
+Quaithe ,knows ,that Jorah 
+Quaithe ,warns ,Jorah 
+Ygritte ,brings ,Jon Snow 
+Ser Jorah Mormont ,advises ,Daenerys Targaryen 
+Theon ,gives ,Dagmer 
+Yara Greyjoy ,arrives ,at Winterfell 
+Dagmer ,tells ,Theon 
+Stannis ,tells ,Davos 
+Arya ,gives ,Jaqen 
+Catelyn ,has sent ,Brienne of Tarth 
+Winterfell ,by turning ,Theon 
+Baratheon ,is assassinated by the ,Shadow 
+Lord Petyr Baelish ,accompanies the ,Tyrell 
+Jon Snow ,joins ,Qhorin 
+Littlefinger ,is awarded ,Harrenhal 
+Loras Tyrell ,asks ,that Joffrey 
+Jaime ,recognized ,by Stark 
+Melisandre ,insists that the ,Lord of Light 
+Melisandre ,tells ,Stannis 
+Maester Luwin ,tells ,Theon 
+Luwin ,suggests ,that Theon 
+Dagmer ,knocks ,Theon 
+Starks ,before asking ,Osha 
+Ygritte ,gives ,Jon 
+Catelyn Stark ,treats ,with King Renly 
+Jon ,realizes ,that Jeor 
+Samwell Tarly ,gives ,Gilly 
+Catelyn ,warns ,Renly 
+Catelyn ,is impressed ,with Brienne 
+Arya ,is incapacitated ,by Polliver 
+Lommy ,was ,Gendry 
+Stannis ,uses ,Ser Davos 
+Arya ,confides ,in Gendry 
+Robb Stark ,sends ,Theon Greyjoy 
+Arya ,asks ,Gendry 
+Davos ,recruits the ,Lysene 
+Rakharo ,from entering the ,Night Lands 
+Samwell Tarly ,are repulsed ,by Craster 
+Craster ,tells ,Jeor 
+Mormont ,asks ,Jon 
+Sansa Stark ,intercedes telling ,Joffrey 
+that Melisandre ,is leading ,Stannis 
+Cressen ,asks ,Davos Seaworth 
+Stannis ,has received ,Ned Stark 
+Stannis ,sees ,as Robb 
+Barra ,is killed ,in Petyr 
+Bronn ,drinks with the ,Lannister 
+Joffrey ,berates ,Tyrion 
+Bronn ,has been awaiting ,Tyrion 
+Mandon ,slashes ,Tyrion 
+Podrick Payne ,kills ,Ser Mandon 
+Cersei ,has taken ,Tommen 
+Shae ,tells ,Sansa 
+Hound ,scares ,Sansa 
+Cersei ,sits on the ,Iron Throne 
+Qhorin ,gives ,Jon 
+Theon ,tells ,Bran Stark 
+Ser Rodrik Cassel ,is captured ,by Theon 
+Dagmer Cleftjaw ,insists ,that Theon 
+Tywin Lannister ,berates ,Ser Amory Lorch 
+as Amory Lorch ,reaches ,Tywin 
+as Cersei ,ignored both ,Tyrion 
+Night Watch ,led ,by Qhorin Halfhand 
+Hot Pie ,are taken ,by Ser Amory Lorch 
+Lancel Lannister ,tells ,Sansa 
+Ser Meryn ,punches ,Sansa 
+Arya Stark Baelish ,lies about the ,Lannisters 
+Catelyn ,insists ,that Robb 
+Catelyn ,tells ,Petyr 
+Ned Stark ,rejected ,Renly 
+Stannis ,offers ,Renly 
+Ser Davos ,rows ,Melisandre 
+of Qarth ,opens ,for Daenerys 
+Qarth ,is known as the ,Garden of Bones 
+Khalasar ,are let ,into Qarth 
+Ramsay Snow ,offered ,Robb Stark 
+Sansa ,is ,Joffrey 
+Small Council ,tenses waiting ,for Tywin 
+Stannis ,is convinced ,by Melisandre 
+Meera Reed ,tells ,Bran 
+Bran ,asks ,Sam 
+House Frey ,joins ,with House Tully 
+Sam ,tells ,Gilly 
+Sam ,tells ,Gilly 
+Tormund ,restrains ,Ygritte 
+Bran ,asks ,Osha 
+Talisa ,is stabbed ,by Lame Lothar 
+Arya ,gives ,Sandor 
+Jon ,is brought ,before Mance Rayder 
+Littlefinger ,offers ,Sansa 
+Jon Snow ,is led ,by Ygritte 
+that Jon ,killed ,Qhorin Halfhand 
+that Jon ,killed ,Qhorin 
+Night Watch ,camped at ,Craster Keep 
+Cersei ,admonishes ,Margaery 
+Davos ,feels ,that Melisandre 
+Slaver Bay ,after leaving ,Qarth 
+Unsullied ,barracks by the ,Unsullied 
+Barristan ,saves ,Daenerys 
+Orell ,tells ,Jon 
+Daenerys ,that conquering ,Yunkai 
+that Daenerys ,leave ,Yunkai 
+Brotherhood ,for selling ,Gendry 
+Margaery Tyrell ,consoles ,Sansa 
+Tywin ,is surprised ,that Joffrey 
+Brienne ,tells ,Jaime 
+Jaime ,leaves ,Harrenhal 
+Jaime ,asks ,that Bolton 
+Locke ,is convinced ,Lord Selwyn 
+Shae ,asks ,Tyrion Lannister 
+Jaime Lannister ,provokes ,Brienne 
+Ygritte ,is surprised ,that Jon 
+Rast ,is annoyed ,that Sam 
+Sam ,is upset ,that Grenn 
+Mormont ,tells ,Sam 
+Jojen ,explains ,that Bran 
+Jojen ,confirms ,that Bran 
+Bran ,says ,that Howland 
+Jojen ,says ,that Howland 
+Jojen ,confirms ,that Bran 
+Sansa ,warns the ,Tyrells that Joffrey 
+Lady Olenna ,insists ,that Sansa 
+Shae ,sneaks ,into Tyrion Lannister 
+Shae ,starts undressing ,Tyrion 
+Robb ,leaves ,Roose 
+Karstark ,maintains ,that unless Edmure 
+Robb ,asks ,if Karstark 
+Jon ,legitimized as a ,Stark 
+Jaime ,insists ,that Renly 
+that Renly ,loved ,Loras 
+Jaime ,tells ,Brienne 
+Brienne ,gives ,Jaime 
+Locke ,has been tormenting ,Jaime 
+Littlefinger ,has visited ,Sansa Stark 
+Joffrey ,gives ,Margaery 
+Olenna ,asks ,if Robert Baratheon 
+Lord Mace Tyrell ,besieged ,Storm End 
+Tyrion ,was captured by the ,Starks 
+Winter ,is ,Coming 
+Sansa ,is ,Robb 
+Margaery Tyrell ,finds ,Sansa Stark 
+Tyrell ,makes ,Sansa 
+Hound ,is brought before the ,Brotherhood 
+Gendry ,are kept hooded as ,Thoros of Myr 
+Hound ,balks ,that Eddard 
+about Robb Stark ,is ,that Robb 
+Samwell Tarly ,visits ,Gilly 
+Rast ,calls ,Craster 
+Mormont ,restrains ,Rast 
+Daenerys Targaryen ,arrives ,before Kraznys 
+Daenerys ,calls the ,Unsullied 
+Kraznys ,complains ,for Missandei 
+Drogon ,burns ,Kraznys The Unsullied 
+Tormund ,warns ,Jon 
+Tormund ,tells ,Jon 
+Ygritte ,tells ,Jon 
+Ser Jorah Mormont ,tells ,Ser Barristan Selmy 
+Barristan ,admits ,that Robert 
+Jorah ,says ,that Barristan 
+if Barristan ,knew ,that Jorah 
+Jorah ,is relieved ,that Barristan 
+while Jorah ,was defending ,Daenerys from Robert Baratheon 
+Brynden Tully ,punches ,Karstark 
+Robb ,executes ,Rickard 
+Lord Rickard ,says ,that Robb 
+Robb ,says ,Tywin Lannister 
+Robb ,shows ,Talisa 
+Roose ,is surprised ,that Jaime 
+Bolton ,calls ,for Qyburn 
+Brienne ,is ,in Harrenhal 
+Jaime ,warned ,Aerys 
+Nor ,did ,Aerys 
+Mad King ,ordered ,Jaime 
+Jaime ,speculates ,that King Aerys 
+Jaime ,finished ,Aerys 
+Hound ,vs ,Beric 
+Beric ,calls upon the ,Lord of Light 
+Targaryens ,built ,Dragonstone 
+Tywin ,explains that the ,Tyrells 
+Karstarks ,have cost ,Robb Stark 
+Theon Greyjoy ,murdered ,Robb 
+that Joffrey ,has made ,Sansa 
+Tyrion ,was ,At 
+that Tywin ,is the ,Hand 
+Lord Varys ,finds ,Lord Petyr Baelish 
+Anguy ,trains ,Arya Stark 
+Melisandre ,says the ,Brotherhood 
+that Melisandre ,has given the ,Brotherhood 
+Bolton ,tells ,Jaime 
+Jaime ,assumes ,that Brienne 
+Wall ,after having fled ,Craster Keep 
+Sam ,shows ,Gilly 
+Ygritte ,strikes the ,Wall 
+Orell ,decides ,that Tormund 
+after Robert Baratheon ,killed ,Rhaegar 
+Barristan ,says ,that Rhaegar 
+Tywin ,says ,that Roose 
+King Stannis Baratheon ,speaks ,with Melisandre 
+Jaime ,warns ,Brienne 
+Locke ,says ,that Jaime 
+Sam ,slays a ,White Walker 
+Sam ,suggests ,that Gilly 
+Tyrion ,speaks ,with Sansa 
+Yara ,see ,Theon 
+Theon ,tells ,Yara 
+Yara ,says ,Theon 
+Ramsay ,allows ,Reek 
+Lord Varys ,informs ,Tywin 
+Hound ,has been spotted in the ,Riverlands 
+Jaime ,has ,Tyrion 
+Jaime ,asks ,Tywin 
+Jaime ,speaks ,with Tyrion 
+Sansa ,planned ,Joffrey 
+Tywin ,scoffs ,at Tyrion 
+Meereenese Great Masters ,crucified ,on Daenerys 
+Ramsay Snow ,sends ,Reek 
+Town ,has arrived ,at Castle Black 
+Sam ,worries ,about Gilly 
+As Ser Barristan Selmy ,watches the ,Unsullied 
+Jorah ,spied ,on Daenerys 
+that Daario Naharis ,has captured ,Meereen 
+Cersei ,asks ,Oberyn 
+though Tywin ,admits the ,Lannisters 
+Brienne ,believes ,Sansa 
+though Petyr ,has ,Sansa 
+Lysa ,encourages ,Sansa 
+Clegane ,disparages ,Arya 
+Jon ,has ,Craster Keep 
+Melisandre ,does speak ,with Shireen 
+Roose Bolton ,arrives at the ,Dreadfort 
+North ,following ,Robb Stark 
+Roose ,dispatches ,Locke 
+Reek ,suggests ,that Jon Snow 
+Roose ,gives ,Ramsay 
+that Bran Stark ,had been warging ,into Summer 
+Jojen Reed ,clarifies ,that Summer 
+Bran ,has ,Hodor 
+Brienne ,presented ,before King Joffrey 
+Great Sept of Baelor ,conducted by the ,High Septon 
+if Joffrey ,is accusing ,Tyrion 
+that Qhorin ,tricked ,Mance 
+First Men ,entered ,Westeros 
+Mance ,calls ,Jon 
+Mance ,says that the ,Free Folk 
+Jon ,says ,that Aemon 
+Tormund ,asks ,if Jon 
+Tormund ,says ,that Ygritte 
+Raven ,says ,that Jojen 
+Ser Barristan Selmy ,warns ,Daenerys 
+Grey Worm ,reports ,that Drogon 
+that Jaime ,helped ,Tyrion 
+Brienne ,tells ,Arya 
+Brienne ,of working for the ,Lannisters 
+Arya ,into thinking ,that Brienne 
+Sansa ,escaping ,with Ser Dontos Hollard 
+whether Oberyn ,had helped ,Tyrion 
+Stannis Baratheon ,learns ,of Joffrey 
+at Castle Black ,after escaping ,Craster Keep 
+Mance ,reaches ,Craster Keep 
+Maester Aemon ,finds ,Sam 
+Sam ,promises ,Gilly 
+Sam ,brings ,Gilly 
+that Alliser ,needs ,Janos 
+Mag Mar Tun Doh Weg ,charges ,Castle Black 
+Sam ,with releasing ,Ghost 
+Styr ,picks ,Jon 
+Night Watch ,have repelled ,Mance Rayder 
+Sam ,tells ,Jon 
+Ice ,held by the ,Lannisters since Eddard Stark 
+Qyburn ,are ,in Cersei 
+Qyburn ,asks ,Cersei 
+Olenna ,are interrupted by ,Brienne of Tarth 
+Brienne ,tells ,Margaery 
+by Stannis ,following the ,Battle 
+Brienne ,expects ,Jaime 
+Styr ,suggests ,that Tormund 
+Qhorin ,wanted ,Jon 
+Slynt ,calls ,for Jon 
+Arya ,takes ,Needle from Polliver 
+Lommy ,by driving ,Needle 
+Daenerys ,speaks ,with Missandei 
+Ser Jorah ,tells ,Daenerys 
+Tyrion ,is approached ,by Oberyn Martell 
+Cersei ,showed ,Tyrion 
+Oberyn ,tells ,Tyrion 
+Cersei ,told ,Oberyn 
+Oberyn ,tells ,Tyrion 
+Daario ,dismisses the ,Second Sons 
+Selyse ,speaks ,with Melisandre 
+Sandor ,is ambushed ,by Biter 
+Brienne ,is surprised ,because Arya 
+Lysa Arryn ,is the ,Hound 
+Sansa ,is summoned ,by Lysa 
+Missandei ,teaches ,Grey Worm 
+Alliser Thorne ,admonishes ,Jon 
+Samwell Tarly ,is fretting ,about Gilly 
+that Sam ,told ,Jon about Bran 
+Locke ,brings ,Jon 
+that Tyrion ,named ,Jaime 
+Jaime ,tells ,Tyrion that Cersei 
+Jaime ,is taking ,Tyrion 
+Lady Olenna ,tells ,Margaery 
+Margaery ,insists ,that Olenna 
+Petyr Baelish ,of having ,Joffrey Baratheon 
+Sansa ,defends ,Tyrion 
+Baelish ,admits ,that Tyrion 
+King Landing ,before ordering ,Rast 
+Rast ,was taunting ,Ghost 
+Sansa ,refuses ,Littlefinger 
+Brynden Tully ,has recaptured ,Riverrun 
+Jon ,from pursuing ,Littlefinger 
+Podrick ,with securing ,Brynden 
+in Valyria ,before establishing the ,Free City of Braavos 
+Tyrion ,invites ,Kinvara 
+that Daenerys ,is The ,Prince That Was Promised 
+Euron ,admits killing ,Balon 
+while Yara ,was commanding ,Ironborn 
+Raven ,shows ,Bran 
+Leaf ,about creating the ,White Walkers 
+Raven ,tells ,Bran 
+Bran ,is ,at Winterfell 
+Night Watch ,stands ,behind Thorne 
+Jaime ,begins threatening the ,High Sparrow 
+Sparrow ,explains ,that if Jaime 
+After Ramsay ,suggests storming ,Castle Black 
+Roose ,warns ,Ramsay 
+Brienne ,fills ,Sansa 
+Ironborn ,held in the ,North 
+Balon ,tells ,Euron 
+Septa Unella ,enters ,Queen Margaery Tyrell 
+Margaery ,tells ,Loras 
+Cersei Lannister ,walks ,in on Grand Maester Pycelle 
+Olenna ,is horrified that the ,Sparrows 
+Kevan ,says ,that Tommen 
+Jaime ,suggests ,that Olenna 
+Sparrows ,into releasing ,Margaery 
+Eddison Tollett ,helps ,Jon Snow 
+Jon ,for leaving the ,Night Watch 
+Starks ,left ,Winterfell 
+Sansa ,are reunited at the ,Wall 
+Davos Seaworth ,asks ,whether Melisandre 
+Brienne ,warns ,Melisandre 
+Petyr ,accuses ,Royce 
+Royce ,accuses ,Baelish 
+that Robin ,is the ,Lord 
+Osha ,is brought ,before Ramsay Bolton 
+Osha ,had seduced ,Theon 
+Theon ,explains ,that Ramsay 
+Missandei ,defends ,Daenerys 
+Daario ,smashes ,Aggo 
+Dosh Khaleen ,gives ,Daenerys 
+with Theon ,hugging ,Sansa 
+Theon ,claims ,Sansa 
+Jorah ,are looking ,for Daenerys 
+Cersei ,asks ,Jaime 
+Nymeria ,offers ,Trystane 
+Ser Davos ,finds ,Jon 
+Davos ,asks ,if Edd 
+Ser Davos ,tells ,Thorne 
+Davos ,asks ,Jon 
+Alliser Thorne ,for bringing the ,Wildlings 
+Davos ,asks ,Melisandre 
+Bowen ,says ,Jon 
+Jon ,looks ,at Olly 
+Targaryen Kingsguard ,stand before the ,Tower 
+of Northmen ,led ,by Eddard Stark 
+Eddard ,tells ,Ser Arthur Dayne 
+Ser Arthur ,states ,that Rhaegar 
+Ser Arthur ,duels ,Eddard 
+Cersei ,wants ,Qyburn 
+Grand Maester Pycelle ,complains ,about Qyburn 
+Pycelle ,admits ,that Ser Gerold Hightower 
+over Dorne ,after eliminating ,House Martell 
+Kingsguard ,visits the ,High Sparrow 
+Tommen ,asks the ,High Sparrow 
+Tyrion ,asks ,Varys 
+Arya ,continues sparring with the ,Waif 
+Jaqen ,asks ,Arya 
+Umbers ,led ,by Smalljon Umber 
+Ramsay ,asks ,Smalljon 
+that Grand Maester Pycelle ,has summoned ,Kevan Lannister 
+Tormund ,seizes the ,Lord 
+Snow ,defied ,Stannis 
+Jon ,retrieves ,Longclaw 
+Jon ,strikes the ,White Walker 
+Waif ,tells ,Arya 
+Tyrion ,is surprised ,that Jorah 
+Doran ,asks ,if Areo 
+Petyr Baelish ,arrives ,in King 
+Lancel ,warns ,Baelish 
+King ,s ,Landing 
+King ,s ,Landing 
+Cersei ,into releasing ,Loras 
+Olenna ,warns ,Cersei 
+Sparrow ,interrogates ,Loras 
+Olyvar ,tells the ,High Sparrow 
+High Sparrow ,has ,Loras 
+Sansa ,is joined ,by Myranda 
+Sansa ,is ,Later 
+Reek ,gives ,Sansa 
+Cersei ,arrives at the ,Great Sept of Baelor 
+Cersei ,is approached ,by Lancel Lannister 
+Loras ,in bed ,with Olyvar 
+Hizdahr ,zo ,Loraq 
+Wise Masters ,have asked ,that Daenerys 
+Though Littlefinger ,told ,Lord Royce 
+Jon ,is discomfited ,by Melisandre 
+Mance ,stands ,before Stannis 
+Brienne of Tarth ,was warned by ,Podrick Payne of Stannis 
+Myranda ,threatens ,Sansa 
+Myranda ,tells ,Sansa that Ramsay 
+Waif ,grabs ,Arya as Jaqen 
+Ellaria Sand ,kisses ,Myrcella 
+Septa Unella ,enters ,Cersei 
+Cersei ,is brought before the ,High Sparrow 
+Qyburn ,suggests ,Cersei 
+Jon Snow ,tells ,Sam 
+Sam ,asks ,Jon 
+Targaryens ,disbanded the ,Faith Militant 
+Great Sept ,is blocked by the ,Faith Militant 
+Ser Bronn ,are on a ,Pentoshi 
+Jaime ,forced ,Varys 
+Bronn ,says ,that if Jaime 
+Lannister ,is ,in Dorne 
+Jorah ,was spying on ,Daenerys for Varys 
+Selyse ,is worried ,that Stannis 
+Stannis ,insists ,that Shireen 
+Dany ,speaks ,with Ser Barristan 
+Barristan ,scoffs ,that Rhaegar 
+Daenerys ,asks ,if Barristan 
+Jon ,reunites ,with Samwell Tarly 
+Doran ,asks ,Jaime 
+Jaime ,asks ,if Doran 
+Doran ,asks ,if Tommen 
+Bronn ,go ,with Jaime 
+Areo ,brings ,Ellaria 
+Doran ,gives ,Ellaria 
+Hizdahr ,zo ,Loraq 
+Hizdahr ,indicates ,that Daenerys 
+Daenerys ,takes ,Missandei 
+Sam ,gives ,Jon 
+Sam ,eulogizes ,Aemon 
+Stannis ,asks ,Melisandre 
+Doran ,has ,Areo Hotah 
+Bronn ,is singing The ,Dornishman Wife 
+Jorah ,is sold ,by Malko 
+Brienne ,searches ,for Sansa 
+Theon ,remains ,under Ramsay 
+Hizdahr ,zo ,Loraq 
+Aemon ,tells ,Jon 
+Night ,s ,Watch 
+Night ,s ,Watch 
+Sam ,tells ,Gilly 
+Night ,s ,Watch 
+Sam ,killed the ,White Walker 
+Stannis ,tells ,Ser Davos 
+Davos ,suggests waiting ,until Jon 
+Podrick ,thinks ,that Sansa 
+Brienne ,believes ,that Sansa 
+Sansa ,for murdering ,Bran 
+Roose ,has ,Walda 
+Roose ,tells ,Ramsay 
+King ,s ,Landing 
+Jorah ,are attacked by the ,Stonemen 
+Jorah ,tells ,Tyrion 
+Jorah ,tells ,Tyrion 
+Margaery ,are ,As Cersei Lannister 
+Margaery ,manipulates ,Tommen 
+in King ,s ,Landing 
+Cersei ,has ,Qyburn 
+Roose Bolton ,scolds ,Ramsay 
+Jon ,declines ,Stannis 
+Stannis ,suggests appointing ,Alliser Thorne 
+Lord Commander Jon Snow ,asks ,Sam about Maester Aemon 
+Lord Commander Snow ,assigns ,Janos Slynt 
+Slynt ,refuses ,Jon 
+Jon ,has ,Janos 
+Stannis Baratheon ,sees ,Jon 
+Arya ,is accosted by The ,Waif In Braavos 
+Waif ,using ,Arya Stark 
+Jaqen ,allows ,Arya 
+Red Priestess ,evangelizes ,in High Valyrian 
+Varys ,tells ,Tyrion 
+Arya ,arrives ,in Braavos 
+Arya ,waits outside the ,House 
+Arya ,knew ,as Jaqen 
+Cersei ,shows ,Jaime 
+Pycelle ,is outraged ,at Qyburn 
+Kevan ,is disgusted ,at Cersei 
+Sand Snakes ,are siding ,with Ellaria 
+Sansa ,denies ,Brienne 
+Brienne ,tells ,Podrick 
+Barristan Selmy ,tells ,Daenarys 
+Daenerys ,promises ,Ser Barristan 
+Shireen Baratheon ,teaches ,Gilly 
+Stannis ,shows ,Jon 
+Jon ,tells ,Stannis 
+Stannis ,makes ,Jon 
+by Khal Drogo ,have departed ,Pentos 
+Jon Snow ,has ,Winterfell 
+Eddard ,tells ,Jon 
+Robert ,is concerned that the ,Seven Kingdoms 
+Robert ,asks ,Eddard about Wylla 
+Catelyn ,decides ,that Ned 
+Tyrion ,seems impressed by the ,Wall 
+Joffrey ,saves ,Sansa 
+Arya ,throws ,Joffrey 
+Hound ,ran ,Mycah 
+Pyp ,holding ,Jon 
+Ser Rodrik Cassel ,intercept ,Robb 
+Khal Drogo ,disciplines ,Mago 
+Septa Mordane ,tells ,Sansa 
+that Eddard ,trusted ,Littlefinger 
+Eddard ,asks ,Varys 
+Princess Daenerys Targaryen ,marries ,Khal Drogo 
+Lady Catelyn Stark ,informs ,Eddard 
+Eddard ,realizes ,that King Robert 
+Jaime ,tells ,Tyrion 
+Lysa ,says ,that Jon Arryn 
+Drogo ,arrives ,in Pentos 
+Drogo ,arrives ,at Illyrio 
+Drogo ,gives ,Daenerys 
+Ser Rodrik ,met at the ,Inn 
+Joffrey ,asks ,Marillion 
+Lancel ,is naked ,in Cersei 
+Osha ,takes ,Bran 
+Rickon ,calls ,Shaggydog 
+that Jaime ,has been captured by the ,Starks 
+Renly ,have claimed the ,Iron Throne 
+Jon ,leaves ,Castle Black 
+Mormont ,tells ,Jon 
+Duur ,agrees ,that Daenerys 
+Ser Jorah ,believes ,that Daenerys 
+Riverrun ,is held by the ,Lannisters 
+that Bronn ,has been beyond the ,Wall 
+Tywin ,forced ,Jaime 
+Jaime ,is captured ,by Robb 
+Lord Commander Jeor Mormont ,gives ,Jon Snow 
+Sam ,takes ,Jon 
+Khal Drogo ,took fighting ,Mago 
+Jorah Mormont ,helps ,Daenerys 
+Jorah ,takes ,Daenerys 
+Varys ,insinuates ,that Sansa 
+King ,is being brought before the ,Great Sept of Baelor 
+Ser Ilyn Payne ,executes ,Eddard Stark 
+Arya ,has been rescued ,by Yoren 
+Ser Ilyn ,draws ,Eddard 
+Eddard ,explains ,that Sansa 
+Eddard ,threatens ,Lord Baelish 
+Littlefinger ,fetches ,Eddard 
+Old Nan ,tells ,Bran 
+Jeor ,asks ,for Tyrion 
+Aemon ,warns that the ,Stark 
+Jorah ,has heard ,of Rakharo 
+with Renly ,betting ,on Loras 
+Ser Loras ,declares ,Sandor 
+Illyrio ,suggests assassinating ,Eddard 
+while Arya ,asks ,Jory Cassel 
+King Robert ,tells ,Eddard that Daenerys Targaryen 
+Cersei ,takes ,Eddard 
+Littlefinger ,brings ,Eddard Stark 
+Eddard ,asks ,Littlefinger 
+Jon Arryn ,was searching ,for Robert 
+Jaime ,has heard ,of Tyrion 
+Eddard ,says ,that Tyrion 
+Samwell Tarly ,joins the ,Night Watch 
+Tyrion ,sympathizes ,with Bran 
+Sam ,joins ,Jon 
+Ser Alliser ,scolds ,Jon 
+Sam ,tells ,Jon 
+Daenerys ,sends ,Doreah 
+Daenerys ,confides ,in Mormont 
+Sansa Stark ,visits the ,Great Hall 
+Eddard ,comes ,across Arya 
+Arya ,asks ,whether Bran 
+Eddard ,decides ,that Littlefinger 
+Eddard ,realizes ,that Gendry 
+Lannister ,is a ,Lannister 
+Maester Luwin ,dismisses ,Theon 
+Ser Jorah ,tells ,Daenerys that Robert Baratheon 
+Robert ,telling ,Joffrey 
+that Lancel Lannister ,ensured the ,King 
+that Stannis ,is ,Renly 
+though Lord Eddard ,has ,Robert 
+Joffrey ,sits on the ,Iron Throne 
+Eddard ,gives ,Ser Barristan Selmy 
+Queen ,put ,Joffrey 
+Theon ,thinks ,that Robb 
+Theon ,tells ,Ros 
+Lysa ,complains ,that Bronn 
+Dothraki ,are chanting ,Rhaego 
+Jorah Mormont ,prevents ,Viserys 
+that Jorah ,wants ,Daenerys 
+Khal Drogo ,gives ,Viserys 
+Viserys ,is pleased ,until Drogo 

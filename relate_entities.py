@@ -3,9 +3,8 @@ import sys
 import csv 
 import re
 from nltk import tokenize
-import nltk
-from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import brown
+import nltk
 
 '''Variaveis globais'''
 path_episodes_output = "output"
@@ -28,65 +27,51 @@ def create_diretory(path):
     if not (os.path.isdir(path)):
         os.mkdir(path)
 
-'''Le o arquivo csv das entidades nomeadas e monta o dicionario para consulta.'''
-def generate_dict_entities():
-    mydict = {}
-    with open(path_entities_csv+'.csv', mode='r') as infile:
-        reader = csv.reader(infile, delimiter="\t")
-        for i,line in enumerate(reader):
-            entitiesList = line[0].split(',')
-            mydict[entitiesList[0]] = []
-            if len(entitiesList) > 1: mydict[entitiesList[0]] = entitiesList[1:]
-    return mydict
     
-'''Cria a tripla da relacao entre as entidades.
-Apenas se ha um verbo entre duas entidades. '''
-def create_triple_entity_relation(text_split, unigram_tagger):
-    lemmatizer = WordNetLemmatizer()
-    triples_line = []
-    for i in range(1, len(text_split)):
-        parts = text_split[i].split("<entidade:")
-        words_middle = parts[0].split()
+'''Remove caracteres especiais da string da relacao.'''
+def clean_entity(entity):
+    newEntity = ''
+    #Remove palavras que nao contem numeros ou letras (para casos com caracteres especiais)
+    for word in entity.split():
+        if word.isalnum(): newEntity += word+" "
+    return newEntity
 
-        if len(words_middle) == 1 and words_middle[0].isalnum() and "<entidade:" in text_split[i]:
-            word_lemm =lemmatizer.lemmatize(words_middle[0], 'v')
-            pos = unigram_tagger.tag([word_lemm])
-            if pos[0][1] == 'VB':
-                first = text_split[i-1].split(">")[1]
-                second = text_split[i].split(">")[1]
-                triples_line.append((first, word_lemm,second))
-    return triples_line
 
-'''Separa o texto por linhas, em cada linha separa os pedacos em que existem entidades.
-Para cada pedaco, se existir mais de uma entidade, gera a tripla correspondente.'''
-def generate_triples(content, unigram_tagger):
+def generate_relation_triples(ner):
     triples = []
-    line_content = tokenize.sent_tokenize(content)
-    for line in line_content:
-        #separa por entidade na linha
-        split_line = line.split("</entidade>")
-        if len(split_line) > 2 :
-            #verifica relacao entre elas
-            triples_line = create_triple_entity_relation(split_line, unigram_tagger)
-            if len(triples_line) > 0 : triples += triples_line
+    #RELATION: {<NE>+<V.*>+<NE>+}
+    grammar = '''
+            NE: {<NE_POS_NE|NE_IN_NE|PLACE|SIMPLE_NE>} 
+            RELATION: {<NE>+<IN>?<DT>?<V.*>+<IN>?<DT>?<NE>+}
+            '''
+    regex_parser = nltk.RegexpParser(grammar)
+    ner = regex_parser.parse(ner)
+
+    for t in ner:
+        if isinstance(t, nltk.tree.Tree):
+            #grammatical_form = t.label()
+            grammatical_form = t.node
+
+            if grammatical_form == 'RELATION':
+                ne1 = ""
+                middle = ""
+                ne2 = ""
+                findVerb = False
+                for x in t:
+                    if isinstance(x[0], unicode):
+                        findVerb = True
+                        middle += x[0]+" "
+                    else:
+                        if findVerb == False:
+                            for y in x[0]:
+                                ne1 += y[0]+" "
+                                ne1 = clean_entity(ne1)                     
+                                
+                        else:
+                            for y in x[0]:
+                                ne2 += y[0]+" "
+                                ne2 = clean_entity(ne2)
+                if ne1 != '' and middle != '' and ne2 != '':
+                    triples.append((ne1, middle, ne2))
     return triples
 
-def do_main():
-    triples = []
-    brown_tagged_sents = brown.tagged_sents()
-    unigram_tagger = nltk.UnigramTagger(brown_tagged_sents)
-    #le todos os arquivos    
-    seasons = os.listdir(path_episodes_output)
-    for season in seasons:
-    	if "season" in season:
-            path_season = path_episodes_output+'/'+season+'/'
-            files = os.listdir(path_season)
-            for episode in files:
-                with open(path_season + episode) as f:
-                    #separa por linha
-                    content = f.read()
-                    triples += generate_triples(content, unigram_tagger)
-    
-    write_related_entities_in_csv(triples)
-if __name__ == "__main__":
-    do_main()

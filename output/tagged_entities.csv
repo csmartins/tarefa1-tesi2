@@ -6,7 +6,8 @@ place,Benjen
 place,Star
 place,Stark
 other,Red Fork
-person,Leaf
+other,For
+other,Leaf
 place,Winter
 place,Baelish At Winterfell
 place,Sack Winterfell
@@ -14,56 +15,57 @@ place,Winterfell
 place,Lands Always Winter
 place,Stark Winterfell
 other,Rat Cook
+other,Unknown
 other,Black Cliffs
 other,Iron Islands
-place,Stark Valyrian
-place,Valyrian
-place,Valyria
+other,Stark Valyrian
 other,Denys Mallister
 other,Lannisters
-person,Caleotte
-person,Bloody Hand
-person,Hand
+other,Caleotte
+other,Bloody Hand
+other,Hand
 other,Aerys Targaryen
 other,Aerys
 other,Mad Aerys Targaryen
 place,Sansa Robb
 place,Robb
 place,Sansa
-place,Jon Sn
-place,Jon Snow
+other,Burn
 other,Aware
 other,Free Folk
-other,Folk
-person,Red Wedding
+other,Red Wedding
 other,Free City Qohor
 other,Free City Volantis
 other,Free City Braavos
 other,Free City Pentos
 other,Westerlands
-person,Anguy
+other,Anguy
 other,Siege Old Wyk
 other,Widow Wail
 other,Wolkan
+place,Bridge Volantis
+place,Volantis
 place,Balon King
 place,King
 place,Balon
 place,Flea Bottom
-person,Brother Lancel
+other,Brother Lancel
+other,Brother
+other,Lancel
 other,Second Sons
 other,Sons
 other,Son
 other,Poppy
 other,Godswood
-person,Warlocks Qarth
-person,Qarth
-person,War
+other,Warlocks Qarth
+other,Qarth
+other,War
 place,Blackwater Bay
 place,Blackwater
 other,Mazins
-person,Lorren
-place,Lhazareen
-place,Lhazar
+other,Fennez
+other,Fennesz
+other,Red Priestess
 other,Shireen Greyscale
 other,Greyscale
 place,Hardhome
@@ -71,19 +73,21 @@ place,Melisandre
 place,Melisandre God
 other,Sack
 other,Sick
+other,Back
 other,Sack Astapor
 other,Thoughtful
 other,Tullys
 other,Sands
 other,Hands
-person,Yezzan
+other,Yezzan
 place,Renly Baratheon
 place,Renly
-person,Shireen Baratheon
-person,Shireen House Baratheon
-person,Shireen
-person,Dany Dothraki
-person,Dany
+other,Morghulis
+other,Shireen Baratheon
+other,Shireen House Baratheon
+other,Shireen
+other,Dany Dothraki
+other,Dany
 other,Orson
 other,Baelor
 house,House Reed
@@ -94,423 +98,422 @@ other,Crow
 other,Crownlands
 other,Mud Gate
 other,Willas Bracken
-person,Rast
-person,Robin Arryn
-person,Robin
+other,Rast
+other,Robin Arryn
+other,Robin
 other,Distraught
-person,Commander
-other,Rides
+other,Commander
 other,High Priestess
-other,High
 other,Priestess
 place,Tyrion Lannister
 place,Tyrion
-person,Bert
-person,Dragon Queen
-person,Queen
-person,Dragon
+other,Bert
+other,Dragon Queen
+other,Queen
+other,Dragon
 place,Samwell Tarly
 place,Samwell
 place,Sam
 other,Stranger
-person,Beric Dondarrion
-person,Dondarrion
-person,Beric
+other,Beric Dondarrion
+other,Dondarrion
+other,Beric
 other,Titan Bastard
+other,Wylla
+other,Wyl
 house,House Stark
 other,Terrified
+other,Alone
 other,Hollow Hill
 other,Hill
-person,Reek
-person,Umber
-person,Jon Umber
-person,Umbers
-person,Greatjon Umber
+other,Reek
 other,Harpy Son
 other,Harpy
 other,Jhiqui
 other,Belicho Paenymion
-other,Valahd
+place,Valahd
+place,Vala
 other,Gift
 other,Light
 other,Wight
 other,Sight
+other,Thin Man
+other,Thin
 other,Wun Wun
-person,Maggy
+other,Hot Pie
+other,Pie
 other,Glover
 other,Glovers
 other,Targaryens
 other,Stone Men
-other,Men
 other,Rivermen
+other,Delighted
 other,Dead
-person,Areo Hotah
-person,Areo
-person,Hotah
+other,Areo Hotah
+other,Areo
+other,Hotah
 place,Cersei Lannister
+place,As Cersei Lannister
 place,Cersei
 other,Farther
 other,Father
-other,First Sword Braavos
-person,Syrio Forel
-person,Syrio
-other,Dismissive
-person,Mountain
-person,Brienne Tarth
-person,Brienne
-person,Dontos Hollard
-person,Dontos
+other,Syrio Forel
+other,Syrio
+other,Eraz
+other,Mountain
+other,Mountain That Rides
+other,Brienne Tarth
+other,Brienne
+other,Yunkish
 other,Skirling Pass
 other,Long Bridge
-other,Long Bridge Volantis
 place,Ygritte
-person,Janos Slynt
-person,Janos
-person,Slynt
+other,Janos Slynt
+other,Janos
+other,Slynt
 other,White Rat
 place,Moat Cailin
 other,Akho
-person,Vale Arryn
-person,Vale
+other,Vale Arryn
+other,Vale
 other,Armeca
 house,House Arryn
 other,Anara
 place,Grand Pycelle
 place,Pycelle
-person,Sandor Clegane
-person,Clegane
-person,Sandor
+other,Watch Thorne
+other,Sandor Clegane
+other,Clegane
+other,Sandor
+other,Sandor Hound Clegane
+other,Hound Sandor Clegane
 place,Karl Tanner
 place,Karl
-other,Daenerys Unsullied
-other,Unsullied
+other,Drowned Men
 place,Stannis Baratheon
 place,Stannis
+other,Eyrie High
+other,Eyrie
+other,Robert Stannis
 place,Stone Mill
+other,Coming
 other,Lanna
 other,Pits
+other,Summary
 house,House Martell
 house,House Martell Dorne
-other,Thin Man
-other,Thin
-place,Littlefinger
+other,Dontos
+other,Queensguard
+other,Queensgard
 other,Piggy
-person,Talisa
-person,Talisa Maegyr
-person,Talisa Volantis
 other,River Trident
+other,Trident
 other,Night Watch
+other,Watch
 other,Night
 other,Nights Watch
 other,Night Watchman
-person,Sansa Stark
+other,Lysa Arryn
+other,Sansa Stark
 place,Pentos
 place,Pentoshi
-person,Daario Naharis
-person,Daario
+other,Daario Naharis
+other,Daario
 other,Ralf Kenning
 other,Mad King
 other,Mad
-person,Locke
-person,Gared
-other,Sapphire Isle
-person,Order Maesters
-person,Maester
-person,Pyke
-person,Siege Pyke
-person,AND Wylis
-person,Wyl
-person,Wylis
+other,Locke
+other,Gared
+other,Down
+other,Pyke
+other,Siege Pyke
+other,Stonemen
 place,Mero
 place,Moro
 other,Northeners
 other,Northerners
+other,Davos An History Aegon
 other,Children
 other,Wolf Bread
-person,Iron Throne
-person,Throne
-person,Iron
+other,Iron Throne
+other,Throne
+other,Iron
 other,Shadow Lands
-person,Septa Unella
-person,Unella
+other,Septa Unella
+other,Sept
 other,Missandei Naath
 other,Naath
 other,Regent
 other,Liberation
-person,Starks
+other,Starks
 other,Runestone
 other,Paramount
-person,Orell
-place,Pyp
-place,Pypar
-person,Blackmont
+other,Orell
+other,Atop
+other,Blackmont
 other,Nightfort
 place,Mycah
-person,Rickon Stark
-person,Rickon
+other,Rickon Stark
+other,Rickon
 other,Kovarro
 other,Rhaegar Targaryen
 other,Crown Rhaegar Targaryen
 other,Rhaegar
-other,That Was
-other,Was
 other,Battle Castle Black
-other,Sumai
-person,Tobho Mott
-person,Mott
+other,Hound Clegane
+other,Hound
+other,Tobho Mott
+other,Mott
 other,Ironborn
 other,Daisy
-other,Furious
-other,Curious
 other,Banners
 other,Brotherhood Without Banners
-person,Matthos Seaworth
-person,Matthos
-place,Red Temple Volantis
-place,Volantis
-place,Temple
-other,Master Whisperers
-place,Drogo
-place,Drogon
-place,Drogos
+other,Matthos Seaworth
+other,Matthos
+other,Leave
 other,Old Ghiscari
 other,Ghiscari
 other,Aunt Lyanna
-place,Yohn
-place,Yohn Royce
-person,Great Sept
-person,Sept
-person,Great Sept Baelor
+other,Great Sept
+other,Great Sept Baelor
 other,Alayne
-person,Lancel Lannister
-person,Lancel
-person,Alton Lannister
-person,Alton
-other,One
+other,Lancel Lannister
+other,Alton Lannister
+other,Alton
 other,Guard
-other,Throne Room
+other,At Karl
+other,At
 other,Unafraid
-other,Cripples
+place,Jaqen H
+place,Jaqen
 other,Beyond
-person,Jory Cassel
-person,Jory
-other,Garden Bones
-other,Bones
+other,Jory Cassel
+other,Jory
+other,Forced
+other,Eye
+other,Targaryen Conquest
+other,Targaryen
 other,Ternesio Terys
-person,Onion Knight
+place,Razdal
+place,Wise Master Razdal
+other,Onion Knight
+other,On
 place,Yoren
-other,Rhaenys
+other,Covered
 other,Red Comet
-other,Bird
 other,Prendahl
 place,Braavosi
 place,Braavos
 other,Dragonglass
-person,Melara Hetherspoon
-person,Melara
+other,Melara Hetherspoon
+other,Melara
 other,Master War
-person,Gerold Hightower
-person,Gerold
-person,Aeron Greyjoy
-person,Aeron
-other,Stallion
+other,Gerold Hightower
+other,Gerold
+other,Aeron Greyjoy
+other,Aeron
 house,House Baratheon Dragonstone
 house,Dragonstone
-place,Landing
+other,Landing
+other,Who Lost
 place,Battle Oxcross
 place,Oxcross
 other,Conquer
 other,Conqueror
-other,Queensguard
-other,Queensgard
 other,Rhaego
 other,Castle Stokeworth
 other,Convinced
-person,Mossador
-other,Robert greet
+other,Grace
+other,Graces
+other,Mossador
+other,Walk Punishment
+other,First His Name
 other,Weirwood
+other,Fearful
 other,Wisdom Hallyne
 other,Hallyne
 other,Long Farewell
 place,Varys
 other,Water Dancing
 other,Greyguard
-other,Sissy
+other,Intrigued
 other,Lhara
+other,Aboard
 other,Mother
 other,Mother Dragons
-person,Fennez
-person,Fennesz
+other,Lorren
 other,Battle Winterfell
 other,Elia Martell
 other,Elia
+other,Martell
 house,House Reyne Castamere
 other,Torrhen Square
 place,Jorah Mormont
 place,Jorah
 place,Mormont
-place,Ramsay Bolton
-place,Ramsay
+other,Dornish Lords
+other,Lord
+other,Dornish
+other,Lords
 place,Olly
 other,Sow
 place,Robb Stark
 place,North Robb Stark
-person,Yara Greyjoy
-person,Yara
+other,Yara Greyjoy
+other,Yara
+other,Greyjoy
 house,House Bolton
-house,House
 house,Bolton
 other,Mikken
-other,Wildfire
-person,Ghost
+place,Kraznys Unsullied
+place,Unsullied
+place,Kraznys
+place,Ghost
 other,Faith Militant
 other,Faith
 other,Rorge
-person,Meera Reed
-person,Meera
+other,Meera Reed
+other,Meera
+other,Sumai
+other,Anyone
 place,Savo
-other,Crying
 other,Lannister Camp
 other,Camp
-person,Waif
-person,Waif In Braavos
-person,Thoros
-person,Thoros Myr
+other,Waif
+other,Waif In Braavos
 other,Common Tongue
-other,Common Tongue Westeros
-house,House Mormont
+other,Tongue
+other,Tysha
 other,Undeterred
-other,Quickly Tyrion
-person,Balon Greyjoy
-place,Kraznys
+other,Balon Greyjoy
 other,Tycho Nestoris
 other,Tycho
 place,Bran Stark
 place,Bran
-person,Moon Door
+other,Moon Door
 other,Sweetrobin Arryn
 other,Loraq
-person,Old Nan
-person,Old
+other,Saddened
+other,Old Nan
+other,Old
 other,Cerwyns
 other,Battle Ashford
+other,This
+place,Yohn Royce
+place,Yohn
 other,Old Tongue
-person,Viserys Targaryen
-person,Viserys
 place,Qhorin Halfhand
 place,Qhorin
 place,Halfhand
 place,Sunspear
 other,Egg
+other,Egg Aegon V
 other,En
-other,Enraged
+other,Storm End
 place,Missandei Daenerys
 place,Daenerys
 place,Missandei
 other,Axell Florent
-person,Olenna Tyrell
-person,Olenna
-person,Tyrell
-person,Nymeria Sand
-person,Nymeria
-person,Nym
+other,Olenna Tyrell
+other,Olenna
+other,Nymeria Sand
+other,Nymeria
+other,Nym
 other,Water Gardens
 other,Water Gardens Dorne
 other,Gardens
 other,Mighty
 other,Rickard Stark
-person,Rhaegal
-person,Mance Rayder
-person,Rayder
-person,Mance
-person,Red Priest
-person,Red Priestess Melisandre
-person,Priest
-person,Red Priestess
-person,High Red Priestess
-person,Jamie
+other,Rickard
+place,Rhaegal
+other,Mance Rayder
+other,Rayder
+other,Mance
+other,Red Priest
+other,Red Priestess Melisandre
+other,High Red Priestess
+other,Zalla
+other,Calla
 other,Prologue
 other,Hugh
-person,Gilly
+other,Gilly
 other,Imp
-person,Karsi
+other,Karsi
 other,Stiv
 other,Black Cells
 other,Karstarks
-person,Dagmer Cleftjaw
-person,Dagmer
-place,Westeros
-place,Westoros
-place,Conquest Westeros
-place,Westerosi
-other,Mormonts
+other,Dagmer Cleftjaw
+other,Dagmer
 place,Tywin Lannister
 place,Tywin
+other,Tied
 place,Whent Harrenhal
 place,Harrenhal
 other,Drowned God
 other,God
-person,Walder Frey
-person,Lords Walder Frey
-person,High Septon
-person,Septon
+other,Walder Frey
+other,Acting Hand
 place,Casterly Rock
-person,Red Keep
+other,Red Keep
+other,Keep
 other,Crane
-person,Jeor Mormont
-person,Jeor
+other,Jeor Mormont
+other,Jeor
 other,Neck
-place,Ned Stark
-place,Ned
+other,Milk
+other,Master Whisperers
 other,Aggo
 other,Iggo
 place,Oberyn Martell
 place,Oberyn
 place,Dothraki Sea
+place,Dothrak
 place,Dothraki
-person,Roose Bolton
-person,Roose
+other,Roose Bolton
+other,Roose
 other,Dornishman Wife
-other,Dornish
 other,Doom Valyria
-place,Lyanna Stark
-place,Lyanna
+other,Lyanna Stark
 place,Crasters Keep
 place,Craster
 place,Craster Keep
-place,Keep
 place,Lysa Tully
 place,Lysa
 place,Tully
 place,Lys
 other,Karlon Stark
-other,Riverlords
-person,Septa Mordane
-person,Mord
-other,Drunk
-person,Oldtown
-person,Euron Greyjoy
-person,Greyjoy
-person,Euron
+other,Exhausted
+other,High Septon
+other,Septon
+other,Shadow Tower
+other,Shadow
+other,Oldtown
+other,Euron Greyjoy
+other,Euron
+other,Qartheen
 other,Mutiny
-person,Kinvara
+other,Kinvara
+place,Pypar
+place,Pyp
+other,Amidst
 other,Stormlands
-other,Storm
 other,Crag
 other,Walda Bolton
 other,Walda
-person,Amory Lorch
-person,Lorch
-person,Amory
+other,Amory Lorch
+other,Lorch
+other,Amory
 place,Vaes Dothrak
 other,Baratheons
 other,NORTH
-person,Loboda
+other,Loboda
 other,Mandon Moore
 other,Mandon
 other,Old Gods
-other,Gods
+place,Ned Stark
+place,Ned
 place,Highgarden
+other,Undaunted
 other,Mhaegen
 place,Eddard Stark
 place,Eddard
@@ -518,112 +521,126 @@ other,Painted Table
 other,First Men
 other,Ask
 other,First Ranger
-person,Arya Stark
-person,Arya
+other,Arya Stark
+other,Arya
+other,Arya Stark Baelish
 other,Joyeuse
-place,Riverrun
-place,Astapor
-person,Night King
-place,Gendry
+place,Ramsay Bolton
 other,Stony Shore
-person,Mag Mar Tun Doh Weg
-person,Mag
+other,Night King
+place,Gendry
+other,Frozen
+other,Mag Mar Tun Doh Weg
+other,Mag
 other,Jafer Flowers
 other,Flowers
-person,Brusco
+other,Brusco
 other,Gold Dragons
-other,Dragons
 other,Protector
 other,Vance Corbray
 other,Corbray
 other,Black Rat
 other,Unburnt
 other,Chamber
+other,Armed
+other,Fuck
 other,Longclaw
-person,Torrhen Karstark
-person,Torrhen
-person,Kingsmoot
+other,Torrhen Karstark
+other,Torrhen
+other,Awoken
+other,Kingsmoot
 other,Thirteen
 other,Lysene
-place,Tommen Baratheon
-place,Tommen
-other,Milk
+other,Tommen Baratheon
+other,Jon Umber
+other,Umber
 place,Tyene Sand
 place,Tyene
 place,Jon Arryn
-place,A
 place,Arry
 place,Arryn
 place,Jon
-person,Smalljon
+other,Infuriated
+other,Smalljon
 place,Illyrio Mopatis
 place,Magister Illyrio Mopatis Pentos
 place,Illyrio
-person,Barra
+other,Barra
 place,Master Mighdal
-place,Mighdal
 other,Nakloz
-person,Wildlings
-person,Wildling
+other,Wildlings
+other,Wildling
 place,Dorne
-person,Targaryen Conquest
-person,Targaryen
 other,Great Hall
 other,Great
-other,Hall
 other,Great Masters
 other,Masters
 other,Meereenese Great Masters
+other,Thoros Myr
+other,Thoros
 other,Bianca
-person,Qotho
+other,Order Maesters
+other,Maester
+other,Qotho
 place,Davos Seaworth
 place,Davos
-other,Cryptically
-person,Tickler
+other,Tickler
 other,White Sword Tower
 other,Sword
-other,Strong
-other,Against Cersei
+other,Quaithe Asshai
+other,Asshai
+other,Quaithe
 other,Hearth
 other,Heart
-person,North Edit
-person,North
+other,North Edit
+other,North
+other,Nor
+other,No
 other,Crossroads Inn
 other,Inn
-other,Crossroads
-person,Myranda
-other,Asshai
+other,In
+other,Myranda
 other,Good Masters
-person,Marillion
-person,Grey Wind
+other,Good Masters Astapor
+other,Marillion
+other,Grey Wind
 place,Olyvar Frey
 place,Frey
 place,Olyvar
-person,White Walkers
-person,Walker
-person,White
-person,White Walker
-person,Walkers
+other,Quick
+other,White Walkers
+other,Walker
+other,White
+other,White Walker
+other,Walkers
+other,Having
+other,Whispering Wood
 place,Podrick Payne
 place,Podrick Payne Stannis
 place,Podrick
 place,Pod
-person,Brynden Tully
-person,Brynden
+other,Brynden Tully
+other,Brynden
+other,Brynden Blackfish Tully
+other,Septa Mordane
+other,Mord
 place,Small Council
 place,Council
 place,Mace Tyrell
 place,Mace
 other,Great Ranging
 other,Ran
-person,Wall
-person,Tall
+other,Riverlords
+place,Xaro Xhoan Daxos
+place,Xaro
 other,Rhaenyra
 place,Myrcella Baratheon
 place,Myr
+place,My
 place,Myrcella
-person,Hound
+place,Littlefinger
 other,Volantene
+other,That Was Promised
 house,House Lannister
 other,Arbor
 other,Gods Laws
@@ -632,381 +649,416 @@ other,Builder
 other,First Builder Othell Yarwyck
 other,First
 other,Stormcrows
+place,Lhazar
+place,Lhazareen
+other,Southerners
+other,South
 other,Angered
 other,Eastern Road
 other,East
+other,Rhaenys
+other,My Lord
 place,Karhold
 other,Wolfswood
 other,Dreadfort
 other,Shaggydog
 place,Low Valyrian
-person,Duur
-person,Mirri Maz Duur
-person,Irri
-person,Howland Reed
-person,Howland
+place,Valyrian
+place,Valyria
+other,Duur
+other,Mirri Maz Duur
+other,Umbers
+other,Irri
+other,Howland Reed
 other,Citadel
 place,Aemon Targaryen
 place,Aemon
 other,Bewildered
 place,Catelyn Stark
 place,Catelyn
-place,Cat
 place,Bronn
 other,Ghezn
 other,Uncle Benjen
 other,Mummer Ford
-person,Martyn Lannister
-person,Martyn
+other,Little Bird Spies
+other,Martyn Lannister
+other,Martyn
 other,Annoyed
-person,Hizdahr
+other,Hizdahr
 other,Royal Fleet
 other,Royal
-other,Shadow Tower
-other,Shadow
-person,Ramsay Snow
+other,Unexpected
+place,Ramsay Snow
+place,Snow
+place,Ramsay
 other,Blessed
+other,Greatjon Umber
+other,Greatjon
 other,Woods
-person,Rickard Karstark
-person,Karstark
-person,Rickard
+other,Direwolves
+other,Rickard Karstark
+other,Karstark
 other,Fist
-person,Hot Pie
-person,Boltons
+other,Maggy
+other,Boltons
 place,Qyburn
 place,Qyburn Grand Maester
 place,Jon Snow
-place,Snow
-other,Deeply
 other,Water Dancer
 other,Dance
 other,Braavosi Water Dancer
 other,Oathkeeper
-person,Ice Cells
-person,Ice
-other,Greatjon
+other,Ice Cells
+other,Ice
 other,Mole Town
+other,Samwall
 other,Greyjoys
+place,Drogon
+place,Drogo
 other,Inside Bran
+other,Great Other
 other,Conclave
 other,Maiden Fair
 other,Green Fork
-other,Graces
+other,Green Fork Trident River
 place,Biter
-person,Osha
+other,Wall
+other,Tall
+other,Osha
+other,Stick
 place,Gregor Clegane
 place,Gregor
+other,Wylis
 place,Arthur Dayne
 place,Arthur
 place,Dayne
 other,Spice King
+other,Shaken
 other,Dolorous Edd
 place,Yunkai
 other,Guild
-place,Valar Morghulis
-place,Vala
+other,Westoros
 other,Free Cities
-other,Cities
 other,Kingslayer
-person,Seven Kingdoms
-person,Kingdom
-person,Seven
-person,Kingdoms
+other,Seven Kingdoms
+other,Kingdom
+other,Seven
+other,Kingdoms
 other,World
+other,Stallion That Mounts World
 place,Essos
-person,Doreah
-person,Selwyn Tarth
-person,Selwyn
-person,Tarth
-person,City Watch
-person,City
-person,Watch
-person,Barristan Selmy
-person,Barristan
-person,Selmy
+other,Doreah
+other,Selwyn Tarth
+other,Selwyn
+other,City Watch
+other,City
+other,Barristan Selmy
+other,Barristan
+other,Selmy
+other,Meerenese Pit Fighter
 other,Viserion
-person,Red Priestess
-other,Tired
+other,Ordered
 place,Lyanna Mormont
-person,Selyse Baratheon
-person,Selyse
-person,Edmure Tully
-person,Edmure
-person,Kingsroad
+place,Lyanna
+other,Selyse Baratheon
+other,Selyse
+other,Edmure Tully
+other,Edmure
+other,Sparrows
+other,Kingsroad
 place,Ellaria Sand
 place,Ellaria
-person,Grenn
-person,Hodor
+other,Grenn
+other,Hodor
 other,Wise Masters
 other,Wise
 other,Wise Masters Yunkai
 other,Battle
 other,Twins
-person,Old Bear
-person,Bear
-person,Hoster Tully
-person,Hoster
-person,Lommy Greenhands
-person,Lommy
+other,Old Bear
+other,Hoster Tully
+other,Hoster
+place,Riverrun
+other,Lommy Greenhands
+other,Lommy
 place,Luwin
 place,High Valyrian
+other,Furthermore
 other,Fingers
 other,Satisfied
-person,Gold Cloaks
+other,Sapphire Isle
+other,Talisa Volantis
 other,Capital
-person,Polliver
+other,You
+other,Polliver
 other,Book Brothers
 other,Book
+other,Red Flea
 other,Qaggaz
-other,Walk Punishment
-person,Brotherhood
+other,Disgusted
+other,Underneath
+place,Tyrells Margaery
+place,Margaery
+place,Tyrells
+other,Brotherhood
 other,Broken Tower
 other,Tower
+other,Sansa Meanwhile
 other,Long Night
-person,Norvosi
-place,Meereenese
-place,Meereen
+other,Norvosi
 other,Riverlands
 other,Great Pyramid
 other,Steelshanks
 place,Rodrik Cassel
 place,Rodrik
 place,White Harbor
-house,House Karstark
-person,Morning
-other,Tysha
-other,Eraz
+other,Myrcella Lannister
+other,Sissy
 place,Meryn Trant
 place,Meryn
 place,Trant
 place,Meryn Trant Meryn Trant
 place,Lordsport
 other,Salt Throne
-person,Kevan Lannister
-person,Kevan
-person,Bowen Marsh
-person,Bowen
+other,Kevan Lannister
+other,Kevan
+other,Bowen Marsh
+other,Bowen
 place,Petyr Baelish
+place,Petyr Littlefinger Baelish
 place,Baelish
 place,Petyr
-person,Myrnada
 place,Robert Baratheon
-place,Robert
 place,Robert Baratheon Kingsguard
+place,Robert
 other,Undying
-person,Sand Snakes
+other,Sand Snakes
 place,Willem Lannister
 place,Will
 place,Willem
 place,Lannister
 other,Heward
-person,Summer Isles
-person,Summer
-person,Waymar Royce
-person,Waymar
-person,Royce
+other,Summer Isles
+other,Summer
+other,Waymar Royce
+other,Waymar
+other,Royce
 place,Jojen Reed
 place,Jojen
 place,Reed
 place,Jaime Lannister
 place,Jaime
 other,Martells
-person,Faceless Man
-person,Faceless Men
+other,Faceless Man
+other,Faceless Men
 other,Othor
-person,Five Kings
 house,House Black
-place,Xaro
-person,Vardis Egen
-person,Vardis
-person,Hobb
-person,Mago
+other,Vardis Egen
+other,Egen
+other,Vardis
+other,Hobb
+other,Mago
 house,House Tyrell
+house,House
+house,Tyrell
 other,Rains Castamere
 other,Narrow Sea
-house,Houses Jon
-other,Savior
+other,Apart
 other,Oh
 house,House Tarth
-other,Dracarys
+house,Tarth
+other,Morning
 other,Freys
 place,Doran Martell
 place,Doran Martell Dorne
 place,Doran
-place,Martell
-other,Vhagar
+other,Stallion Who Mounts
+other,Accompanied
 other,Shagga
+place,After Tommen
+place,Tommen
 other,Reeds
-place,Jaqen
 other,Smoking Sea
+other,Within
 other,Ornela
 other,Great Pit
 other,Pit
 other,Great Pit Daznak
 other,Jaime Dornish
-person,Quaithe
-person,Quaithe Asshai
-other,Cleon
+other,Bones
+other,Garden Bones
 other,Kingswood
-other,Aegon V
-other,Aegon
 other,Fine
 other,Prince
-person,Targaryen Kingsguard
-person,Kingsguard
-person,Lothar Frey
-person,Lothar
+other,Targaryen Kingsguard
+other,Kingsguard
+other,Lothar Frey
+other,Lothar
 other,Army
 other,Chosen
 other,Forlorn
 other,Greensight
-person,Grey Worm
+other,Grey Worm
 other,Brandon
 other,Daznak Pit
+place,Tongue Westeros
+place,Westeros
 other,Genna
 place,Castle Black
 other,Berserk
 other,Titan Braavos
 other,Marei
+other,Throne Room
+other,Temple
+other,Red Temple Volantis
 other,Kayla
-other,Columns
-other,Discouraged
+other,Let
+other,Filled
 other,Aegon Targaryen
-person,Pit Fighter
+other,Aegon
 other,Afterward
-person,Othell Yarwyck
-person,Yarwyck
+other,Othell Yarwyck
+other,Yarwyck
 other,Boy
 other,Slaver Bay
-other,Slaver
 other,Slavers Bay
-person,Whispering Wood
+other,Look
 other,Old Valyria
 other,Townshall
-other,Wylla
+other,Vhagar
 place,Alliser Thorne
 place,Alliser
 place,Thorne
-person,Bear Island
-person,Tyrells
-person,Calla
-person,Zalla
-person,Raven
+other,Bear Island
+other,Bear
+other,Cleon
+other,First Sword Braavos
+other,Raven
 other,Malko
-person,Rakharo
+other,Rakharo
 other,Lannister Monster
-person,Aemon Sam
+other,Aemon Sam
 other,Boros Blount
 other,Maegor Holdfast
-person,Dosh een
-person,Dosh
+other,Hold
+other,Dosh een
+other,Dosh
 other,Tower Joy
 other,Captain
 other,Haunted Forest
 other,Forest
 other,Frostfangs
 other,Iron Fleet
-person,Eddison Tollett
-person,Eddison
-person,Edd
+other,Wildfire
+other,Eddison Tollett
+other,Eddison
+other,Edd
 other,Great Houses
-other,Houses
-person,Red Waste
-person,Shae
-person,High Sparrow
-person,Sparrow
+other,Fascinated
+other,Red Waste
+other,Shae
+other,High Sparrow
+other,Sparrow
+other,Hollard
 place,Black Walder
 place,Black Walder Rivers
 place,Walder
+other,Frustrated
+other,Lives Four Kings
 other,Trident River
-other,Trident
-other,Fork Trident River
-person,Eyrie
-person,Eyrie High
-other,Robert jokingly
+other,Viserys
+other,Jamie
+other,Upon
+other,Growing Strong
 house,House Frey
-person,Blackfish
-person,Roslin Frey
-person,Ros
-person,Roslin
+other,Blackfish
+other,Roslin Frey
+other,Ros
+other,Roslin
 other,Warden
-person,Xhoan Daxos
-person,Xaro Xhoan Daxos
-person,Iron Bank
-person,Bank
-person,Iron Bank Braavos
+other,Iron Bank
+other,Bank
+other,Iron Bank Braavos
 other,Tears Lys
-person,Lysa Arryn
+place,Astapor
 other,Sworn Brothers
-other,Brother
 other,Brothers
 other,Robert Rebellion
+other,Brutal
 other,Hall Faces
+other,Jon We
 other,Bloody Gate
 other,Castle
-other,Famished
 other,Tourney
+other,Heavy
 other,Battle Stone Mill
-person,Daenerys Targaryen
-person,Daenerys Stormborn House Targaryen
-person,Daenarys
+other,Daenerys Targaryen
+other,Daenerys Stormborn House Targaryen
+other,Daenarys
 other,Master Coin Mace Tyrell
 other,Joanna
 other,Silent Sisters
-other,Sisters
-other,Sister
+other,Silent Sister
+other,Obedient
 other,Master Laws
 house,House Targaryen
+other,Mollified
 other,Greyjoy Rebellion
 other,Realm
 other,Bastard Girls
 other,Little Sam
-other,Outside
-person,Cressen
+other,Watchman
+other,Talisa Maegyr
+other,Talisa
+other,Cressen
 other,Viper
 other,New
-place,Wise Master Razdal
-place,Razdal
-person,Pyat Pree
-person,Pree
+other,Westerosi
+other,Pyat Pree
+other,Pree
 other,Bannen
 other,Night Lands
 other,Anya Waynwood
 other,Waynwood
 house,House Greyjoy
 other,Needle
-person,Reach
-person,Lollys Stokeworth
-person,Lollys
-other,Knot
+other,Reach
+other,Lollys Stokeworth
+other,Lollys
+other,Savior
 other,Master Ships
-place,Margaery Tyrell
-place,Margaery
+other,Margaery Tyrell
 other,Lady
 place,Obara Sand
 place,Obara
-person,Tormund Giantsbane
-person,Tormund
+other,Later
+other,Tormund Giantsbane
+other,Giant
+other,Tormund
 other,Horrified
-person,Ilyn Payne
-person,Ilyn
-other,Sparrows
+other,Ilyn Payne
+other,Ilyn
+place,Meereenese Knot
+place,Meereenese
+place,Meereen
 other,High Hall
-other,Salladhor Saan
-other,Salladhor
-person,South
+other,Hall
+place,Salladhor Saan
+place,Salladhor
 other,Northern Lords
-other,Lord
 other,Northern
-other,Lords
 other,Master Coin
+other,Drowned Priest
 other,Essence Nightshade
 place,Loras Tyrell
 place,Loras
 place,Styr
+other,Cripples
 place,Trystane Martell
 place,Trystane
 place,Trystane Martell Jaime
+other,His Conquest Westeros
 other,Randyll Tarly
 other,Randyll
+other,Tarly
 other,Deepwood Motte
