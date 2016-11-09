@@ -48,7 +48,7 @@ Gera um arquivo "related_entities.csv" na pasta output.
 ## tf-idf.py
 Arquivo responsável por buscar documentos que mais se adequam a consulta passada como parâmetro. Para tal usa-se a técnica de TF-IDF. Também recebe o caminho para os episódios.
 
-Como rodar: python tf-idf.py <query> <caminho_para_os_episódios>
+Como rodar: python tf-idf.py query caminho_para_os_episódios
 
 Retorna os 5 arquivos com maior score ordenados.
 
