@@ -1,9 +1,6 @@
 import os
 import sys
 import csv 
-import re
-from nltk import tokenize
-from nltk.corpus import brown
 import nltk
 
 '''Variaveis globais'''
@@ -36,17 +33,9 @@ def clean_entity(entity):
         if word.isalnum(): newEntity += word+" "
     return newEntity
 
-
-def generate_relation_triples(ner):
+'''Funcao responsavel por obter as triplas de relacoes a partir da arvore sintatica gerada. Cria as strings das relacoes e entidades para formar as triplas.'''
+def get_triple_from_relation(ner):
     triples = []
-    #RELATION: {<NE>+<V.*>+<NE>+}
-    grammar = '''
-            NE: {<NE_POS_NE|NE_IN_NE|PLACE|SIMPLE_NE>} 
-            RELATION: {<NE>+<IN>?<DT>?<V.*>+<IN>?<DT>?<NE>+}
-            '''
-    regex_parser = nltk.RegexpParser(grammar)
-    ner = regex_parser.parse(ner)
-
     for t in ner:
         if isinstance(t, nltk.tree.Tree):
             #grammatical_form = t.label()
@@ -66,7 +55,7 @@ def generate_relation_triples(ner):
                             for y in x[0]:
                                 ne1 += y[0]+" "
                                 ne1 = clean_entity(ne1)                     
-                                
+                                            
                         else:
                             for y in x[0]:
                                 ne2 += y[0]+" "
@@ -74,4 +63,15 @@ def generate_relation_triples(ner):
                 if ne1 != '' and middle != '' and ne2 != '':
                     triples.append((ne1, middle, ne2))
     return triples
+
+'''Funcao responsavel por parsear o regex da gramatica de relacoes e obter as triplas a partir da arvore sintatica.'''
+def generate_relation_triples(ner):
+    grammar = '''
+            NE: {<NE_POS_NE|NE_IN_NE|PLACE|SIMPLE_NE>} 
+            RELATION: {<NE>+<IN>?<DT>?<V.*>+<IN>?<DT>?<NE>+}
+            '''
+    regex_parser = nltk.RegexpParser(grammar)
+    ner = regex_parser.parse(ner)
+
+    return get_triple_from_relation(ner)
 
