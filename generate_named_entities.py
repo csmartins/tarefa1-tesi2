@@ -19,7 +19,7 @@ csv_name = "/entities.csv"
 named_entities = []
 names_dict = {}
 accepted_grammatical_forms = ['NE_POS_NE', 'NE_IN_NE', 'NE_VERB', 'PLACE', 'SIMPLE_NE']
-stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'of ', 'The', 'Khal' ]
+stopwords = ['Lord ', 'King ', 'Queen ', 'Sir ', 'Ser ', 'Prince ', 'Princess ', 'Regent ', 'Commander ', 'Lady ', 'Young ', 'Maester ', 'Grand Maester ', 'The', 'Khal' ]
 
 place_entities = []
 person_entities = []
@@ -51,6 +51,41 @@ def refine_text_from_tree(t):
             text = clear_entity(text)
     return text
 
+'''Remove palavras minusculas no meio de entidades. Transforma as duas entidades da ponta em entidades diferentes. Ignora caso a palavra possua 'of' como minuscula.'''    
+def remove_middle_words_lower(text):
+    text_split = text.split()
+    if len(text_split) <= 1 or (" of " in text): 
+        return [text]
+        
+    else:
+        newEntities = []
+        newEntity = text_split[0]+" "
+        for x in range(1, len(text_split)):
+            if text_split[x][0].isupper() is not True:
+                newEntities.append(newEntity.strip())
+                newEntity = ""
+            else:
+                newEntity += text_split[x]+" "
+        if newEntity != "": 
+            newEntities.append(newEntity.strip())
+    return newEntities
+    
+'''Se entidade comecar com letra minuscula, so pega a partir da primeira palavra com letra maiuscula'''
+def remove_initial_words_lower(text):
+    result = ""
+    text_split = text.split()
+    if (len(text) > 0 and text[0].isupper() is not True and len(text_split) > 1):
+        for i in range(0, len(text_split)):
+            if text_split[i][0].isupper() is True:
+                text_split = text_split[i:]
+                for x in text_split:
+                    result += x+" "
+                break
+    if(result != ""): 
+        text = result
+    return text.strip()
+
+
 '''Adiciona como chave do dicionario de entidades se a mesma for uma sequencia de nomes proprios de tamanho 2
 (assumimos que nesse caso sera nome e sobrenome). Caso contrario, verifica se entidade possui palavra de letra minuscula no meio: se sim, separa em entidades tudo o que não for minusculo e retorna na lista nes, se não apenas retorna na lista.'''
 def add_entity_to_nes(text, nes, grammatical_form):
@@ -59,33 +94,14 @@ def add_entity_to_nes(text, nes, grammatical_form):
     #Condicoes para nao considerar como entidade
     if len(text_split) == 0 or (text in special_names_to_ignore and grammatical_form == 'NE_VERB') or (text in names_dict.keys() or (len(text) > 0 and text[0].isupper() is not True and len(text_split) == 1)):
         pass
-        
-    #Se entidade comecar com letra minuscula, so pega a partir da primeira palavra com letra maiuscula
-    elif (len(text) > 0 and text[0].isupper() is not True and len(text_split) > 1):
-        for i in range(0, len(text_split)):
-            if text_split[i][0].isupper() is True:
-                text_split = text_split[i:]
-                break
                 
     #Se forem 2 palavras como simple_ne adiciona como chave
     elif len(text_split) == 2 and grammatical_form == 'SIMPLE_NE':
-        if text not in names_dict.keys(): 
-            names_dict[text] = []
+        if text not in names_dict.keys():
+            names_dict[text.strip()] = []
     
     else:
-        if len(text_split) == 1: 
-            nes.append(text)
-        
-        else:
-            newEntities = []
-            newEntity = text_split[0]+" "
-            for x in range(1, len(text_split)):
-                if text_split[x][0].isupper() is not True:
-                    nes.append(newEntity)
-                    newEntity = ""
-                else:
-                    newEntity += text_split[x]+" "
-            nes.append(newEntity)
+        nes.append(text)
 
 
 '''Responsavel por fazer o chunk das entidades ao separa-las por frases, utilizando o regexParser e
@@ -115,23 +131,24 @@ def generate_named_entity(s):
                 grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
-                    if grammatical_form == 'NE_VERB':
-                        text = refine_text_from_tree(t)
-                        add_entity_to_nes(text, nes, grammatical_form)
-                        person_entities.append(text)
-                        
-                    elif grammatical_form == 'PLACE':
+                    if grammatical_form == 'PLACE':
                         if t[0][1] == 'IN' and t[0][0] in ['from', 'in', 'at']:
                             t.remove(t[0])
                             text = refine_text_from_tree(t)
-                            add_entity_to_nes(text,nes, grammatical_form)
-                            place_entities.append(text)				
+                            text = remove_initial_words_lower(text)
+                            entities_text = remove_middle_words_lower(text)
+                            for ent in entities_text:
+                                add_entity_to_nes(ent.strip(),nes, grammatical_form)
+                                place_entities.append(ent)				
                         
                     else:
                         text = ' '.join([c[0] for c in t])
                         text = remove_stopwords(text)
                         text = clear_entity(text)
-                        add_entity_to_nes(text,nes, grammatical_form)
+                        text = remove_initial_words_lower(text)
+                        entities_text = remove_middle_words_lower(text)
+                        for ent in entities_text:
+                            add_entity_to_nes(ent.strip(),nes, grammatical_form)
     return nes
 
 '''Responsavel por alterar a variavel global de entidades nomeadas, adicionando as encontradas em cada linha.'''
@@ -186,12 +203,12 @@ def remove_multiple_names():
         if name.split()[0] not in special_first_word_to_consider:
             for nameKey in names_dict.keys():
                 if similar_strings(nameKey, name):
-                    if name != nameKey: names_dict[nameKey].append(name)
+                    if name.strip() != nameKey.strip(): names_dict[nameKey].append(name)
                     encontrou = True
                     break
                     
         if encontrou == False: 
-            names_dict[name] = []
+            names_dict[name.strip()] = []
 
 '''Responsavel por juntar as keys que sao similares, por exemplo: White Walker e White Walkers'''            
 def remove_similar_keys():
@@ -201,10 +218,10 @@ def remove_similar_keys():
                 #condicao para nao juntar Aemon e Aegon Targaryen
                 if key1 == "Aemon Targaryen" or key1 == "Aegon Targaryen" or key2 == "Aemon Targaryen" or key2 == "Aegon Targaryen": continue
                 union_keys_names_dict(key1,key2)
-
     union_keys_names_dict("Daenerys Targaryen", "Daenarys")            
 
-                
+'''Responsavel por receber duas chaves do dicionario de entidades e concatena-los, copiando tanto a chave como os 
+valores de um para os valores de outro.'''
 def union_keys_names_dict(key1, key2):
     values = names_dict[key1]
     values.append(key2)
