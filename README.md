@@ -17,6 +17,15 @@ Espera-se que a pasta "cleaned_text" esteja preenchida.
 
 Gera um arquivo "entities.csv" na pasta output.
 
+Atenção!!!!! 
+
+Por conta de uma falta de retrocompatibilidade da biblioteca NLTK os seguintes erros podem ser gerados quando o arquivo é executado:
+
+NotImplementedError : Use l a b e l ( ) t o a c c e s s a node l a b e l .
+A t t r i b u t e E r r o r : ’ Tree ’ o b j e c t has no a t t r i b u t e ’ l a b e l ’
+
+O erro é corrigido trocando os comentários das linhas 129 e 130 do arquivo generate named entities.py e das linhas 41 e 42 do arquivo relate entities.py.
+
 
 ## mark_entities.py
 É o arquivo responsável por gerar os textos limpos com a marcação de cada entidade no decorrer dos mesmos.
@@ -27,21 +36,16 @@ Espera-se que a pasta "cleaned_text" e o arquivo "entities.csv" estejam preenchi
 
 Cria as pastas com mesmo formato dos episódios na pasta "output".
 
-## tag_entities.py
-É o arquivo responsável por gerar um csv de todas as entidades nomeadas encontradas em "entities.csv" e sua respectiva classe de descrição (person, place, battle, etc).
+## entity classifier.py
+É o arquivo responsável por gerar um csv de todas as entidades nomeadas encontradas pelo nosso gerador e sua respectiva classe de descrição (person,place, house, battle ou other).
+Este classificador é chamado pelo próprio gerador de entidades nomeadas, não sendo possível executá-lo sozinho.
 
-Como rodar: python tag_entities.py
-
-Espera-se que a pasta "cleaned_text" e o arquivo "entities.csv" estejam preenchidos.
-
-Gera um arquivo "tagged_entities.csv" na pasta output.
+Gera um arquivo ”classified entities.csv”na pasta output.
 
 ## relate_entities.py
 É o arquivo responsável por gerar um csv de todas as relações entre entidades nomeadas encontradas nos arquivos de "output".
 
-Como rodar: python relate_entities.py
-
-Espera-se que a pasta "output" esteja preenchida com os arquivos de texto com entidades já marcadas.
+Esse arquivo é chamado pelo gerador de entidades nomeadas, não sendo possível executá-lo sozinho.
 
 Gera um arquivo "related_entities.csv" na pasta output.
 
@@ -49,7 +53,7 @@ Gera um arquivo "related_entities.csv" na pasta output.
 Arquivo responsável por retornar os 5 documentos em que o texto da consulta passada como parâmetro possui mais ocorrências. Para tal usa-se a técnica de TF-IDF. Também recebe o caminho para os episódios.
 
 Como rodar: 
-$python tf-idf.py \<consulta\> \<caminho_para_os_episódios\>
+$python tf-idf.py \<consulta\> \<caminho_para_os_episodios\>
 
 Exemplo:
 $ python tf-idf.py "Jon Snow Death" cleaned_episodes
