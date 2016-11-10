@@ -114,7 +114,6 @@ def generate_named_entity(s):
         words_tokenized = nltk.word_tokenize(sentence)
         pos = nltk.pos_tag(words_tokenized)
         if len(pos) == 0 : continue
-        #NE_VERB: {<NNP|NNPS>+<VBZ>}
         grammar = '''
             NE_POS_NE: {<NNP|NNPS>+<POS><NNP|NNPS>}
             NE_IN_NE: {<NNP|NNPS>+<IN><NNP|NNPS>+}
@@ -234,7 +233,6 @@ def similar_strings(s1, s2):
     if (s1 in s2) or (s2 in s1) :
         return True
     else:
-        #distance = Levenshtein.distance(s1, s2)
         words2 = s2.split()
         totalWords2 = len(words2)
         words1 = s1.split()
