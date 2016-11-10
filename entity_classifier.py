@@ -36,16 +36,20 @@ def generate_dict_entities():
             mydict[entitiesList[0]] = []
             if len(entitiesList) > 1: mydict[entitiesList[0]] = entitiesList[1:]
     return mydict
-        
+
+'''Adiciona as entidades à lista de entidades classificadas com classe tag'''       
 def add_to_classified_entities(entities, tag):
     for entity in entities:
         classified_entities[entity] = tag
 
+'''Usada para marcar as entidades com a tag other'''
 def tag_general_entities(entities):
     for entity in entities.keys():
         classified_entities[entity] = 'other'
         add_to_classified_entities(entities[entity], 'other')
 
+'''Usada para chamar a função add_to_classified_entities e marcar as entidades com a tag place.
+Se a entidade começa com a palavra Castle marcamos como place'''
 def tag_places():
     global place_entities	
     add_to_classified_entities(place_entities, 'place')
@@ -54,11 +58,15 @@ def tag_places():
         if entity.startswith("Castle"):
             classified_entities[entity] = 'place'
 
+''' Todas as entidades que começam com a palavra Battle marcamos com a tag battle'''
 def tag_battles():
     for entity in classified_entities.keys():
         if entity.startswith("Battle"):
             classified_entities[entity] = 'battle'
 
+'''Usada para marcar todas as entidades que começam com House com a tag house. Para essas entidades
+guardamos o nome da casa numa lista de nomes de famílias. Consideramos também alguns outros nomes de
+famílias que também são comuns.'''
 def tag_houses():
     for entity in classified_entities.keys():
         if entity.startswith("House"):
@@ -81,11 +89,14 @@ def tag_houses():
         house = entity.split()
         if len(house) == 1 and entity in family_names:
             classified_entities[entity] = 'house'			
-	
+
+'''Usado para inicializar a lista de entidades consideradas como lugares'''	
 def set_places_entities(places):
     global place_entities
     place_entities = places
 
+'''Usado para marcar como person as entidades de 2 palavras que possuem a segunda palavra 
+pertencente à lista de nomes de famílias'''
 def tag_persons():
     all_persons = []
     for entity in classified_entities.keys():
