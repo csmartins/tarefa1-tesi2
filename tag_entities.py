@@ -65,7 +65,7 @@ def populate_family_names(dict_entities):
 	for tagged in tagged_entities:
 		if tagged[0] == 'house':
 			house = tagged[1].split()
-			# se house tem 3 palavras a terceira é sempre um lugar
+			# se house tem 3 palavras a terceira eh sempre um lugar
 			if len(house) == 2:
 				family_names.append(house[1])
 
@@ -78,7 +78,7 @@ def tag_houses():
         	tagged_entities[entity] = 'house'
 
 			house = tagged[1].split()
-			# se house tem 3 palavras a terceira é sempre um lugar
+			# se house tem 3 palavras a terceira eh sempre um lugar
 			family_names.append(house[1])
 			if len(house) == 3:
 				tagged_entities[tagged[2]] = 'place'				

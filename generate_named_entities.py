@@ -5,7 +5,7 @@ import sys
 from nltk.tree import Tree
 import csv
 import Levenshtein
-import tag_entities
+#import tag_entities
 import relate_entities
 
 '''Variaveis de caminho de paths'''
@@ -247,7 +247,7 @@ def do_main():
     remove_similar_keys()
     write_named_entities_in_csv(names_dict, path_output)
 
-    tag_entities.tag_all(place_entities)
+    #tag_entities.tag_all(place_entities)
     relate_entities.write_related_entities_in_csv(triples)
 
 if __name__ == "__main__":
