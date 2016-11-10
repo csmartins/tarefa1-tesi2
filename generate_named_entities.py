@@ -5,7 +5,7 @@ import sys
 from nltk.tree import Tree
 import csv
 import Levenshtein
-#import tag_entities
+import entity_classifier
 import relate_entities
 
 '''Variaveis de caminho de paths'''
@@ -126,8 +126,8 @@ def generate_named_entity(s):
         triples += relate_entities.generate_relation_triples(ner)    
         for t in ner:
             if isinstance(t, nltk.tree.Tree):
-                #grammatical_form = t.label()
-                grammatical_form = t.node
+                grammatical_form = t.label()
+                #grammatical_form = t.node
 
                 if grammatical_form in accepted_grammatical_forms:
                     if grammatical_form == 'PLACE':
@@ -262,7 +262,8 @@ def do_main():
     remove_similar_keys()
     write_named_entities_in_csv(names_dict, path_output)
 
-    #tag_entities.tag_all(place_entities)
+    entity_classifier.set_places_entities(place_entities)
+    entity_classifier.tag_all()
     relate_entities.write_related_entities_in_csv(triples)
 
 if __name__ == "__main__":

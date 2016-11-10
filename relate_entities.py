@@ -38,8 +38,8 @@ def get_triple_from_relation(ner):
     triples = []
     for t in ner:
         if isinstance(t, nltk.tree.Tree):
-            #grammatical_form = t.label()
-            grammatical_form = t.node
+            grammatical_form = t.label()
+            #grammatical_form = t.node
 
             if grammatical_form == 'RELATION':
                 ne1 = ""
