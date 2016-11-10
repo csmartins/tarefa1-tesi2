@@ -5,19 +5,21 @@ other,Leaf
 other,Winter
 place,
 other,Rat Cook
+other,Unknown
 other,Black Cliffs
 place,Essos
 other,Stark Valyrian
 other,Denys Mallister
 other,Lannisters
 other,Caleotte
+other,Wildfire
 other,Braavosi Water Dancer
 other,Bloody Hand
 person,Aerys Targaryen
 other,Lollys Stokeworth
 other,Sansa Robb
 person,Kevan Lannister
-other,Jon Sn
+other,Burn
 other,Watch
 other,Salladhor Saan
 other,Aware
@@ -28,13 +30,15 @@ person,Tyrion
 person,Margaery
 person,Selyse Baratheon
 house,Greyjoy
+other,Nor
 place,Petyr
 other,Westerlands
 other,Anguy
 other,Widow Wail
-other,Eyrie
 other,Wolkan
+other,Robert Baratheon Kingsguard
 other,Beric
+person,Aemon
 person,Jaime
 other,Temple
 other,Balon King
@@ -47,7 +51,8 @@ other,Blackwater Bay
 other,Dosh
 other,Baelish
 other,Fennez
-other,Lhazareen
+other,Barra
+place,Alliser Thorne
 other,Loraq
 place,Hardhome
 place,Melisandre
@@ -59,8 +64,8 @@ other,Sands
 other,Yezzan
 person,Renly Baratheon
 battle,Battle of Castle Black
+other,Morghulis
 other,Cerwyns
-other,Red Priestess
 other,Dany Dothraki
 other,Orson
 other,Baelor
@@ -75,7 +80,6 @@ person,Robin Arryn
 other,Drogon
 other,Distraught
 other,East
-other,Rides
 person,Robb
 other,High Priestess
 person,Tyrion Lannister
@@ -86,60 +90,61 @@ person,Samwell Tarly
 other,Old Valyria
 other,Sack of Astapor
 other,Grenn
+other,Throne Room
 other,Titan Bastard
 person,Torrhen
-other,Inn
 house,House Stark
 other,Terrified
-other,Hearth
+other,Alone
 other,Hollow Hill
 other,Reek
 other,Umber
 other,Harpy Son
+other,Green Fork of Trident River
 other,Jhiqui
 other,Belicho Paenymion
 other,Valahd
 other,Gift
 other,Light
 other,Magister Illyrio Mopatis of Pentos
-battle,Battle
+other,Thin Man
 place,Arthur
 other,Wun Wun
-other,Maggy
+other,Hot Pie
 other,Glover
 other,Rains of Castamere
-place,on
 other,Targaryens
 other,Stone Men
-other,Enraged
+person,Randyll
+other,Little Bird Spies
 other,Great Hall
 person,Sansa
 other,Malko
 other,Queen
+other,Back
 other,Dead
 other,Areo Hotah
 person,Cersei Lannister
 other,Farther
 battle,Battle of Stone Mill
 other,Syrio Forel
-other,Dismissive
+other,Eraz
 other,Ilyn
-person,Viserys Targaryen
 other,Mountain
 other,Hall of Faces
 other,Halfhand
 other,Brothers
-other,Dontos Hollard
+person,Hoster Tully
 house,House Reyne of Castamere
-person,Robert
+other,Yunkish
 other,Siege of Old Wyk
-other,Qhorin Halfhand
+place,Valyrian
 other,Long Bridge
 other,Book
-other,Unella
 other,Janos Slynt
 other,Vardis
 place,Luwin
+other,Cressen
 other,Akho
 other,Whispering Wood
 other,Armeca
@@ -149,20 +154,22 @@ place,Grand Pycelle
 person,Sandor Clegane
 person,Roslin
 other,Karl Tanner
-other,Daenerys Unsullied
+other,Drowned Men
 other,Rakharo
 other,Eyrie High
-house,Houses
+other,Robert Stannis
 other,Warden
-person,Lysa
-other,Cities
+other,Coming
+other,Wise Masters
+other,Furthermore
 person,Willem
 other,Lanna
-other,Tysha
+place,on
 other,Pits
+other,Summary
 house,House Martell
 other,Dontos
-other,Queensguard
+other,En
 other,Piggy
 other,Talisa
 other,River Trident
@@ -174,23 +181,26 @@ person,Bran
 other,Daario Naharis
 person,Rhaegar
 other,Mad King
+other,Pyat Pree
 other,Locke
-other,Gods
 other,Army
 other,Gared
 place,Valyria
+other,Down
 other,Pyke
-other,AND Wylis
+other,Inn
+other,Satisfied
 place,Mero
 other,Northeners
 house,Tarth
 other,Children
+other,Iron Fleet
 other,Wolf Bread
 person,Stannis
 other,Qarth
 other,Shadow Lands
 other,Regent
-place,Harrenhal
+other,Masters
 other,Liberation
 other,Starks
 other,Essence of Nightshade
@@ -199,10 +209,10 @@ person,Aegon
 other,Dayne
 other,Runestone
 other,Crownlands
-other,Lords
 other,Paramount
 other,Orell
 place,Pyp
+other,Atop
 other,Blackmont
 other,Nightfort
 place,Mycah
@@ -210,10 +220,10 @@ place,Dragonstone
 person,Rickon Stark
 other,Kovarro
 person,Rhaegar Targaryen
-other,Mighty
 other,Shadow
-other,Ghost
-other,Sumai
+other,Egen
+place,Ghost
+person,Hound Clegane
 other,Pycelle
 other,Tobho Mott
 other,Ironborn
@@ -222,7 +232,6 @@ place,Dothraki
 other,Garden of Bones
 other,Kingdoms
 other,Daisy
-other,Furious
 other,Kingsguard
 other,Banners
 other,Matthos Seaworth
@@ -230,6 +239,7 @@ place,Missandei
 person,Myrcella
 house,Arryn
 other,Dagmer Cleftjaw
+other,Grey Wind
 place,Drogo
 other,Old Ghiscari
 other,Aunt Lyanna
@@ -239,27 +249,28 @@ other,Alayne
 person,Lancel Lannister
 person,Alton Lannister
 other,Walkers
-other,One
-other,Guard
+other,Who Lost
 other,Axell Florent
-other,Throne Room
+other,At Karl
 other,Mandon
 other,Unafraid
+other,Jaqen H
 other,Beyond
 other,Jory Cassel
-person,Aemon
+other,Rhaenys
 other,Doreah
-other,Iron Fleet
+other,Forced
+other,Eye
 other,Targaryen Conquest
 other,Prologue
-other,Slaver
 other,Ternesio Terys
+person,Lothar
+other,My
 other,Onion Knight
 place,Yoren
-other,Rhaenys
+other,Covered
 other,White
 other,Red Comet
-other,Bird
 other,Prendahl
 other,Braavosi
 other,Dragonglass
@@ -267,30 +278,32 @@ other,Melara Hetherspoon
 other,Northerners
 other,Gerold Hightower
 person,Aeron Greyjoy
-other,Stallion
 other,Waif
-place,Landing
+other,Landing
 other,Hall
+person,Daenerys Targaryen
 other,Conquer
-other,Valar Morghulis
+other,Lives of Four Kings
 other,Rhaego
 place,Castle Stokeworth
 place,Qhorin
 other,Convinced
+other,Grace
 other,Mossador
 other,Throne
 other,Water Gardens of Dorne
-other,Sister
 other,Weirwood
-other,Royal
+other,Fearful
+other,Hugh
 other,Wisdom Hallyne
 other,Long Farewell
 other,Brother
 place,Varys
 other,Water Dancing
 other,Greyguard
-other,Sissy
+other,Intrigued
 other,Lhara
+other,Aboard
 person,Lothar Frey
 other,Mother
 other,Lorren
@@ -306,78 +319,86 @@ other,Torrhen Square
 other,Ran
 person,Eddard
 person,Shireen Baratheon
-person,Ramsay Bolton
+other,Dornish Lords
+other,Meereenese Knot
 person,Walder
 place,Olly
-other,Conquest of Westeros
 person,Robb Stark
 other,Long Night
 other,Council
-house,Mormont
+place,Mormont
 other,Viper
-other,Curious
 other,Fennesz
 house,House Bolton
 other,Yarwyck
 other,Mikken
 other,Siege of Pyke
-other,A
 other,Faith Militant
 other,Rorge
+person,Randyll Tarly
 person,Meera Reed
 other,Black Cells
+other,Sumai
+other,Anyone
 place,Savo
 other,Moro
-other,Crying
+other,Quaithe
 other,Lannister Camp
+other,Accompanied
 other,Black Walder
 other,Melisandre God
 other,Free City of Qohor
 other,Common Tongue
-house,House Mormont
+other,Great Ranging
 other,Undeterred
-other,Quickly Tyrion
 person,Balon Greyjoy
 place,Kraznys
+other,Within
 person,Bran Stark
+house,Tarly
 other,Moon Door
 person,Sweetrobin Arryn
+other,Hold
 other,Shireen Greyscale
-person,Jon
+other,Saddened
 other,Old Nan
 other,Town
 other,Dondarrion
+other,This
 other,Builder
 other,Yohn Royce
 other,Old Tongue
 other,Thin
-place,Valyrian
+other,Qhorin Halfhand
 place,Sunspear
-other,Doom of Valyria
 other,Egg
-other,Steelshanks
-other,En
+place,Will
+other,Queensguard
 other,Missandei Daenerys
 other,Ralf Kenning
 person,Nymeria Sand
 person,Cersei
+other,Bowen
 other,Water Gardens
-other,That Was
+other,Mighty
 other,Stark of Winterfell
 person,Rickard Stark
 other,Unsullied
 place,Rhaegal
-other,Folk
 other,Mance Rayder
-other,Mormonts
+other,Giant
+other,Jamie
+other,Brynden Blackfish Tully
 other,Zalla
 other,Syrio
-other,Hugh
+other,Davos An History of Aegon
+other,Jaime Dornish
 house,Stark
 other,Gilly
 other,Imp
 other,Karsi
 place,Black
+other,Tied
 other,High Red Priestess
 other,Stiv
 other,Red Priest
@@ -388,21 +409,23 @@ place,Westeros
 person,Arya
 other,North
 place,Vala
-person,Jorah
+place,Jorah
 person,Tywin Lannister
+other,Maegor Holdfast
 other,Vale
 other,Drowned God
 place,Pod
 person,Walder Frey
 other,Selmy
 other,Janos
+other,Lannister Monster
 other,Vale of Arryn
 other,Sack of Winterfell
 other,Red Keep
 place,Davos
-person,Jeor Mormont
+other,Jeor Mormont
 other,Neck
-other,Milk
+other,Arya Stark Baelish
 person,Ned Stark
 other,Willas Bracken
 other,Aggo
@@ -410,22 +433,25 @@ person,Oberyn Martell
 other,Dothraki Sea
 person,Roose Bolton
 other,Dornishman Wife
-person,Jojen
 other,Shireen of House Baratheon
+other,Tongue
 other,Sept
 other,Crasters Keep
 person,Lysa Tully
-other,Seven
+other,Mountain That Rides
+other,Ordered
 house,Tyrell
 other,Edd
 person,Karlon Stark
 other,Lommy
-other,Riverlords
-other,High Septon
-other,Drunk
-place,Casterly Rock
+other,Exhausted
+other,Acting Hand
+other,Watch Thorne
+other,His Conquest of Westeros
 other,Oldtown
-place,Will
+house,Clegane
+other,Filled
+person,Trystane
 person,Euron Greyjoy
 house,Baratheon
 person,Obara Sand
@@ -435,7 +461,7 @@ other,God
 other,Pypar
 other,Father
 place,Meereen
-other,Master of War
+other,Amidst
 other,Stormlands
 other,Crag
 other,Tormund
@@ -443,13 +469,15 @@ place,Oxcross
 person,Walda Bolton
 other,Amory Lorch
 place,Vaes Dothrak
+other,Storm End
 other,Baratheons
 other,NORTH
 other,Loboda
 person,Alton
 other,Old Gods
 other,Amory
-house,Clegane
+other,Hollard
+other,Guard
 other,Septon
 other,Lands of Always Winter
 other,Mhaegen
@@ -460,51 +488,60 @@ other,First Men
 other,Ask
 other,First Ranger
 person,Arya Stark
+other,Lady
 other,Lollys
 other,Bank
 other,Joyeuse
 place,Riverrun
-other,Stony Shore
+place,Astapor
 other,Wise
 other,Night King
+other,Royal
 place,Gendry
+other,Frozen
+battle,Battle of Ashford
+place,M
 other,Harpy
 other,Eddison
 other,Mag Mar Tun Doh Weg
-other,Priest
+other,Jafer Flowers
 other,Whent of Harrenhal
 other,Slaver Bay
 other,Brusco
 other,Gold Dragons
 other,Wyl
-other,Lords Walder Frey
+other,Vance Corbray
 other,Black Rat
 other,Unburnt
 person,Benjen
+other,Podrick Payne
 person,Doran
 other,Capital
 person,Aeron
 other,Crow
 other,Hallyne
 other,Crown Rhaegar Targaryen
+other,Fuck
 other,Longclaw
 person,Torrhen Karstark
+other,Awoken
 other,Dagmer
 other,Kingsmoot
 other,Thirteen
 other,Ghiscari
 other,Lysene
 person,Tommen Baratheon
-person,Randyll Tarly
-other,Long Bridge of Volantis
+other,Jon We
+other,Apart
 person,Tyene Sand
 person,Jon Arryn
+other,Stonemen
 battle,Battle of Winterfell
-other,High Hall
 other,Smalljon
 other,Illyrio Mopatis
-other,Barra
+other,Lhazareen
 other,Iggo
+other,Naath
 other,Hill
 place,Master Mighdal
 other,White Rat
@@ -513,71 +550,77 @@ place,Dorne
 house,Karstark
 other,Kingdom
 other,Rivermen
-other,Captain
 other,Wildling
 house,Bolton
 person,Loras
 person,Shireen
 other,Tycho
+other,Petyr Littlefinger Baelish
 other,Bianca
 other,Waymar
 other,Wight
 other,Davos Seaworth
-other,Cryptically
 other,Tickler
 house,Reed
 other,White Sword Tower
-other,Strong
+other,First of His Name
 other,New
-other,Against Cersei
 person,Yara
-other,Masters
+place,Harrenhal
 person,Selwyn
 other,North Edit
 other,Crossroads Inn
 other,Myranda
-other,Asshai
+person,Lysa
 other,Good Masters
 other,Marillion
+other,Seven
 other,Protector
 other,Keep
-other,Grey Wind
+other,Leave
 person,Olyvar Frey
 other,Sand Snakes
 person,Lyanna
-person,Lothar
+other,Quick
 other,White Walkers
-other,Greyjoys
-other,Podrick Payne
+other,Having
+person,Willem Lannister
+other,As Cersei Lannister
+other,Hearth
 person,Brynden Tully
 other,Septa Mordane
 person,Tywin
 place,Small Council
+other,Uncle Benjen
 person,Mace Tyrell
 other,Daenarys
-other,Dragons
-other,Great Ranging
-person,Daenerys Targaryen
+other,Tysha
+other,Riverlords
 other,Xaro Xhoan Daxos
 other,Rhaenyra
 other,Missandei of Naath
 person,Myrcella Baratheon
-place,Littlefinger
+person,Hound
 other,Volantene
+other,That Was Promised
 house,House Lannister
 other,Iron Throne
 person,Oberyn
+other,For
 other,Gods Laws
 other,Areo
 other,First Builder
 other,Stormcrows
 place,Lhazar
 other,Iron Bank of Braavos
+other,Southerners
 other,Angered
 other,Mutiny
 person,Brynden
+other,My Lord
 place,Karhold
 other,Wolfswood
+place,Stone Mill
 other,Dreadfort
 other,Shaggydog
 person,Obara
@@ -591,46 +634,45 @@ other,Sons
 other,Umbers
 other,Irri
 person,Howland Reed
-person,Trystane
 person,Jaime Lannister
 other,Nights Watch
+other,High Septon
 person,Aemon Targaryen
-place,King
+other,King
 other,Bewildered
 other,Slynt
 other,Dany
-other,Knot
 person,Catelyn Stark
 place,Bronn
 other,Titan of Braavos
-other,Uncle Benjen
+other,Qartheen
 other,Mummer Ford
 other,Black Walder Rivers
 place,Winterfell
 other,First Builder Othell Yarwyck
-other,Fork of Trident River
-other,Annoyed
+other,Graces
 other,Hizdahr
 other,Royal Fleet
+other,Unexpected
 other,Shadow Tower
 other,Dance
-person,Ramsay Snow
+other,Tongue of Westeros
 other,Blessed
 other,Ghezn
 other,Great Sept of Baelor
 other,Arry
 other,Woods
+other,Direwolves
 person,Rickard Karstark
 other,Fist
 other,Night Watchman
-other,Hot Pie
+other,Maggy
 other,Boltons
 place,Qyburn
-other,Famished
 person,Jon Snow
 other,World
 other,Free City of Braavos
-other,Deeply
+person,Olenna
 other,Water Dancer
 other,Oathkeeper
 house,Snow
@@ -644,6 +686,7 @@ person,Euron
 other,Pentoshi
 other,War
 other,Tycho Nestoris
+other,Oh
 other,Mord
 house,House Baratheon of Dragonstone
 other,Conclave
@@ -653,22 +696,21 @@ other,Brienne
 other,Red Priestess Melisandre
 other,Tower of Joy
 other,Green Fork
-other,Graces
+other,Annoyed
 person,Mace
 other,Osha
 person,Meera
 person,Lysa Arryn
-other,Kinvara
 other,Warlocks of Qarth
 other,Arthur Dayne
 other,Tears of Lys
 other,Flowers
 other,Spice King
+other,Shaken
 other,Dolorous Edd
 place,Yunkai
 other,Guild
 other,Mazins
-person,Randyll
 other,Westoros
 other,Matthos
 other,Glovers
@@ -676,7 +718,7 @@ other,Thorne
 other,Dragon
 person,Tyene
 other,Kingslayer
-other,Seven Kingdoms
+other,Master of War
 other,Night
 other,Iron Islands
 other,Conqueror
@@ -684,25 +726,24 @@ person,Selwyn Tarth
 other,Trant
 place,Biter
 other,Barristan Selmy
-other,Robert Baratheon Kingsguard
+other,Meerenese Pit Fighter
 other,Viserion
-other,Old
+other,Red Priestess
 person,Elia
-other,Tired
 person,Lyanna Stark
-person,Lyanna Mormont
+place,Lyanna Mormont
 other,Talisa of Volantis
 other,Skirling Pass
 person,Edmure Tully
-other,Outside
 other,Sparrows
 other,Commander
 person,Ellaria Sand
 other,Beric Dondarrion
 other,Hodor
-other,Wise Masters
-other,Drogoʼs
-other,Cressen
+other,Asshai
+person,Ramsay Snow
+battle,Battle
+other,Silent Sister
 other,White Walker
 other,Waynwood
 other,Old Bear
@@ -715,25 +756,30 @@ other,Pree
 place,High Valyrian
 person,Gregor
 other,Fingers
-other,Satisfied
+other,Hound Sandor Clegane
+other,Delighted
 other,Sapphire Isle
 house,House of Black
 other,Sword
 place,Illyrio
 other,Greyscale
+other,You
 other,Greatjon Umber
+other,Heavy
 other,Polliver
 other,Podrick
 person,Kevan
+other,Red Flea
 person,Samwell
 other,Qaggaz
 other,Podrick Payne of Stannis
 other,Bear
-other,Columns
-other,Northern
+other,Disgusted
+other,Underneath
+other,Tyrells Margaery
 other,Brotherhood
 other,Broken Tower
-other,Pyat Pree
+other,Sansa Meanwhile
 person,Rickon
 other,Brotherhood Without Banners
 other,Faith
@@ -743,26 +789,26 @@ other,Meereenese
 other,Riverlands
 other,Craster Keep
 other,Great Pyramid
-other,Crossroads
-person,Hoster Tully
+other,Doom of Valyria
+other,Steelshanks
 other,Rodrik Cassel
+other,Obedient
 other,Night Lands
 other,Iron
 person,Edmure
-other,Dracarys
 battle,Battle of Oxcross
 person,Nymeria
 other,Anya Waynwood
 person,Martyn
-other,Eraz
 other,Mandon Moore
+other,Sissy
 other,Son
 house,Lannister
 other,Meryn Trant
 place,Lordsport
 other,Salt Throne
 other,Sow
-battle,Battle of Ashford
+other,In
 other,Bowen Marsh
 place,Karl
 other,Petyr Baelish
@@ -771,7 +817,7 @@ person,Robert Baratheon
 other,Undying
 other,Order of Maesters
 place,Highgarden
-person,Willem Lannister
+other,Egg Aegon V
 other,Heward
 other,Mad Aerys Targaryen
 other,Summer Isles
@@ -782,8 +828,10 @@ person,Gregor Clegane
 other,Shagga
 other,Faceless Man
 other,Othor
-other,Five Kings
+other,Undaunted
+place,Littlefinger
 other,Trident
+other,Samwall
 place,Xaro
 other,Vardis Egen
 other,Hobb
@@ -791,82 +839,87 @@ other,First Sword of Braavos
 other,Hands
 other,Free City of Pentos
 other,Crane
+person,Robert
 other,Narrow Sea
 person,Ramsay
+other,On
 place,Craster
-house,Houses Jon
 person,Lancel
-other,Oh
+other,Heart
 other,Camp
 house,House Tarth
 other,Morning
 other,Alliser
 other,Freys
 person,Doran Martell
+other,Stallion Who Mounts
 other,Tall
 other,Hotah
-other,Heart
+other,Lords
+other,After Tommen
 person,Margaery Tyrell
 other,Reeds
 place,Lys
 place,Jaqen
-other,Lady
+other,Old
 place,Myr
+other,Pie
 other,Ornela
 other,Great Pit
 person,Catelyn
 other,Sight
-other,Quaithe
+other,Good Masters of Astapor
 other,Bones
 other,Kingswood
-other,Aegon V
+place,Salladhor
 other,Pit
 other,Prince
 other,Targaryen Kingsguard
-person,Jorah Mormont
+place,Jorah Mormont
 other,Sick
-other,Cripples
+person,Jojen
 other,Chosen
-other,Forlorn
+person,Ramsay Bolton
 person,Ned
 other,Grey Worm
 other,Brandon
 other,Daario
-other,Daznak Pit
+place,Razdal
 other,Genna
 place,Castle Black
 house,House Tyrell
+person,Jon
 other,Marei
 other,Mance
 other,Greensight
 house,Tully
-person,Olenna
-other,Was
-other,Men
-person,Jeor
+other,Greyjoys
+other,Jeor
 place,Braavos
+other,Armed
 person,Rickard
 other,Kayla
 other,Ilyn Payne
+other,Northern
+other,Let
 other,Master of Whisperers
-other,Discouraged
 person,Aegon Targaryen
 other,Mother of Dragons
 other,Royce
 other,Othell Yarwyck
 other,Boy
 other,Qotho
-other,Jaime Dornish
+other,Look
 other,Stranger
 other,Townshall
 other,Wylla
-place,Alliser Thorne
+other,Wise Master Razdal
 other,Boros Blount
+other,Great Other
 other,Bear Island
 other,Priestess
 other,Cleon
 other,Tyrells
-other,Hound
 other,Calla
 other,Raven
 other,Septa Unella
@@ -878,52 +931,55 @@ other,Norvosi
 other,Aemon Sam
 other,Slavers Bay
 person,Yara Greyjoy
-other,Maegor Holdfast
+other,Milk
 person,Olenna Tyrell
 person,Sandor
 other,Maiden Fair
-other,Pit Fighter
+other,Captain
 other,Haunted Forest
 house,Targaryen
 other,Horrified
 house,Frey
-other,Wildfire
+other,Kraznys Unsullied
 other,Brienne of Tarth
 place,Meryn
 other,Eddison Tollett
 other,Great Houses
-other,Lannister Monster
+other,No
 other,Daenerys Stormborn of House Targaryen
+other,Fascinated
 other,Red Waste
 other,Mago
 other,Doran Martell of Dorne
 other,Fine
-other,Storm
+place,Casterly Rock
 other,Shae
 other,Qyburn Grand Maester
+person,Myrcella Lannister
 other,Master of Coin Mace Tyrell
+other,Frustrated
 person,Aerys
-other,Jafer Flowers
 other,Lorch
 person,Ellaria
 other,Trident River
-other,Bowen
-other,Vance Corbray
-other,Jamie
+other,Infuriated
+other,High Hall
+other,Eyrie
+other,Upon
+other,Growing Strong
 other,Hand
 other,Faceless Men
 other,Blackfish
 other,South
-person,Loras Tyrell
+other,Forlorn
 person,Roslin Frey
 person,Roose
-place,Stone Mill
+other,Stick
 other,Quaithe of Asshai
-other,Xhoan Daxos
 other,Iron Bank
 other,Star
 person,Walda
-place,Astapor
+other,Stony Shore
 other,Sworn Brothers
 other,High Sparrow
 other,Mirri Maz Duur
@@ -941,11 +997,12 @@ house,House
 other,Melara
 other,Sparrow
 other,Great Masters
-other,Salladhor
+other,Brutal
 other,Joanna
 other,Silent Sisters
-place,Razdal
+other,Daznak Pit
 house,House Targaryen
+other,Mollified
 other,Greyjoy Rebellion
 other,Book of Brothers
 other,Realm
@@ -954,16 +1011,15 @@ other,Gerold
 other,Free City of Volantis
 other,Little Sam
 other,Ice
+other,Watchman
 other,Talisa Maegyr
 other,Twins
 other,Wylis
 other,Nym
 person,Daenerys
-other,Wise Master Razdal
 other,Westerosi
 other,Mighdal
 other,Bannen
-other,High
 place,Volantis
 place,White Harbor
 other,Vhagar
@@ -973,34 +1029,41 @@ other,Reach
 person,Martyn Lannister
 other,Berserk
 other,Martells
-other,Naath
+other,Dothrak
 other,Inside Bran
 other,Mad
 other,Mag
-other,Sisters
 other,Thoros
 other,Smoking Sea
 other,Red Temple of Volantis
 other,Barristan
 other,Great
 other,Meereenese Great Masters
+other,Bridge of Volantis
+other,Later
 other,Tormund Giantsbane
 other,Frostfangs
 other,Savior
 other,Nakloz
 other,North Robb Stark
 person,Olyvar
-person,Viserys
+other,Viserys
 other,Gardens
 house,Martell
 other,Maester
 other,Free Cities
 other,Robert Rebellion
-other,Thin Man
+other,Drowned Priest
+other,Stallion That Mounts World
 person,Tommen
-other,Common Tongue of Westeros
+person,Loras Tyrell
 place,Styr
+other,Cripples
 person,Trystane Martell
+other,Kinvara
 other,Mott
+other,At
+other,Sandor Hound Clegane
 other,Waif In Braavos
 other,Deepwood Motte
+other,Seven Kingdoms
