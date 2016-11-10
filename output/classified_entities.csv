@@ -58,7 +58,7 @@ other,Tullys
 other,Sands
 other,Yezzan
 person,Renly Baratheon
-other,Battle of Castle Black
+battle,Battle of Castle Black
 other,Cerwyns
 other,Red Priestess
 other,Dany Dothraki
@@ -102,7 +102,7 @@ other,Valahd
 other,Gift
 other,Light
 other,Magister Illyrio Mopatis of Pentos
-other,Battle
+battle,Battle
 place,Arthur
 other,Wun Wun
 other,Maggy
@@ -120,7 +120,7 @@ other,Dead
 other,Areo Hotah
 person,Cersei Lannister
 other,Farther
-other,Battle of Stone Mill
+battle,Battle of Stone Mill
 other,Syrio Forel
 other,Dismissive
 other,Ilyn
@@ -274,7 +274,7 @@ other,Hall
 other,Conquer
 other,Valar Morghulis
 other,Rhaego
-other,Castle Stokeworth
+place,Castle Stokeworth
 place,Qhorin
 other,Convinced
 other,Mossador
@@ -499,7 +499,7 @@ person,Randyll Tarly
 other,Long Bridge of Volantis
 person,Tyene Sand
 person,Jon Arryn
-other,Battle of Winterfell
+battle,Battle of Winterfell
 other,High Hall
 other,Smalljon
 other,Illyrio Mopatis
@@ -750,7 +750,7 @@ other,Night Lands
 other,Iron
 person,Edmure
 other,Dracarys
-other,Battle of Oxcross
+battle,Battle of Oxcross
 person,Nymeria
 other,Anya Waynwood
 person,Martyn
@@ -762,7 +762,7 @@ other,Meryn Trant
 place,Lordsport
 other,Salt Throne
 other,Sow
-other,Battle of Ashford
+battle,Battle of Ashford
 other,Bowen Marsh
 place,Karl
 other,Petyr Baelish
@@ -931,7 +931,7 @@ other,Chamber
 other,Jon Umber
 other,Bloody Gate
 other,Walker
-other,Castle
+place,Castle
 other,Selwyn of Tarth
 other,Tourney
 other,Baelish At Winterfell

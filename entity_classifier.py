@@ -50,6 +50,15 @@ def tag_places():
     global place_entities	
     add_to_classified_entities(place_entities, 'place')
 
+    for entity in classified_entities.keys():
+        if entity.startswith("Castle"):
+            classified_entities[entity] = 'place'
+
+def tag_battles():
+    for entity in classified_entities.keys():
+        if entity.startswith("Battle"):
+            classified_entities[entity] = 'battle'
+
 def tag_houses():
     for entity in classified_entities.keys():
         if entity.startswith("House"):
@@ -90,7 +99,6 @@ def tag_persons():
         if len(name) == 1 and entity in all_persons:
             classified_entities[entity] = 'person'
         
-
 def tag_all():   
     dict_entities = generate_dict_entities()  
     
@@ -98,6 +106,7 @@ def tag_all():
     tag_places()
     tag_houses()
     tag_persons()
+    tag_battles()
 
     write_classified_entities_in_csv()
     
