@@ -28,6 +28,8 @@ def update_dict(x, y):
 	z.update(y)
 	return z
 
+'''Conta o numero de palavras de um conteudo e guarda a quantidade num dicionario onde a chave
+eh a palavra e o valor eh o numero de vezes que aparece.'''
 def count_words(full_content):
 	sentences = nltk.sent_tokenize(full_content.decode('utf-8'))
 	words_count = {}
@@ -48,6 +50,9 @@ def count_words(full_content):
 		words_count = update_dict(words_count, words_dict)
 	return words_count
 
+'''Adiciona ao dicionario geral a ocorrencia de uma palavra em um episodio. Cada elemento do dict
+tem como chave a palavra e o valor uma lista. Cada elemento da lista eh composto por uma tupla onde
+o primeiro elemento eh o nome do arquivo e o segundo eh o valor da ocorrencia daquela palavra no documento.'''
 def count_frequency(path_episode, words_count):
 	for word in words_count.keys():
 		if word in word_frequency.keys():
@@ -55,9 +60,13 @@ def count_frequency(path_episode, words_count):
 		else:
 			word_frequency[word] = [(path_episode, words_count[word])]
 
+'''Calcula o valor de idf para cada palavra do dict de frequencia de palavras(word_frequency).
+Lembrando que o valor desse dict eh uma lista de tuplas onde cada uma delas junta o nome do episodio
+e a quantidade de vezes que essa palavra ocorre.'''
 def calc_idf():
 	inverse_document_frequency = {}
 	for word in word_frequency.keys():
+		#df = numero de documentos em que uma palavra aparece
 		df = len(word_frequency[word])
 
 		N = documents_count * 1.0 #convertendo pra decimal para prevenir math domain error
@@ -68,6 +77,8 @@ def calc_idf():
 		inverse_document_frequency[word] = idf
 	return inverse_document_frequency
 
+'''Constroi a matriz de tf-idf onde a chave eh uma palavra e o valor tambem é um dict. Esse dict interno
+tem como chave o nome do episodio e valor o tf*idf'''
 def calc_tf_idf(idf):
 	tf_idf = {}
 	for word in word_frequency.keys():
@@ -76,6 +87,8 @@ def calc_tf_idf(idf):
 			tf_idf[word][tf[0]] = tf[1]*idf[word]
 	return tf_idf
 
+'''Calcula o score de cada documento percorrendo cada palavra do dict de tf-idf somando os valores
+de cada elemento do mesmo'''
 def score(query, tf_idf):
 	scores = []
 	words = nltk.word_tokenize(query)
@@ -88,6 +101,7 @@ def score(query, tf_idf):
 		scores.append((document, score))
 	return scores
 
+'''Ordena os scores e retorna o 5 maiores'''
 def get_best_scores(scores):
 	sorted_scores = sorted(scores, key=lambda scor: scor[1], reverse=True)
 	new_sorted_scores = []
